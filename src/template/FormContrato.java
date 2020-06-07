@@ -58,7 +58,7 @@ public abstract class FormContrato extends javax.swing.JFrame
     lblStatus = new javax.swing.JLabel();
     jSeparator1 = new javax.swing.JSeparator();
     lblTitulo = new javax.swing.JLabel();
-    jTextField1 = new javax.swing.JTextField();
+    edValor = new javax.swing.JTextField();
     lblValor = new javax.swing.JLabel();
     jPanel2 = new javax.swing.JPanel();
     btnGravar = new javax.swing.JButton();
@@ -96,8 +96,8 @@ public abstract class FormContrato extends javax.swing.JFrame
 
     lblTitulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
-    jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-    jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+    edValor.setBackground(new java.awt.Color(255, 255, 255));
+    edValor.setForeground(new java.awt.Color(0, 0, 0));
 
     lblValor.setBackground(new java.awt.Color(255, 255, 255));
     lblValor.setForeground(new java.awt.Color(0, 0, 0));
@@ -127,7 +127,7 @@ public abstract class FormContrato extends javax.swing.JFrame
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(lblValor)
                 .addGap(0, 0, Short.MAX_VALUE))
-              .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+              .addComponent(edValor, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(edStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,15 +147,13 @@ public abstract class FormContrato extends javax.swing.JFrame
             .addComponent(lblCodi)
             .addComponent(lblData)
             .addComponent(lblStatus))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addComponent(lblValor)
-            .addGap(0, 0, 0)))
+          .addComponent(lblValor))
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(edCodi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(edValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
@@ -232,10 +230,10 @@ public abstract class FormContrato extends javax.swing.JFrame
   protected javax.swing.JTextField edCodi;
   protected javax.swing.JFormattedTextField edData;
   protected javax.swing.JTextField edStatus;
+  protected javax.swing.JTextField edValor;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
   private javax.swing.JSeparator jSeparator1;
-  protected javax.swing.JTextField jTextField1;
   protected javax.swing.JLabel lblCodi;
   protected javax.swing.JLabel lblData;
   protected javax.swing.JLabel lblStatus;

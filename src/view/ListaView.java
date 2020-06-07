@@ -27,7 +27,7 @@ public final class ListaView extends javax.swing.JFrame
   private List<Prog0007Vo>prog0007List; 
   private List<Prog0008Vo>prog0008List; 
   private List<Prog0009Vo>prog0009List; 
-  Prog0007View lista = new Prog0007View();
+  //Prog0007View lista = new Prog0007View();
   private Prog0005View lista0005;
   private Prog0006View lista0006;
   private Prog0007View lista0007;
@@ -189,7 +189,6 @@ public final class ListaView extends javax.swing.JFrame
     
   }
 
-  
  //=======================================================================
   private void mostrarTabelaEntidade()
   {
@@ -513,9 +512,9 @@ public final class ListaView extends javax.swing.JFrame
         int linha = tblGridView.getSelectedRow();   
         ListaCidadeTableModel item = new ListaCidadeTableModel(prog0007List);
 
-        lista0009.getEdCodiCida().setText((String) item.getValueAt(linha, 0));
-        lista0009.getEdNomeCida().setText((String) item.getValueAt(linha, 1));
-        lista0009.getEdUf().setText((String) item.getValueAt(linha, 2));
+        lista0009.getEdCodiCidaComp().setText((String) item.getValueAt(linha, 0));
+        lista0009.getEdNomeCidaComp().setText((String) item.getValueAt(linha, 1));
+        lista0009.getEdUfComp().setText((String) item.getValueAt(linha, 2));
         lista0009.setVisible(true);
         this.dispose();
         break;

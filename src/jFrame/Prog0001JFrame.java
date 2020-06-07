@@ -5,7 +5,6 @@ import view.Prog0005View;
 import view.Prog0008View;
 import view.Prog0009View;
 //import view.Prog0008View;
-
 public class Prog0001JFrame extends javax.swing.JFrame 
 {
   public Prog0001JFrame() 
