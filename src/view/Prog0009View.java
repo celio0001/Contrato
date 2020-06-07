@@ -121,6 +121,40 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     edUf = new javax.swing.JTextField();
     jLabel10 = new javax.swing.JLabel();
     edBairro = new javax.swing.JTextField();
+    jLabel11 = new javax.swing.JLabel();
+    jLabel18 = new javax.swing.JLabel();
+    edCep1 = new javax.swing.JTextField();
+    jLabel19 = new javax.swing.JLabel();
+    edEnde1 = new javax.swing.JTextField();
+    jLabel20 = new javax.swing.JLabel();
+    edNume1 = new javax.swing.JTextField();
+    jLabel21 = new javax.swing.JLabel();
+    edCodiCida1 = new javax.swing.JTextField();
+    btnBuscaCidade1 = new javax.swing.JButton();
+    edNomeCida1 = new javax.swing.JTextField();
+    jLabel22 = new javax.swing.JLabel();
+    jLabel23 = new javax.swing.JLabel();
+    edUf1 = new javax.swing.JTextField();
+    jLabel24 = new javax.swing.JLabel();
+    edBairro1 = new javax.swing.JTextField();
+    jSeparator2 = new javax.swing.JSeparator();
+    jLabel25 = new javax.swing.JLabel();
+    jLabel26 = new javax.swing.JLabel();
+    edCep2 = new javax.swing.JTextField();
+    jLabel27 = new javax.swing.JLabel();
+    edEnde2 = new javax.swing.JTextField();
+    jLabel28 = new javax.swing.JLabel();
+    edNume2 = new javax.swing.JTextField();
+    jLabel29 = new javax.swing.JLabel();
+    edCodiCida2 = new javax.swing.JTextField();
+    btnBuscaCidade2 = new javax.swing.JButton();
+    edNomeCida2 = new javax.swing.JTextField();
+    jLabel30 = new javax.swing.JLabel();
+    jLabel31 = new javax.swing.JLabel();
+    edUf2 = new javax.swing.JTextField();
+    jLabel32 = new javax.swing.JLabel();
+    edBairro2 = new javax.swing.JTextField();
+    jSeparator3 = new javax.swing.JSeparator();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -142,10 +176,13 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       }
     });
 
+    edCodiComp.setBackground(new java.awt.Color(255, 255, 255));
     edCodiComp.setForeground(new java.awt.Color(0, 0, 0));
 
+    edNomeComp.setBackground(new java.awt.Color(255, 255, 255));
     edNomeComp.setForeground(new java.awt.Color(0, 0, 0));
 
+    edCodiVend.setBackground(new java.awt.Color(255, 255, 255));
     edCodiVend.setForeground(new java.awt.Color(0, 0, 0));
 
     jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -160,11 +197,13 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       }
     });
 
+    edNomeVend.setBackground(new java.awt.Color(255, 255, 255));
     edNomeVend.setForeground(new java.awt.Color(0, 0, 0));
 
     jLabel4.setForeground(new java.awt.Color(0, 0, 0));
     jLabel4.setText("Vendedor");
 
+    edCodiBanc.setBackground(new java.awt.Color(255, 255, 255));
     edCodiBanc.setForeground(new java.awt.Color(0, 0, 0));
 
     jLabel5.setForeground(new java.awt.Color(0, 0, 0));
@@ -179,11 +218,13 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       }
     });
 
+    edNomeBanc.setBackground(new java.awt.Color(255, 255, 255));
     edNomeBanc.setForeground(new java.awt.Color(0, 0, 0));
 
     jLabel6.setForeground(new java.awt.Color(0, 0, 0));
     jLabel6.setText("Banco");
 
+    edCodiForo.setBackground(new java.awt.Color(255, 255, 255));
     edCodiForo.setForeground(new java.awt.Color(0, 0, 0));
 
     jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -198,6 +239,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       }
     });
 
+    edNomeForo.setBackground(new java.awt.Color(255, 255, 255));
     edNomeForo.setForeground(new java.awt.Color(0, 0, 0));
 
     jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -270,109 +312,324 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     edBairro.setBackground(new java.awt.Color(255, 255, 255));
     edBairro.setForeground(new java.awt.Color(0, 0, 0));
 
+    jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel11.setText("DADOS CONPRADOR");
+
+    jLabel18.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel18.setText("Cep");
+
+    edCep1.setBackground(new java.awt.Color(255, 255, 255));
+    edCep1.setForeground(new java.awt.Color(0, 0, 0));
+    edCep1.addFocusListener(new java.awt.event.FocusAdapter() {
+      public void focusLost(java.awt.event.FocusEvent evt) {
+        edCep1FocusLost(evt);
+      }
+    });
+
+    jLabel19.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel19.setText("Endereço");
+
+    edEnde1.setBackground(new java.awt.Color(255, 255, 255));
+    edEnde1.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel20.setText("Numero");
+
+    edNume1.setBackground(new java.awt.Color(255, 255, 255));
+    edNume1.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel21.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel21.setText("Codigo");
+
+    edCodiCida1.setBackground(new java.awt.Color(255, 255, 255));
+    edCodiCida1.setForeground(new java.awt.Color(0, 0, 0));
+
+    btnBuscaCidade1.setBackground(new java.awt.Color(0, 0, 0));
+    btnBuscaCidade1.setForeground(new java.awt.Color(255, 255, 255));
+    btnBuscaCidade1.setText("Buscar");
+    btnBuscaCidade1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnBuscaCidade1ActionPerformed(evt);
+      }
+    });
+
+    edNomeCida1.setBackground(new java.awt.Color(255, 255, 255));
+    edNomeCida1.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel22.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel22.setText("Cidade");
+
+    jLabel23.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel23.setText("UF");
+
+    edUf1.setBackground(new java.awt.Color(255, 255, 255));
+    edUf1.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel24.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel24.setText("Bairro");
+
+    edBairro1.setBackground(new java.awt.Color(255, 255, 255));
+    edBairro1.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel25.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel25.setText("DADOS VENDEDOR");
+
+    jLabel26.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel26.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel26.setText("Cep");
+
+    edCep2.setBackground(new java.awt.Color(255, 255, 255));
+    edCep2.setForeground(new java.awt.Color(0, 0, 0));
+    edCep2.addFocusListener(new java.awt.event.FocusAdapter() {
+      public void focusLost(java.awt.event.FocusEvent evt) {
+        edCep2FocusLost(evt);
+      }
+    });
+
+    jLabel27.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel27.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel27.setText("Endereço");
+
+    edEnde2.setBackground(new java.awt.Color(255, 255, 255));
+    edEnde2.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel28.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel28.setText("Numero");
+
+    edNume2.setBackground(new java.awt.Color(255, 255, 255));
+    edNume2.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel29.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel29.setText("Codigo");
+
+    edCodiCida2.setBackground(new java.awt.Color(255, 255, 255));
+    edCodiCida2.setForeground(new java.awt.Color(0, 0, 0));
+
+    btnBuscaCidade2.setBackground(new java.awt.Color(0, 0, 0));
+    btnBuscaCidade2.setForeground(new java.awt.Color(255, 255, 255));
+    btnBuscaCidade2.setText("Buscar");
+    btnBuscaCidade2.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnBuscaCidade2ActionPerformed(evt);
+      }
+    });
+
+    edNomeCida2.setBackground(new java.awt.Color(255, 255, 255));
+    edNomeCida2.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel30.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel30.setText("Cidade");
+
+    jLabel31.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel31.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel31.setText("UF");
+
+    edUf2.setBackground(new java.awt.Color(255, 255, 255));
+    edUf2.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel32.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel32.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel32.setText("Bairro");
+
+    edBairro2.setBackground(new java.awt.Color(255, 255, 255));
+    edBairro2.setForeground(new java.awt.Color(0, 0, 0));
+
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel2Layout.createSequentialGroup()
-        .addGap(247, 247, 247)
-        .addComponent(jLabel9)
-        .addContainerGap(278, Short.MAX_VALUE))
+        .addGap(221, 221, 221)
+        .addComponent(jLabel11)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(edBairro)
-          .addComponent(jSeparator1)
           .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel1)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(edCodiComp, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscaComp)))
-            .addGap(3, 3, 3)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-              .addComponent(edNomeComp)))
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel3)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(edCodiVend, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscaVendedor)))
-            .addGap(3, 3, 3)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel4)
-                .addGap(0, 0, Short.MAX_VALUE))
-              .addComponent(edNomeVend)))
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel5)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(edCodiBanc, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscaBanco)))
-            .addGap(3, 3, 3)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addGap(0, 0, Short.MAX_VALUE))
-              .addComponent(edNomeBanc)))
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel7)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(edCodiForo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscaForo)))
-            .addGap(3, 3, 3)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel8)
-                .addGap(0, 0, Short.MAX_VALUE))
-              .addComponent(edNomeForo)))
-          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel15)
-              .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                  .addComponent(edCodiCida, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                  .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(edCep))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                  .addComponent(jLabel13)
-                  .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(btnBuscaCidade)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(edNomeCida)
-                      .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addGap(0, 306, Short.MAX_VALUE))))
-                  .addComponent(edEnde))))
-            .addGap(9, 9, 9)
+            .addGap(217, 217, 217)
+            .addComponent(jLabel25)
+            .addGap(273, 273, 273))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(jLabel14)
-                  .addComponent(jLabel17))
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(edCodiVend, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnBuscaVendedor))
+                  .addComponent(jLabel3))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE))
+                  .addComponent(edNomeVend)))
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel29)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                      .addComponent(edCodiCida2)
+                      .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(edCep2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                      .addComponent(jLabel27)
+                      .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnBuscaCidade2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                          .addComponent(edNomeCida2)
+                          .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel30)
+                            .addGap(0, 0, Short.MAX_VALUE))))
+                      .addComponent(edEnde2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(jLabel28)
+                      .addComponent(jLabel31))
+                    .addGap(0, 0, Short.MAX_VALUE))
+                  .addComponent(edNume2)
+                  .addComponent(edUf2)))
+              .addComponent(edBairro2)
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                  .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(0, 0, Short.MAX_VALUE))
-              .addComponent(edUf)
-              .addComponent(edNume)))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel1)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(edCodiComp, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnBuscaComp)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(edNomeComp)))
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel21)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                      .addComponent(edCodiCida1)
+                      .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(edCep1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                      .addComponent(jLabel19)
+                      .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnBuscaCidade1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                          .addComponent(edNomeCida1)
+                          .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel22)
+                            .addGap(0, 0, Short.MAX_VALUE))))
+                      .addComponent(edEnde1, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(edNume1)
+                  .addComponent(edUf1)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(jLabel20)
+                      .addComponent(jLabel23))
+                    .addGap(0, 0, Short.MAX_VALUE))))
+              .addComponent(edBairro1)
+              .addComponent(jSeparator2)
+              .addComponent(jSeparator3))
+            .addGap(10, 10, 10))))
+      .addGroup(jPanel2Layout.createSequentialGroup()
+        .addContainerGap()
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel2Layout.createSequentialGroup()
-            .addComponent(jLabel10)
-            .addGap(0, 0, Short.MAX_VALUE)))
-        .addGap(10, 10, 10))
+            .addGap(239, 239, 239)
+            .addComponent(jLabel9)
+            .addGap(280, 280, 280))
+          .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel5)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(edCodiBanc, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnBuscaBanco)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(jLabel6)
+                    .addGap(0, 0, Short.MAX_VALUE))
+                  .addComponent(edNomeBanc)))
+              .addComponent(jSeparator1)
+              .addComponent(edBairro)
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel15)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                      .addComponent(edCodiCida)
+                      .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(edCep, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                      .addComponent(jLabel13)
+                      .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnBuscaCidade)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                          .addComponent(edNomeCida)
+                          .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel16)
+                            .addGap(0, 0, Short.MAX_VALUE))))
+                      .addComponent(edEnde, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(jLabel14)
+                      .addComponent(jLabel17))
+                    .addGap(0, 0, Short.MAX_VALUE))
+                  .addComponent(edUf)
+                  .addComponent(edNume)))
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel10)
+                .addGap(0, 0, Short.MAX_VALUE))
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel7)
+                  .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(edCodiForo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnBuscaForo)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel8)
+                  .addComponent(edNomeForo))))
+            .addGap(10, 10, 10))))
     );
     jPanel2Layout.setVerticalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
+        .addComponent(jLabel11)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel1)
           .addComponent(jLabel2))
@@ -380,7 +637,36 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
           .addComponent(btnBuscaComp, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edCodiComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edNomeComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel18)
+          .addComponent(jLabel19)
+          .addComponent(jLabel20))
+        .addGap(0, 0, 0)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(edCep1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edEnde1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edNume1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(1, 1, 1)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel21)
+          .addComponent(jLabel22)
+          .addComponent(jLabel23))
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+            .addComponent(btnBuscaCidade1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(edNomeCida1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(edUf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(edCodiCida1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(1, 1, 1)
+        .addComponent(jLabel24)
+        .addGap(0, 0, 0)
+        .addComponent(edBairro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jLabel25)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel3)
           .addComponent(jLabel4))
@@ -388,7 +674,34 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
           .addComponent(btnBuscaVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edCodiVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edNomeVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel26)
+          .addComponent(jLabel27)
+          .addComponent(jLabel28))
+        .addGap(0, 0, 0)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(edCep2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edEnde2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edNume2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(1, 1, 1)
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel29)
+          .addComponent(jLabel30)
+          .addComponent(jLabel31))
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+            .addComponent(btnBuscaCidade2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(edNomeCida2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(edUf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(edCodiCida2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(1, 1, 1)
+        .addComponent(jLabel32)
+        .addGap(0, 0, 0)
+        .addComponent(edBairro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel5)
           .addComponent(jLabel6))
@@ -404,11 +717,11 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
           .addComponent(btnBuscaForo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edCodiForo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edNomeForo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(5, 5, 5)
-        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(5, 5, 5)
-        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addGap(1, 1, 1)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel12)
           .addComponent(jLabel13)
@@ -428,12 +741,12 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
             .addComponent(btnBuscaCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(edNomeCida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(edUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addComponent(edCodiCida))
+          .addComponent(edCodiCida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(1, 1, 1)
         .addComponent(jLabel10)
         .addGap(0, 0, 0)
         .addComponent(edBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(22, 22, 22))
+        .addContainerGap(14, Short.MAX_VALUE))
     );
 
     getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -507,6 +820,22 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     }
   }//GEN-LAST:event_edCepFocusLost
 
+  private void edCep1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edCep1FocusLost
+    // TODO add your handling code here:
+  }//GEN-LAST:event_edCep1FocusLost
+
+  private void btnBuscaCidade1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaCidade1ActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_btnBuscaCidade1ActionPerformed
+
+  private void edCep2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edCep2FocusLost
+    // TODO add your handling code here:
+  }//GEN-LAST:event_edCep2FocusLost
+
+  private void btnBuscaCidade2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaCidade2ActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_btnBuscaCidade2ActionPerformed
+
   private void buscarLista(String palavra) 
   {
     switch(palavra)
@@ -566,34 +895,66 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnBuscaBanco;
   private javax.swing.JButton btnBuscaCidade;
+  private javax.swing.JButton btnBuscaCidade1;
+  private javax.swing.JButton btnBuscaCidade2;
   private javax.swing.JButton btnBuscaComp;
   private javax.swing.JButton btnBuscaForo;
   private javax.swing.JButton btnBuscaVendedor;
   private javax.swing.JTextField edBairro;
+  private javax.swing.JTextField edBairro1;
+  private javax.swing.JTextField edBairro2;
   private javax.swing.JTextField edCep;
+  private javax.swing.JTextField edCep1;
+  private javax.swing.JTextField edCep2;
   private javax.swing.JTextField edCodiBanc;
   private javax.swing.JTextField edCodiCida;
+  private javax.swing.JTextField edCodiCida1;
+  private javax.swing.JTextField edCodiCida2;
   private javax.swing.JTextField edCodiComp;
   private javax.swing.JTextField edCodiForo;
   private javax.swing.JTextField edCodiVend;
   private javax.swing.JTextField edEnde;
+  private javax.swing.JTextField edEnde1;
+  private javax.swing.JTextField edEnde2;
   private javax.swing.JTextField edNomeBanc;
   private javax.swing.JTextField edNomeCida;
+  private javax.swing.JTextField edNomeCida1;
+  private javax.swing.JTextField edNomeCida2;
   private javax.swing.JTextField edNomeComp;
   private javax.swing.JTextField edNomeForo;
   private javax.swing.JTextField edNomeVend;
   private javax.swing.JTextField edNume;
+  private javax.swing.JTextField edNume1;
+  private javax.swing.JTextField edNume2;
   private javax.swing.JTextField edUf;
+  private javax.swing.JTextField edUf1;
+  private javax.swing.JTextField edUf2;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel10;
+  private javax.swing.JLabel jLabel11;
   private javax.swing.JLabel jLabel12;
   private javax.swing.JLabel jLabel13;
   private javax.swing.JLabel jLabel14;
   private javax.swing.JLabel jLabel15;
   private javax.swing.JLabel jLabel16;
   private javax.swing.JLabel jLabel17;
+  private javax.swing.JLabel jLabel18;
+  private javax.swing.JLabel jLabel19;
   private javax.swing.JLabel jLabel2;
+  private javax.swing.JLabel jLabel20;
+  private javax.swing.JLabel jLabel21;
+  private javax.swing.JLabel jLabel22;
+  private javax.swing.JLabel jLabel23;
+  private javax.swing.JLabel jLabel24;
+  private javax.swing.JLabel jLabel25;
+  private javax.swing.JLabel jLabel26;
+  private javax.swing.JLabel jLabel27;
+  private javax.swing.JLabel jLabel28;
+  private javax.swing.JLabel jLabel29;
   private javax.swing.JLabel jLabel3;
+  private javax.swing.JLabel jLabel30;
+  private javax.swing.JLabel jLabel31;
+  private javax.swing.JLabel jLabel32;
   private javax.swing.JLabel jLabel4;
   private javax.swing.JLabel jLabel5;
   private javax.swing.JLabel jLabel6;
@@ -602,6 +963,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JLabel jLabel9;
   private javax.swing.JPanel jPanel2;
   private javax.swing.JSeparator jSeparator1;
+  private javax.swing.JSeparator jSeparator2;
+  private javax.swing.JSeparator jSeparator3;
   // End of variables declaration//GEN-END:variables
 
   private static final long serialVersionUID = 1L;
