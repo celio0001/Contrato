@@ -2,7 +2,7 @@
 package view;
 
 import model.ListaEnderecoEntidadeTableModel;
-import controle.Prog0007Control;
+import control.Prog0007Control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;

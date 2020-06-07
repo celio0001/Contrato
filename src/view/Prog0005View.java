@@ -3,7 +3,7 @@ package view;
 
 
 //import vo.ProgVo;
-import controle.Prog0005Control;
+import control.Prog0005Control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;

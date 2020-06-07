@@ -1,10 +1,10 @@
 package view;
 
-import controle.Prog0005Control;
-import controle.Prog0006Control;
-import controle.Prog0007Control;
-import controle.Prog0008Control;
-import controle.Prog0009Control;
+import control.Prog0005Control;
+import control.Prog0006Control;
+import control.Prog0007Control;
+import control.Prog0008Control;
+import control.Prog0009Control;
 import java.util.List;
 import model.ListaBancoTableModel;
 import model.ListaCidadeTableModel;

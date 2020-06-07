@@ -1,4 +1,4 @@
-package controle;
+package control;
 
 import java.util.List;
 import vo.Prog0005Vo;

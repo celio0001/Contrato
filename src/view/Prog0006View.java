@@ -1,6 +1,6 @@
 package view;
 
-import controle.Prog0006Control;
+import control.Prog0006Control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;

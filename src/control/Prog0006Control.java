@@ -1,4 +1,4 @@
-package controle;
+package control;
 
 import dao.Prog0006Dao;
 import java.sql.SQLException;
