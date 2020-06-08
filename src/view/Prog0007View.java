@@ -445,8 +445,8 @@ public class Prog0007View extends FormTemplate implements ActionListener,FocusLi
     jLabel15.setForeground(new java.awt.Color(0, 0, 0));
     jLabel15.setText("Tipo de Entidade");
 
-    btnBuscaTipoEntidade.setBackground(new java.awt.Color(255, 255, 255));
-    btnBuscaTipoEntidade.setForeground(new java.awt.Color(0, 0, 0));
+    btnBuscaTipoEntidade.setBackground(new java.awt.Color(0, 0, 0));
+    btnBuscaTipoEntidade.setForeground(new java.awt.Color(255, 255, 255));
     btnBuscaTipoEntidade.setText("Buscar");
     btnBuscaTipoEntidade.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {

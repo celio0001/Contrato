@@ -75,6 +75,13 @@ public final class ListaView extends javax.swing.JFrame
         mostrarTabelaCidade();
         break;
       }
+      case"tipoEnti":
+      {
+        setPalavra("");
+        setPalavra("listatipoEnti");
+        mostrarTabelaTipoEntidade();
+        break;
+      }
     }
   }
   
@@ -445,6 +452,17 @@ public final class ListaView extends javax.swing.JFrame
         lista0006.getEdCodiCida().setText((String) item.getValueAt(linha, 0));
         lista0006.getEdNomeCida().setText((String) item.getValueAt(linha, 1));
         lista0006.getEdSiglaEsta().setText((String) item.getValueAt(linha, 2));
+        lista0006.setVisible(true);
+        this.dispose();
+        break;
+      }
+      case"listatipoEnti":
+      {
+        int linha = tblGridView.getSelectedRow();
+        ListaTipoEntidadeTableModel item = new ListaTipoEntidadeTableModel(prog0007List);
+
+        lista0006.getEdCodiTien().setText((String) item.getValueAt(linha, 0));
+        lista0006.getEdTien().setText((String) item.getValueAt(linha, 1));
         lista0006.setVisible(true);
         this.dispose();
         break;

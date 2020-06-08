@@ -269,6 +269,11 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     edNasc = new javax.swing.JTextField();
     jLabel16 = new javax.swing.JLabel();
     edProfi = new javax.swing.JTextField();
+    edCodiTien = new javax.swing.JTextField();
+    btnBuscaTipoEntidadeFisica = new javax.swing.JButton();
+    edTien = new javax.swing.JTextField();
+    jLabel17 = new javax.swing.JLabel();
+    jLabel18 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -397,12 +402,37 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     jLabel15.setForeground(new java.awt.Color(0, 0, 0));
     jLabel15.setText("Nascionalidade");
 
+    edNasc.setBackground(new java.awt.Color(255, 255, 255));
     edNasc.setForeground(new java.awt.Color(0, 0, 0));
 
     jLabel16.setForeground(new java.awt.Color(0, 0, 0));
     jLabel16.setText("Profissão");
 
+    edProfi.setBackground(new java.awt.Color(255, 255, 255));
     edProfi.setForeground(new java.awt.Color(0, 0, 0));
+
+    edCodiTien.setBackground(new java.awt.Color(255, 255, 255));
+    edCodiTien.setForeground(new java.awt.Color(0, 0, 0));
+
+    btnBuscaTipoEntidadeFisica.setBackground(new java.awt.Color(0, 0, 0));
+    btnBuscaTipoEntidadeFisica.setForeground(new java.awt.Color(255, 255, 255));
+    btnBuscaTipoEntidadeFisica.setText("Buscar");
+    btnBuscaTipoEntidadeFisica.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnBuscaTipoEntidadeFisicaActionPerformed(evt);
+      }
+    });
+
+    edTien.setBackground(new java.awt.Color(255, 255, 255));
+    edTien.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel17.setBackground(java.awt.Color.white);
+    jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel17.setText("Tipo de Entidade");
+
+    jLabel18.setBackground(java.awt.Color.white);
+    jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel18.setText("Codigo");
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -411,72 +441,87 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(jScrollPane2)
-          .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-              .addComponent(edBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(edComp, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-              .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))))
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel10)
-              .addComponent(edRg))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(edCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(edFoneFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(edCelu, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addComponent(edEmail)
+            .addComponent(jLabel9)
+            .addGap(433, 433, 433))
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-              .addComponent(edCodiCida)
-              .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel4)
-              .addComponent(edCep, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(btnBuscarCida)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                  .addComponent(edBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(edComp)
+                  .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE))))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel10)
+                  .addComponent(edRg))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(edNomeCida, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(jLabel5)))
-              .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(edEnde, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-              .addComponent(edNume)
-              .addComponent(edSiglaEsta)
-              .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                  .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 25, Short.MAX_VALUE))))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(edNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jLabel9)
-              .addComponent(jLabel14)
-              .addComponent(jLabel15))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(edCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(edFoneFixo, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(edCelu, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+              .addComponent(edEmail)
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel16)
-                .addGap(0, 0, Short.MAX_VALUE))
-              .addComponent(edProfi))))
-        .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                  .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jLabel4)
+                  .addComponent(edCep, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                  .addComponent(edCodiCida))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(btnBuscarCida)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(edNomeCida, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(jLabel5)))
+                  .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(edEnde, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                  .addComponent(edNume)
+                  .addComponent(edSiglaEsta)
+                  .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                      .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE))))
+              .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(edNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jLabel14)
+                  .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jLabel16)
+                    .addGap(0, 0, Short.MAX_VALUE))
+                  .addComponent(edProfi)))
+              .addComponent(jScrollPane2)
+              .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+              .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel18)
+                  .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(edCodiTien, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnBuscaTipoEntidadeFisica)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel17)
+                  .addComponent(edTien))))
+            .addContainerGap())))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -532,12 +577,24 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
         .addComponent(jLabel14)
         .addGap(0, 0, 0)
         .addComponent(edEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(9, 9, 9)
-        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(7, 7, 7)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addComponent(jLabel18)
+            .addGap(0, 0, 0)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(edCodiTien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(btnBuscaTipoEntidadeFisica, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addComponent(jLabel17)
+            .addGap(0, 0, 0)
+            .addComponent(edTien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jLabel9)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap())
     );
 
@@ -568,6 +625,11 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     buscarLista(palavra);
   }//GEN-LAST:event_btnBuscarCidaActionPerformed
 
+  private void btnBuscaTipoEntidadeFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaTipoEntidadeFisicaActionPerformed
+    setPalavra("tipoEnti");
+    buscarLista(palavra);
+  }//GEN-LAST:event_btnBuscaTipoEntidadeFisicaActionPerformed
+
   public void buscarLista(String palavra)
   {
     switch(palavra)
@@ -583,6 +645,13 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
       {
         ListaView listaCidade = new ListaView(this);
         listaCidade.setVisible(true);
+        this.dispose();
+        break;
+      }
+      case"tipoEnti":
+      {
+        ListaView listaTipoEnti = new ListaView(this);
+        listaTipoEnti.setVisible(true);
         this.dispose();
         break;
       }
@@ -737,17 +806,36 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     return palavra;
   }
 
+  public JTextField getEdCodiTien() {
+    return edCodiTien;
+  }
+
+  public void setEdCodiTien(JTextField edCodiTien) {
+    this.edCodiTien = edCodiTien;
+  }
+
+  public JTextField getEdTien() {
+    return edTien;
+  }
+
+  public void setEdTien(JTextField edTien) {
+    this.edTien = edTien;
+  }
+
+  
   public void setPalavra(String palavra) {
     this.palavra = palavra;
   }
   
   
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton btnBuscaTipoEntidadeFisica;
   private javax.swing.JButton btnBuscarCida;
   private javax.swing.JTextField edBairro;
   private javax.swing.JTextField edCelu;
   private javax.swing.JFormattedTextField edCep;
   private javax.swing.JTextField edCodiCida;
+  private javax.swing.JTextField edCodiTien;
   private javax.swing.JTextField edComp;
   private javax.swing.JTextField edCpf;
   private javax.swing.JTextField edEmail;
@@ -760,6 +848,7 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
   private javax.swing.JTextField edProfi;
   private javax.swing.JTextField edRg;
   private javax.swing.JTextField edSiglaEsta;
+  private javax.swing.JTextField edTien;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel10;
   private javax.swing.JLabel jLabel11;
@@ -768,6 +857,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
   private javax.swing.JLabel jLabel14;
   private javax.swing.JLabel jLabel15;
   private javax.swing.JLabel jLabel16;
+  private javax.swing.JLabel jLabel17;
+  private javax.swing.JLabel jLabel18;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;
