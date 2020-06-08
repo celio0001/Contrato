@@ -1,6 +1,7 @@
 package view;
 
 import control.Prog0006Control;
+import control.Prog0009Control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -14,10 +15,13 @@ import javax.swing.JTextField;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import template.FormContrato;
 import vo.Prog0006Vo;
+import vo.Prog0009Vo;
 
 public class Prog0009View extends FormContrato implements ActionListener,FocusListener 
 {
 
+  private Prog0009Control prog0009Control;
+  private Prog0009Vo prog0009Vo;
   private String palavra;
   
   public Prog0009View() 
@@ -34,6 +38,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     super.setLocationRelativeTo(null);
     super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     edCodi.addFocusListener((FocusListener) this);
+    prog0009Control = new Prog0009Control();
+    prog0009Vo = new Prog0009Vo();
   }
 
   @Override
@@ -45,7 +51,21 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   @Override
   public void focusLost(FocusEvent fe) 
   {
-    
+    if(edCodi.getText().equals(""))
+    {
+      try 
+      {
+        prog0009Vo = prog0009Control.buscarContrato(edCodi.getText());
+      } 
+      catch (SQLException ex) 
+      {
+        Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
+      } 
+      catch (ClassNotFoundException ex) 
+      {
+        Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }
   }
 
   @Override
