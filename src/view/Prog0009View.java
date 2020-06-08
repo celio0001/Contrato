@@ -794,7 +794,9 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   }//GEN-LAST:event_btnBuscaCompActionPerformed
 
   private void btnBuscaCidaCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaCidaCompActionPerformed
-    // TODO add your handling code here:
+    
+    setPalavra("cidaComp");
+    buscarLista(palavra);
   }//GEN-LAST:event_btnBuscaCidaCompActionPerformed
 
   private void btnBuscaVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaVendedorActionPerformed
@@ -834,7 +836,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   }//GEN-LAST:event_edCepVendFocusLost
 
   private void btnBuscaCidaVendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaCidaVendActionPerformed
-    // TODO add your handling code here:
+    setPalavra("cidaVend");
+    buscarLista(palavra);
   }//GEN-LAST:event_btnBuscaCidaVendActionPerformed
 
   private void edCepImovelFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_edCepImovelFocusLost
@@ -860,7 +863,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   }//GEN-LAST:event_edCepImovelFocusLost
 
   private void btnBuscaCidaImovelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaCidaImovelActionPerformed
-    setPalavra("CCidade");
+    setPalavra("cidaImovel");
     buscarLista(palavra);
   }//GEN-LAST:event_btnBuscaCidaImovelActionPerformed
 
@@ -921,21 +924,30 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         this.dispose();
         break;
       }
-      case"CCidade":
+      case"cidaImovel":
       {
-        ListaView cCida = new ListaView(this);
-        cCida.setVisible(true);
+        ListaView listaCidaImovel = new ListaView(this);
+        listaCidaImovel.setVisible(true);
+        this.dispose();
+        break;
+      }
+      case"cidaComp":
+      {
+        ListaView listaCidaComp = new ListaView(this);
+        listaCidaComp.setVisible(true);
+        this.dispose();
+        break;
+      }
+      case"cidaVend":
+      {
+        ListaView listaCidaVend = new ListaView(this);
+        listaCidaVend.setVisible(true);
         this.dispose();
         break;
       }
     }
-  }
+  }   
   
-  public void buscarCep()
-  {
-    
-  }
-
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnBuscaBanco;
   private javax.swing.JButton btnBuscaCidaComp;

@@ -178,15 +178,28 @@ public final class ListaView extends javax.swing.JFrame
         mostrarTabelaForo();
         break;
       }
-      case"CCidade":
+      case"cidaComp":
       {
         setPalavra("");
-        setPalavra("cCida");
+        setPalavra("cidaComp");
+         mostrarTabelaCidade();
+        break;
+      }
+      case"cidaVend":
+      {
+        setPalavra("");
+        setPalavra("cidaVend");
+         mostrarTabelaCidade();
+        break;
+      }
+      case"cidaImovel":
+      {
+        setPalavra("");
+        setPalavra("cidaImovel");
         mostrarTabelaCidade();
         break;
       }
     }
-    
   }
 
  //=======================================================================
@@ -507,7 +520,7 @@ public final class ListaView extends javax.swing.JFrame
         this.dispose();
         break;
       }
-      case"cCida":
+      case"cidaComp":
       {
         int linha = tblGridView.getSelectedRow();   
         ListaCidadeTableModel item = new ListaCidadeTableModel(prog0007List);
@@ -515,6 +528,30 @@ public final class ListaView extends javax.swing.JFrame
         lista0009.getEdCodiCidaComp().setText((String) item.getValueAt(linha, 0));
         lista0009.getEdNomeCidaComp().setText((String) item.getValueAt(linha, 1));
         lista0009.getEdUfComp().setText((String) item.getValueAt(linha, 2));
+        lista0009.setVisible(true);
+        this.dispose();
+        break;
+      }
+      case"cidaVend":
+      {
+        int linha = tblGridView.getSelectedRow();   
+        ListaCidadeTableModel item = new ListaCidadeTableModel(prog0007List);
+
+        lista0009.getEdCodiCidaVend().setText((String) item.getValueAt(linha, 0));
+        lista0009.getEdNomeCidaVend().setText((String) item.getValueAt(linha, 1));
+        lista0009.getEdUfVend().setText((String) item.getValueAt(linha, 2));
+        lista0009.setVisible(true);
+        this.dispose();
+        break;
+      }
+      case"cidaImovel":
+      {
+        int linha = tblGridView.getSelectedRow();   
+        ListaCidadeTableModel item = new ListaCidadeTableModel(prog0007List);
+
+        lista0009.getEdCodiCidaImovel().setText((String) item.getValueAt(linha, 0));
+        lista0009.getEdNomeCidaImovel().setText((String) item.getValueAt(linha, 1));
+        lista0009.getEdUfImovel().setText((String) item.getValueAt(linha, 2));
         lista0009.setVisible(true);
         this.dispose();
         break;
