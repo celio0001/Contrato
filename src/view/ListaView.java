@@ -4,7 +4,6 @@ import control.Prog0005Control;
 import control.Prog0006Control;
 import control.Prog0007Control;
 import control.Prog0008Control;
-import control.Prog0009Control;
 import java.util.List;
 import model.ListaBancoTableModel;
 import model.ListaCidadeTableModel;
@@ -461,8 +460,8 @@ public final class ListaView extends javax.swing.JFrame
         int linha = tblGridView.getSelectedRow();
         ListaTipoEntidadeTableModel item = new ListaTipoEntidadeTableModel(prog0007List);
 
-        lista0006.getEdCodiTien().setText((String) item.getValueAt(linha, 0));
-        lista0006.getEdTien().setText((String) item.getValueAt(linha, 1));
+        lista0006.getEdTienCodi().setText((String) item.getValueAt(linha, 0));
+        lista0006.getEdTienNome().setText((String) item.getValueAt(linha, 1));
         lista0006.setVisible(true);
         this.dispose();
         break;

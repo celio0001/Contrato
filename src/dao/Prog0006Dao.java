@@ -9,39 +9,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import vo.CidadeVo;
 import vo.Prog0006Vo;
+import vo.TipoEntidadeVo;
 
 public class Prog0006Dao 
 {
-  Prog0006Vo prog0006Vo = new Prog0006Vo();
+  Prog0006Vo prog0006Vo;
+  CidadeVo cidadeVo;
+  TipoEntidadeVo tipoEntidadeVo;
   
   public Prog0006Dao(Prog0006Vo prog0006Vo) 
   {
     this.prog0006Vo = prog0006Vo;
+    cidadeVo = new CidadeVo();
+    tipoEntidadeVo = new TipoEntidadeVo();
   }
 
   public Prog0006Vo buscaNovaEntidade() throws SQLException, ClassNotFoundException 
   {
     int num = Integer.parseInt(prog0006Vo.getCodigo());
-    
-//    String sql =" select enti_codi,\n" +
-//                "		 enti_raza,\n" +
-//                "   	 enti_cpf,\n" +
-//                "        enti_fone,\n" +
-//                "        enti_emai,\n" +
-//                "        enti_obse,\n" +
-//                "        enti_celu,\n" +
-//                "        enti_rg,\n" +
-//                "        (select ende_cep from ende where ende_enti = enti_codi) as 'cep',\n" +
-//                "        (select ende_ende from ende where ende_enti = enti_codi) as 'endereco',\n" +
-//                "        (select ende_nume from ende where ende_enti = enti_codi) as 'numero',\n" +
-//                "        (select ende_Bair from ende where ende_enti = enti_codi) as 'bairro',\n" +
-//                "        (select ende_comp from ende where ende_enti = enti_codi) as  'complemento',\n" +
-//                "        (select cida_codi from cida where cida_codi = enti_cida) as 'codigo',\n" +
-//                "        (select cida_desc from cida where cida_codi = enti_cida) as 'cidade',\n" +
-//                "	     (select cida_sigl from cida where cida_codi = enti_cida) as 'estado'\n" +
-//"from enti\n" +
-//"where enti_codi = "+num;
     
     String sql = "select fisi_codi,\n"+
                  "       fisi_nome,\n"+
@@ -57,8 +44,12 @@ public class Prog0006Dao
                  "       fisi_cpf,\n"+
                  "       fisi_fone,\n"+
                  "       fisi_celu,\n"+
-                 "       fisi_emai,\n"+
-                 "       fisi_obse\n"+
+                 "       fisi_emai,\n"+                            
+                 "       fisi_obse,\n"+
+                 "       fisi_nasc,\n"+
+                 "       fisi_prof,\n"+
+                 "       fisi_tien,\n"+
+                 "      (select tien_desc from tien where tien_codi = fisi_tien)as 'tien'\n"+
     "from fisi\n"+
     "where fisi_codi="+num;
     
@@ -84,27 +75,11 @@ public class Prog0006Dao
       String dFone         = rs.getString("fisi_fone");   
       String dCelu         = rs.getString("fisi_celu");          
       String dEmail        = rs.getString("fisi_emai");
+      String dCodiTien        = rs.getString("fisi_tien");     
       String dObservacao   = rs.getString("fisi_obse");
-       
-      
-      
-//      String dCod          = Integer.toString(rs.getInt("enti_codi"));
-//      String dRazao        = rs.getString("enti_raza");
-//      String dCpf          = rs.getString("enti_cpf");
-//      String dFone         = rs.getString("enti_fone");   
-//      String dCodiCida     = rs.getString("codigo"); 
-//      String dNomeCida     = rs.getString("cidade"); 
-//      String dSiglaEsta    = rs.getString("estado"); 
-//      String dCep          = rs.getString("cep"); 
-//      String dEndereco     = rs.getString("endereco"); 
-//      String dnumero       = rs.getString("numero"); 
-//      String dBairro       = rs.getString("bairro"); 
-//      String dComplemento  = rs.getString("complemento");          
-//      String dEmail        = rs.getString("enti_emai");
-//      String dObservacao   = rs.getString("enti_obse");
-//      String dCelu         = rs.getString("enti_celu");  
-//      String dRg           = rs.getString("enti_rg");
-      
+      String dNascionalidade   = rs.getString("fisi_nasc");
+      String dProfissao   = rs.getString("fisi_prof");
+      String dTien        = rs.getString("tien");
                        
       prog0006Vo.setCodigo(dCod);
       prog0006Vo.setDescricao(dRazao);
@@ -121,7 +96,11 @@ public class Prog0006Dao
       prog0006Vo.setFoneFixo(dFone);
       prog0006Vo.setCelular(dCelu);
       prog0006Vo.setEmail(dEmail);
+      prog0006Vo.setCodiTien(dCodiTien);
       prog0006Vo.setObservacao(dObservacao);
+      prog0006Vo.setNascionalidade(dNascionalidade);
+      prog0006Vo.setProfissao(dProfissao);
+      prog0006Vo.setTien(dTien);
     }
     conexao.desconectar();
     return prog0006Vo;
@@ -144,18 +123,16 @@ public class Prog0006Dao
       String dSiglEsta = (webServiceCep.getUf());
       
       prog0006Vo.setEndereco(dEndereco);
-      prog0006Vo.setNomeCida(dCidade);
+      cidadeVo.setNomeCida(dCidade);
       prog0006Vo.setBairro(dBairro);
-      prog0006Vo.setEstado(dSiglEsta);
+      cidadeVo.setEstado(dSiglEsta);
     }
     else 
     {
       
-
-      
     } 
     
-    String nomeCidade = prog0006Vo.getNomeCida();
+    String nomeCidade = cidadeVo.getNomeCida();
     
     Conexao conexao = new Conexao();
     Connection con = conexao.conectar();
@@ -169,15 +146,16 @@ public class Prog0006Dao
     while(rs.next())
     {  
       String dCodiCida  = Integer.toString(rs.getInt("cida_codi"));             
-      prog0006Vo.setCodiCida(dCodiCida);       
+      cidadeVo.setCodiCida(dCodiCida);       
     }
     conexao.desconectar();
-    System.out.println(prog0006Vo.getCodiCida());
+    System.out.println(cidadeVo.getCodiCida());
     return prog0006Vo;
   }
 
   public void gravarPessoaFisca() throws ClassNotFoundException, SQLException 
   {
+    int valor = Integer.parseInt(tipoEntidadeVo.getTienCodi());
     String sql1 = "SELECT (coalesce(max(fisi_codi),0)+1) as sequ FROM fisi";
     Conexao conexao = new Conexao();
     Connection con = conexao.conectar();
@@ -201,12 +179,13 @@ public class Prog0006Dao
                   "                fisi_fone,               " + 
                   "                fisi_celu,               " + 
                   "                fisi_email,              " + 
-                  "                fisi_obse)               " + 
+                  "                fisi_obse,               " + 
+                  "                fisi_tien)               " + 
             "VALUES('"           + prog0006Vo.getCodigo()     + "',"
                  + "'"           + prog0006Vo.getDescricao()  + "',"
                  + "'"           + prog0006Vo.getCep()        + "',"
                  + "'"           + prog0006Vo.getEndereco()+ "',"
-                 + "'"           + prog0006Vo.getCodiCida()   + "',"
+                 + "'"           + cidadeVo.getCodiCida()   + "',"
                  + "'"           + prog0006Vo.getBairro()     + "',"
                  + "'"           + prog0006Vo.getNumero()     + "',"
                  + "'"           + prog0006Vo.getComplemento()+ "',"
@@ -215,7 +194,8 @@ public class Prog0006Dao
                  + "'"           + prog0006Vo.getFoneFixo()   + "',"
                  + "'"           + prog0006Vo.getCelular()    + "',"
                  + "'"           + prog0006Vo.getEmail()      + "',"
-                 + "'"           + prog0006Vo.getObservacao() + "')";
+                 + "'"           + prog0006Vo.getObservacao() + "',"
+                 + "'"           + valor+ "')";
     sessao.executeUpdate(sql);
     conexao.desconectar();
   }
@@ -234,19 +214,24 @@ public class Prog0006Dao
   public void editarPessoaFisca() throws ClassNotFoundException, SQLException 
   {
     int num = Integer.parseInt(prog0006Vo.getCodigo());
+    int valor = Integer.parseInt(tipoEntidadeVo.getTienCodi());
     String sql = "UPDATE fisi SET fisi_nome  = '" + prog0006Vo.getDescricao() + 
                  "'," + "         fisi_cep = '" + prog0006Vo.getCep() + 
                  "'," + "         fisi_ende = '" + prog0006Vo.getEndereco()+ 
-                 "'," + "          fisi_cida  = '" + prog0006Vo.getCodiCida() + 
-                 "'," + "          fisi_bairro  = '" + prog0006Vo.getBairro() + 
+                 "'," + "          fisi_cida  = '" + cidadeVo.getCodiCida() + 
+                 "'," + "          fisi_bair  = '" + prog0006Vo.getBairro() + 
                  "'," + "          fisi_nume = '" + prog0006Vo.getNumero()+ 
                  "'," + "          fisi_comp = '" + prog0006Vo.getComplemento()+ 
                  "'," + "          fisi_rg = '" + prog0006Vo.getRg()+ 
                  "'," + "          fisi_cpf = '" + prog0006Vo.getCpf()+ 
                  "'," + "          fisi_fone = '" + prog0006Vo.getFoneFixo()+ 
                  "'," + "          fisi_celu = '" + prog0006Vo.getCelular()+ 
-                 "'," + "          fisi_email = '" + prog0006Vo.getEmail()+ 
-                 "'," + "          fisi_obse    = '" + prog0006Vo.getObservacao()+ 
+                 "'," + "          fisi_emai = '" + prog0006Vo.getEmail()+ 
+                 "'," + "          fisi_obse    = '" + prog0006Vo.getObservacao()+
+                 "'," + "          fisi_nasc    = '" + prog0006Vo.getNascionalidade()+
+                 "'," + "          fisi_prof    = '" + prog0006Vo.getProfissao()+
+                 "'," + "          fisi_tien = '" + valor+ 
+                  
                  "' " + "WHERE     fisi_codi    =  " + num;
     Conexao conexao = new Conexao();
     Connection con = conexao.conectar();
@@ -265,5 +250,12 @@ public class Prog0006Dao
     Statement sessao = con.createStatement();
     sessao.executeUpdate(sql);
     conexao.desconectar();
+  }
+
+  public Prog0006Vo buscaCidade() 
+  {
+    return null;
+    //int Valor = Integer.parseInt(cidadeVo.getCodiCida());
+    
   }
 }

@@ -2,24 +2,24 @@ package vo;
 
 public class TipoEntidadeVo 
 {
-  private String codigo;
-  private String descricao;
+  private String tienCodi;
+  private String tienNome;
   private String observacao;
 
-  public String getCodigo() {
-    return codigo;
+  public String getTienCodi() {
+    return tienCodi;
   }
 
-  public void setCodigo(String codigo) {
-    this.codigo = codigo;
+  public void setTienCodi(String tienCodi) {
+    this.tienCodi = tienCodi;
   }
 
-  public String getDescricao() {
-    return descricao;
+  public String getTienNome() {
+    return tienNome;
   }
 
-  public void setDescricao(String descricao) {
-    this.descricao = descricao;
+  public void setTienNome(String tienNome) {
+    this.tienNome = tienNome;
   }
 
   public String getObservacao() {
@@ -29,6 +29,8 @@ public class TipoEntidadeVo
   public void setObservacao(String observacao) {
     this.observacao = observacao;
   }
+
+  
   
   
 }

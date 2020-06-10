@@ -20,7 +20,8 @@ public class Prog0006ListaDao implements IListaProg0006Dao
     List<Prog0006Vo>listaPessoaFisica = new ArrayList();
     String sql = "select *,"+
                  "(select cida_desc from cida where fisi_cida = cida_codi) as 'nome_cida',"+
-                 "(select cida_sigl from cida where fisi_cida = cida_codi) as 'sigl_cida'"+
+                 "(select cida_sigl from cida where fisi_cida = cida_codi) as 'sigl_cida',"+
+                 "(select tien_desc from tien where tien_codi = fisi_codi) as 'tien_desc'"+
                  "from fisi";             
     Conexao conexao = new Conexao();   
     try 
@@ -49,6 +50,8 @@ public class Prog0006ListaDao implements IListaProg0006Dao
         prog0006Vo.setObservacao(rs.getString("fisi_obse")); 
         prog0006Vo.setNascionalidade(rs.getString("fisi_nasc"));
         prog0006Vo.setProfissao(rs.getString("fisi_prof"));
+        prog0006Vo.setCodiTien(rs.getString("fisi_tien"));
+        prog0006Vo.setTien(rs.getString("tien_desc"));
         
         
         listaPessoaFisica.add(prog0006Vo);

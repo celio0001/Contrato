@@ -16,8 +16,8 @@ import vo.Prog0008Vo;
 
 public class Prog0008View extends FormTemplate implements ActionListener,FocusListener
 {
-  Prog0008Vo prog0008Vo = new Prog0008Vo();
-  Prog0008Control prog0008Control = new Prog0008Control();
+  Prog0008Vo prog0008Vo;
+  Prog0008Control prog0008Control;
   
   public Prog0008View() 
   {
@@ -30,6 +30,8 @@ public class Prog0008View extends FormTemplate implements ActionListener,FocusLi
     super.setLocationRelativeTo(null);
     super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     edCodi.addFocusListener((FocusListener) this);
+    prog0008Vo = new Prog0008Vo();
+    prog0008Control = new Prog0008Control();
   }
 
   @Override

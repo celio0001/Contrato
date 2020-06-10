@@ -14,16 +14,18 @@ public class Prog0006Vo
   private String cpf;
   private String codiCida;
   private String nomeCida;
+  private String estado;
   private String foneFixo;
   private String celular;
   private String email;
-  private String observacao;
-  private String estado;
+  private String observacao; 
   private String bairro;
   private String rg;
   private String complemento;
   private String nascionalidade;
   private String profissao;
+  private String codiTien;
+  private String Tien;
   
 
   public String getCodigo() {
@@ -169,6 +171,20 @@ public class Prog0006Vo
   public void setProfissao(String profissao) {
     this.profissao = profissao;
   }
-  
-  
+
+  public String getCodiTien() {
+    return codiTien;
+  }
+
+  public void setCodiTien(String codiTien) {
+    this.codiTien = codiTien;
+  }
+
+  public String getTien() {
+    return Tien;
+  }
+
+  public void setTien(String Tien) {
+    this.Tien = Tien;
+  }
 }

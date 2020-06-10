@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -17,6 +15,7 @@ import vo.Prog0006Vo;
 
 public class Prog0006View extends FormTemplate implements ActionListener,FocusListener
 {
+
   Prog0006Vo prog0006Vo = new Prog0006Vo();
   private String palavra;
   public Prog0006View() 
@@ -26,7 +25,7 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     super.lblCodi.setText("Codigo");
     super.lblDesc.setText("Nome");
     super.setTitle("..::PROG0006::..");
-    super.setSize(620, 600);
+    super.setSize(620, 670);
     super.setLocationRelativeTo(null);
     super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     edCodi.addFocusListener((FocusListener) this);
@@ -63,6 +62,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
                                   edFoneFixo.getText(),
                                   edCelu.getText(),
                                   edEmail.getText(),
+                                  edTienCodi.getText(),
+                                  edTienNome.getText(),
                                   edObse.getText());
         edDesc.setText("");
         edCep.setText("");
@@ -79,38 +80,44 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
         edFoneFixo.setText("");
         edCelu.setText("");
         edEmail.setText("");
+        edTienCodi.setText("");
+        edTienNome.setText("");
         edObse.setText("");   
         
         JOptionPane.showMessageDialog(null,"Cadastro Salvo com sucesso","Gravar Pessoa Fisica",JOptionPane.INFORMATION_MESSAGE);
-      } catch (ClassNotFoundException | SQLException ex) 
+      } 
+      catch (ClassNotFoundException | SQLException ex) 
       {
-        Logger.getLogger(Prog0006View.class.getName()).log(Level.SEVERE, null, ex);
+        System.out.println("Error:"+ex);
       }
     }
     else
     {
+      System.out.println(edNasc.getText());
+      System.out.println(edTienNome.getText());
       //EDITANDO
       Prog0006Control pessoaE = new Prog0006Control();
       try 
       {
         pessoaE.editarPessoa(edCodi.getText(),
-                edDesc.getText(),
-                edCep.getText(),
-                edEnde.getText(),
-                edNume.getText(),
-                edCodiCida.getText(),
-                edNomeCida.getText(),
-                edSiglaEsta.getText(),
-                edBairro.getText(),
-                edComp.getText(),
-                edRg.getText(),
-                edCpf.getText(),
-                edFoneFixo.getText(),
-                edCelu.getText(),
-                edEmail.getText(),
-                edObse.getText());
+                             edDesc.getText(),
+                             edCep.getText(),
+                             edEnde.getText(),
+                             edNume.getText(),
+                             edCodiCida.getText(),
+                             edNomeCida.getText(),
+                             edSiglaEsta.getText(),
+                             edBairro.getText(),
+                             edComp.getText(),
+                             edRg.getText(),
+                             edCpf.getText(),
+                             edFoneFixo.getText(),
+                             edCelu.getText(),
+                             edEmail.getText(),
+                             edTienCodi.getText(),
+                             edTienNome.getText(),
+                             edObse.getText());
         
-        edDesc.requestFocus();
         edCodi.setText("");
         edDesc.setText("");
         edCep.setText("");
@@ -127,12 +134,16 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
         edFoneFixo.setText("");
         edCelu.setText("");
         edEmail.setText("");
-        edObse.setText("");    
+        edTienCodi.setText("");
+        edTienNome.setText("");
+        edObse.setText("");  
+        edDesc.requestFocus();
         
         JOptionPane.showMessageDialog(null,"Edição realizada com sucesso","Gravar Pessoa Fisica",JOptionPane.INFORMATION_MESSAGE);
-      } catch (ClassNotFoundException | SQLException ex) 
+      } 
+      catch (ClassNotFoundException | SQLException ex) 
       {
-        Logger.getLogger(Prog0006View.class.getName()).log(Level.SEVERE, null, ex);
+        System.out.println("Error:"+ex);
       }      
     }
   }
@@ -159,16 +170,21 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
       edFoneFixo.setText("");
       edCelu.setText("");
       edEmail.setText("");
+      edTienCodi.setText("");
+      edTienNome.setText("");
       edObse.setText("");
 
       JOptionPane.showMessageDialog(null,"Cadastro Excluido com sucesso","Excluir Pessoa Fisica",JOptionPane.INFORMATION_MESSAGE);
-    } catch (ClassNotFoundException | SQLException | NumberFormatException ex) {
-      JOptionPane.showMessageDialog(null,"Cadastro inesistente ou não encontrado","Excluir Pessoa Fisica",JOptionPane.INFORMATION_MESSAGE);
+    } 
+    catch (ClassNotFoundException | SQLException | NumberFormatException ex) 
+    {
+      System.out.println("Error:"+ex);
     }  
   }
 
   @Override
-  public void btnSairActionPerformed(ActionEvent e) {
+  public void btnSairActionPerformed(ActionEvent e) 
+  {
     this.dispose();
   }
 
@@ -186,6 +202,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
         prog0006Vo = NovantidadeB.buscaNovaEntidade(edCodi.getText());
         edCodi.setText(prog0006Vo.getCodigo());
         edDesc.setText(prog0006Vo.getDescricao());
+        edNasc.setText(prog0006Vo.getNascionalidade());
+        edProfi.setText(prog0006Vo.getProfissao());
         edCep.setText(prog0006Vo.getCep());
         edEnde.setText(prog0006Vo.getEndereco());
         edNume.setText(prog0006Vo.getNumero());
@@ -199,14 +217,14 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
         edBairro.setText(prog0006Vo.getBairro());
         edRg.setText(prog0006Vo.getRg());
         edComp.setText(prog0006Vo.getComplemento());
+        edTienCodi.setText(prog0006Vo.getCodiTien());
+        edTienNome.setText(prog0006Vo.getTien());
         edObse.setText(prog0006Vo.getObservacao());
       
-      } catch (SQLException ex) {
-        Logger.getLogger(Prog0006View.class.getName()).log(Level.SEVERE, null, ex);
-      } catch (ClassNotFoundException ex) {
-        Logger.getLogger(Prog0006View.class.getName()).log(Level.SEVERE, null, ex);
-      }catch (Exception ex) {
-        JOptionPane.showMessageDialog(null,"Cpf Invalido ou inesistente:" ,"Cadastro Tipo Entidade",JOptionPane.INFORMATION_MESSAGE);
+      } 
+      catch (SQLException | ClassNotFoundException ex) 
+      {
+        System.out.println("Error:"+ex);
       }
     } 
     else 
@@ -226,6 +244,9 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
       edBairro.setText("");        
       edRg.setText("");   
       edComp.setText("");
+      edTienCodi.setText("");
+      edTienNome.setText("");
+      edObse.setText("");
     }  
   }
     
@@ -269,11 +290,11 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     edNasc = new javax.swing.JTextField();
     jLabel16 = new javax.swing.JLabel();
     edProfi = new javax.swing.JTextField();
-    edCodiTien = new javax.swing.JTextField();
     btnBuscaTipoEntidadeFisica = new javax.swing.JButton();
-    edTien = new javax.swing.JTextField();
     jLabel17 = new javax.swing.JLabel();
     jLabel18 = new javax.swing.JLabel();
+    edTienCodi = new javax.swing.JTextField();
+    edTienNome = new javax.swing.JTextField();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -410,9 +431,11 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
 
     edProfi.setBackground(new java.awt.Color(255, 255, 255));
     edProfi.setForeground(new java.awt.Color(0, 0, 0));
-
-    edCodiTien.setBackground(new java.awt.Color(255, 255, 255));
-    edCodiTien.setForeground(new java.awt.Color(0, 0, 0));
+    edProfi.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        edProfiActionPerformed(evt);
+      }
+    });
 
     btnBuscaTipoEntidadeFisica.setBackground(new java.awt.Color(0, 0, 0));
     btnBuscaTipoEntidadeFisica.setForeground(new java.awt.Color(255, 255, 255));
@@ -423,9 +446,6 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
       }
     });
 
-    edTien.setBackground(new java.awt.Color(255, 255, 255));
-    edTien.setForeground(new java.awt.Color(0, 0, 0));
-
     jLabel17.setBackground(java.awt.Color.white);
     jLabel17.setForeground(new java.awt.Color(0, 0, 0));
     jLabel17.setText("Tipo de Entidade");
@@ -433,6 +453,12 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     jLabel18.setBackground(java.awt.Color.white);
     jLabel18.setForeground(new java.awt.Color(0, 0, 0));
     jLabel18.setText("Codigo");
+
+    edTienCodi.setBackground(new java.awt.Color(255, 255, 255));
+    edTienCodi.setForeground(new java.awt.Color(0, 0, 0));
+
+    edTienNome.setBackground(new java.awt.Color(255, 255, 255));
+    edTienNome.setForeground(new java.awt.Color(0, 0, 0));
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -514,13 +540,15 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabel18)
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(edCodiTien, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edTienCodi, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(btnBuscaTipoEntidadeFisica)))
+                    .addComponent(btnBuscaTipoEntidadeFisica, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(jLabel17)
-                  .addComponent(edTien))))
+                  .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jLabel17)
+                    .addGap(0, 0, Short.MAX_VALUE))
+                  .addComponent(edTienNome))))
             .addContainerGap())))
     );
     jPanel1Layout.setVerticalGroup(
@@ -577,24 +605,22 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
         .addComponent(jLabel14)
         .addGap(0, 0, 0)
         .addComponent(edEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(7, 7, 7)
-        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        .addGap(1, 1, 1)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jLabel18)
             .addGap(0, 0, 0)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-              .addComponent(edCodiTien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(btnBuscaTipoEntidadeFisica, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addComponent(jLabel17)
-            .addGap(0, 0, 0)
-            .addComponent(edTien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jLabel9)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(btnBuscaTipoEntidadeFisica, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(edTienCodi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(edTienNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(1, 1, 1)
+            .addComponent(jLabel9)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(jLabel17))
         .addContainerGap())
     );
 
@@ -612,10 +638,10 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
         edCodiCida.setText(prog0006Vo.getCodiCida());
         edNomeCida.setText(prog0006Vo.getNomeCida());
         edSiglaEsta.setText(prog0006Vo.getEstado());
-      } catch (ClassNotFoundException ex) {
-        Logger.getLogger(Prog0006View.class.getName()).log(Level.SEVERE, null, ex);
-      } catch (SQLException ex) {
-        Logger.getLogger(Prog0006View.class.getName()).log(Level.SEVERE, null, ex);
+      } 
+      catch (ClassNotFoundException | SQLException ex) 
+      {
+        System.out.println("Error:"+ex);
       }
   }//GEN-LAST:event_edCepFocusLost
 
@@ -629,6 +655,10 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     setPalavra("tipoEnti");
     buscarLista(palavra);
   }//GEN-LAST:event_btnBuscaTipoEntidadeFisicaActionPerformed
+
+  private void edProfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edProfiActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_edProfiActionPerformed
 
   public void buscarLista(String palavra)
   {
@@ -805,27 +835,27 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
   public String getPalavra() {
     return palavra;
   }
-
-  public JTextField getEdCodiTien() {
-    return edCodiTien;
-  }
-
-  public void setEdCodiTien(JTextField edCodiTien) {
-    this.edCodiTien = edCodiTien;
-  }
-
-  public JTextField getEdTien() {
-    return edTien;
-  }
-
-  public void setEdTien(JTextField edTien) {
-    this.edTien = edTien;
-  }
-
   
   public void setPalavra(String palavra) {
     this.palavra = palavra;
   }
+
+  public JTextField getEdTienCodi() {
+    return edTienCodi;
+  }
+
+  public void setEdTienCodi(JTextField edTienCodi) {
+    this.edTienCodi = edTienCodi;
+  }
+
+  public JTextField getEdTienNome() {
+    return edTienNome;
+  }
+
+  public void setEdTienNome(JTextField edTienNome) {
+    this.edTienNome = edTienNome;
+  }
+  
   
   
   // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -835,7 +865,6 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
   private javax.swing.JTextField edCelu;
   private javax.swing.JFormattedTextField edCep;
   private javax.swing.JTextField edCodiCida;
-  private javax.swing.JTextField edCodiTien;
   private javax.swing.JTextField edComp;
   private javax.swing.JTextField edCpf;
   private javax.swing.JTextField edEmail;
@@ -848,7 +877,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
   private javax.swing.JTextField edProfi;
   private javax.swing.JTextField edRg;
   private javax.swing.JTextField edSiglaEsta;
-  private javax.swing.JTextField edTien;
+  private javax.swing.JTextField edTienCodi;
+  private javax.swing.JTextField edTienNome;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel10;
   private javax.swing.JLabel jLabel11;
@@ -873,5 +903,5 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
   // End of variables declaration//GEN-END:variables
 
   
-
+  private static final long serialVersionUID = 1L;
 }

@@ -94,8 +94,7 @@ public class Prog0005View extends FormTemplate implements ActionListener,FocusLi
   public void btnGravarActionPerformed(ActionEvent e) 
   {
     if(edCodi.getText().equals(""))
-    {
-      
+    { 
       try 
       {
         Prog0005Control prog0005 = new Prog0005Control();

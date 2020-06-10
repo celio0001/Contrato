@@ -26,6 +26,8 @@ public class Prog0006TableModel extends AbstractTableModel
   private static final int COL_BAIRRO = 15;
   private static final int COL_RG = 16;
   private static final int COL_COMPLEMENTO = 17;
+  private static final int COL_CODITIEN = 18;
+  private static final int COL_TIEN = 19;
   
   
   private List<Prog0006Vo>valores = new ArrayList<>() ;
@@ -90,6 +92,10 @@ public class Prog0006TableModel extends AbstractTableModel
         return lista.getRg();
       case COL_COMPLEMENTO:
         return lista.getComplemento();
+      case COL_CODITIEN:
+        return lista.getCodiTien();
+      case COL_TIEN:
+        return lista.getTien();
       default:
         break;
     }
@@ -154,6 +160,10 @@ public class Prog0006TableModel extends AbstractTableModel
       case COL_RG:
         return String.class;
       case COL_COMPLEMENTO:
+        return String.class;
+      case COL_CODITIEN:
+        return Integer.class;
+      case COL_TIEN:
         return String.class;
       default:
         throw new IllegalArgumentException("Coluna invalida");
