@@ -12,6 +12,7 @@ import model.ListaTipoEntidadeTableModel;
 import model.Prog0005TableModel;
 import model.Prog0006TableModel;
 import model.Prog0008TableModel;
+import vo.CidadeVo;
 import vo.Prog0005Vo;
 import vo.Prog0006Vo;
 import vo.Prog0007Vo;
@@ -24,6 +25,7 @@ public final class ListaView extends javax.swing.JFrame
   private List<Prog0005Vo>prog0005List;
   private List<Prog0006Vo>prog0006List;
   private List<Prog0007Vo>prog0007List; 
+  private List<CidadeVo>cidadeList; 
   private List<Prog0008Vo>prog0008List; 
   private List<Prog0009Vo>prog0009List; 
   //Prog0007View lista = new Prog0007View();
@@ -71,7 +73,7 @@ public final class ListaView extends javax.swing.JFrame
       {
         setPalavra("");
         setPalavra("listaCidade");
-        mostrarTabelaCidade();
+        mostrarTabelaCidadeProg0006();
         break;
       }
       case"tipoEnti":
@@ -209,6 +211,15 @@ public final class ListaView extends javax.swing.JFrame
   }
 
  //=======================================================================
+  private void mostrarTabelaCidadeProg0006() 
+  {
+    cidadeList = new Prog0006Control().findCidade();
+    if(cidadeList != null)
+    {
+      tblGridView.setModel(new ListaCidadeTableModel(cidadeList));
+    }  
+  }
+  
   private void mostrarTabelaEntidade()
   {
     prog0007List = new Prog0007Control().findEnti();
@@ -225,9 +236,9 @@ public final class ListaView extends javax.swing.JFrame
   
   private void mostrarTabelaCidade() 
   {
-    prog0007List = new Prog0007Control().findCidade();
-    if(prog0007List != null)
-      tblGridView.setModel(new ListaCidadeTableModel(prog0007List)); 
+    cidadeList = new Prog0007Control().findCidade();
+    if(cidadeList != null)
+      tblGridView.setModel(new ListaCidadeTableModel(cidadeList)); 
   }
     
   private void mostrarTabelaBanco() 
@@ -318,7 +329,72 @@ public final class ListaView extends javax.swing.JFrame
   private void tblGridViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblGridViewMouseClicked
    switch(getPalavra())
    {
-     
+     //LISTA PARA CLASSE PROG0005View
+     case"tipoEnti":
+      {
+        int linha = tblGridView.getSelectedRow();
+        Prog0005TableModel item = new Prog0005TableModel(prog0005List);
+
+        lista0005.getEdCodi().setText((String) item.getValueAt(linha, 0));
+        lista0005.getEdDesc().setText((String) item.getValueAt(linha, 1));
+        lista0005.getJtaObs().setText((String) item.getValueAt(linha, 2));
+        lista0005.setVisible(true);
+        this.dispose();
+        break;
+      }
+      //LISTA PARA CLASSE PROG0006View
+     case"pessoaFisica":
+      {
+        int linha = tblGridView.getSelectedRow();
+        Prog0006TableModel item = new Prog0006TableModel(prog0006List);
+        
+        lista0006.getEdCodi().setText((String) item.getValueAt(linha, 0));
+        lista0006.getEdDesc().setText((String) item.getValueAt(linha, 1));
+        lista0006.getEdNasc().setText((String) item.getValueAt(linha, 3));
+        lista0006.getEdProfi().setText((String) item.getValueAt(linha, 4));
+        lista0006.getEdCep().setText((String) item.getValueAt(linha, 6));
+        lista0006.getEdEnde().setText((String) item.getValueAt(linha, 2));
+        lista0006.getEdNume().setText((String) item.getValueAt(linha, 5));
+        lista0006.getEdCodiCida().setText((String) item.getValueAt(linha, 8));
+        lista0006.getEdNomeCida().setText((String) item.getValueAt(linha, 9));
+        lista0006.getEdSiglaEsta().setText((String) item.getValueAt(linha, 14));
+        lista0006.getEdBairro().setText((String) item.getValueAt(linha, 15));
+        lista0006.getEdComp().setText((String) item.getValueAt(linha, 17));
+        lista0006.getEdRg().setText((String) item.getValueAt(linha, 16));
+        lista0006.getEdCpf().setText((String) item.getValueAt(linha, 7));
+        lista0006.getEdFoneFixo().setText((String) item.getValueAt(linha, 10));
+        lista0006.getEdCelu().setText((String) item.getValueAt(linha, 11));
+        lista0006.getEdEmail().setText((String) item.getValueAt(linha, 12));
+        lista0006.getEdObse().setText((String) item.getValueAt(linha, 13));
+        
+        lista0006.setVisible(true);
+        this.dispose();
+        break;
+      }
+     case"listaCidade":
+      {
+        int linha = tblGridView.getSelectedRow();
+        ListaCidadeTableModel item = new ListaCidadeTableModel(cidadeList);
+        
+        lista0006.getEdCodiCida().setText((String) item.getValueAt(linha, 0));
+        lista0006.getEdNomeCida().setText((String) item.getValueAt(linha, 1));
+        lista0006.getEdSiglaEsta().setText((String) item.getValueAt(linha, 2));
+        lista0006.setVisible(true);
+        this.dispose();
+        break;
+      }
+      case"listatipoEnti":
+      {
+        int linha = tblGridView.getSelectedRow();
+        ListaTipoEntidadeTableModel item = new ListaTipoEntidadeTableModel(prog0007List);
+
+        lista0006.getEdTienCodi().setText((String) item.getValueAt(linha, 0));
+        lista0006.getEdTienNome().setText((String) item.getValueAt(linha, 1));
+        lista0006.setVisible(true);
+        this.dispose();
+        break;
+      }
+      //LISTA PARA CLASSE PROG0007View
      case "entidade":
       {
         int linha = tblGridView.getSelectedRow();    
@@ -359,7 +435,7 @@ public final class ListaView extends javax.swing.JFrame
       case"cidaEnde":
       {
         int linha = tblGridView.getSelectedRow();   
-        ListaCidadeTableModel item = new ListaCidadeTableModel(prog0007List);
+        ListaCidadeTableModel item = new ListaCidadeTableModel(cidadeList);
 
         lista0007.getEdCodiCidaEnde().setText((String) item.getValueAt(linha, 0));
         lista0007.getEdNomeCidaEnde().setText((String) item.getValueAt(linha, 1));
@@ -391,18 +467,7 @@ public final class ListaView extends javax.swing.JFrame
         this.dispose();
         break;
       }
-      case"tipoEnti":
-      {
-        int linha = tblGridView.getSelectedRow();
-        Prog0005TableModel item = new Prog0005TableModel(prog0005List);
-
-        lista0005.getEdCodi().setText((String) item.getValueAt(linha, 0));
-        lista0005.getEdDesc().setText((String) item.getValueAt(linha, 1));
-        lista0005.getJtaObs().setText((String) item.getValueAt(linha, 2));
-        lista0005.setVisible(true);
-        this.dispose();
-        break;
-      }
+      //LISTA PARA CLASSE PROG0008View
       case"foro":
       {
         int linha = tblGridView.getSelectedRow();
@@ -415,57 +480,8 @@ public final class ListaView extends javax.swing.JFrame
         this.dispose();
         break;
       }
-      case"pessoaFisica":
-      {
-        int linha = tblGridView.getSelectedRow();
-        Prog0006TableModel item = new Prog0006TableModel(prog0006List);
-        
-        lista0006.getEdCodi().setText((String) item.getValueAt(linha, 0));
-        lista0006.getEdDesc().setText((String) item.getValueAt(linha, 1));
-        lista0006.getEdNasc().setText((String) item.getValueAt(linha, 3));
-        lista0006.getEdProfi().setText((String) item.getValueAt(linha, 4));
-        lista0006.getEdCep().setText((String) item.getValueAt(linha, 6));
-        lista0006.getEdEnde().setText((String) item.getValueAt(linha, 2));
-        lista0006.getEdNume().setText((String) item.getValueAt(linha, 5));
-        lista0006.getEdCodiCida().setText((String) item.getValueAt(linha, 8));
-        lista0006.getEdNomeCida().setText((String) item.getValueAt(linha, 9));
-        lista0006.getEdSiglaEsta().setText((String) item.getValueAt(linha, 14));
-        lista0006.getEdBairro().setText((String) item.getValueAt(linha, 15));
-        lista0006.getEdComp().setText((String) item.getValueAt(linha, 17));
-        lista0006.getEdRg().setText((String) item.getValueAt(linha, 16));
-        lista0006.getEdCpf().setText((String) item.getValueAt(linha, 7));
-        lista0006.getEdFoneFixo().setText((String) item.getValueAt(linha, 10));
-        lista0006.getEdCelu().setText((String) item.getValueAt(linha, 11));
-        lista0006.getEdEmail().setText((String) item.getValueAt(linha, 12));
-        lista0006.getEdObse().setText((String) item.getValueAt(linha, 13));
-        
-        lista0006.setVisible(true);
-        this.dispose();
-        break;
-      }
-      case"listaCidade":
-      {
-        int linha = tblGridView.getSelectedRow();
-        ListaCidadeTableModel item = new ListaCidadeTableModel(prog0007List);
-        
-        lista0006.getEdCodiCida().setText((String) item.getValueAt(linha, 0));
-        lista0006.getEdNomeCida().setText((String) item.getValueAt(linha, 1));
-        lista0006.getEdSiglaEsta().setText((String) item.getValueAt(linha, 2));
-        lista0006.setVisible(true);
-        this.dispose();
-        break;
-      }
-      case"listatipoEnti":
-      {
-        int linha = tblGridView.getSelectedRow();
-        ListaTipoEntidadeTableModel item = new ListaTipoEntidadeTableModel(prog0007List);
-
-        lista0006.getEdTienCodi().setText((String) item.getValueAt(linha, 0));
-        lista0006.getEdTienNome().setText((String) item.getValueAt(linha, 1));
-        lista0006.setVisible(true);
-        this.dispose();
-        break;
-      }
+      
+      //LISTA PARA CLASSE PROG0009View
       case"compradorFisica":
       {
         int linha = tblGridView.getSelectedRow();
@@ -540,7 +556,7 @@ public final class ListaView extends javax.swing.JFrame
       case"cidaComp":
       {
         int linha = tblGridView.getSelectedRow();   
-        ListaCidadeTableModel item = new ListaCidadeTableModel(prog0007List);
+        ListaCidadeTableModel item = new ListaCidadeTableModel(cidadeList);
 
         lista0009.getEdCodiCidaComp().setText((String) item.getValueAt(linha, 0));
         lista0009.getEdNomeCidaComp().setText((String) item.getValueAt(linha, 1));
@@ -552,7 +568,7 @@ public final class ListaView extends javax.swing.JFrame
       case"cidaVend":
       {
         int linha = tblGridView.getSelectedRow();   
-        ListaCidadeTableModel item = new ListaCidadeTableModel(prog0007List);
+        ListaCidadeTableModel item = new ListaCidadeTableModel(cidadeList);
 
         lista0009.getEdCodiCidaVend().setText((String) item.getValueAt(linha, 0));
         lista0009.getEdNomeCidaVend().setText((String) item.getValueAt(linha, 1));
@@ -564,7 +580,7 @@ public final class ListaView extends javax.swing.JFrame
       case"cidaImovel":
       {
         int linha = tblGridView.getSelectedRow();   
-        ListaCidadeTableModel item = new ListaCidadeTableModel(prog0007List);
+        ListaCidadeTableModel item = new ListaCidadeTableModel(cidadeList);
 
         lista0009.getEdCodiCidaImovel().setText((String) item.getValueAt(linha, 0));
         lista0009.getEdNomeCidaImovel().setText((String) item.getValueAt(linha, 1));
@@ -593,4 +609,6 @@ public final class ListaView extends javax.swing.JFrame
   }
   
   private static final long serialVersionUID = 1L;
+
+  
 }

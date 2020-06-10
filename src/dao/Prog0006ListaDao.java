@@ -9,23 +9,36 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import vo.CidadeVo;
 import vo.Prog0006Vo;
 
 public class Prog0006ListaDao implements IListaProg0006Dao 
 {
 
+  List<Prog0006Vo>listaPessoaFisica;
+  List<CidadeVo>listaCidade;
+
+  
+  
+  public Prog0006ListaDao()
+  {
+    listaPessoaFisica = new ArrayList();
+    listaCidade = new ArrayList();
+    
+  }
+  
+  //BUSCA LISTA DE PESSOA FISICA DA CLASSE PRO0006VIEW
   @Override
   public List<Prog0006Vo> findPessoaFisica() 
-  {
-    List<Prog0006Vo>listaPessoaFisica = new ArrayList();
+  { 
     String sql = "select *,"+
                  "(select cida_desc from cida where fisi_cida = cida_codi) as 'nome_cida',"+
                  "(select cida_sigl from cida where fisi_cida = cida_codi) as 'sigl_cida',"+
                  "(select tien_desc from tien where tien_codi = fisi_codi) as 'tien_desc'"+
-                 "from fisi";             
-    Conexao conexao = new Conexao();   
+                 "from fisi";            
     try 
     {
+      Conexao conexao = new Conexao(); 
       Connection con = conexao.conectar();
       PreparedStatement sessao = con.prepareStatement(sql);
       ResultSet rs = sessao.executeQuery();
@@ -64,6 +77,36 @@ public class Prog0006ListaDao implements IListaProg0006Dao
     }
     return listaPessoaFisica;
     
+  }
+
+  //BUSCA LISTA DE CIDADE DA CLASSE PROG0006VIEW
+  @Override
+  public List<CidadeVo> findCidade() 
+  {
+    String sql = "select * from cida";
+    
+    try 
+    {
+      Conexao conexao = new Conexao(); 
+      Connection con = conexao.conectar();
+      PreparedStatement sessao = con.prepareStatement(sql);
+      ResultSet rs = sessao.executeQuery();
+      while(rs.next())
+      {  
+        CidadeVo cidadeVo = new CidadeVo();
+        cidadeVo.setCodiCida(Integer.toString(rs.getInt("cida_codi")));
+        cidadeVo.setNomeCida(rs.getString("cida_desc"));
+        cidadeVo.setEstado(rs.getString("cida_sigl"));
+  
+        listaCidade.add(cidadeVo);
+      }
+      conexao.desconectar();
+    } 
+    catch (ClassNotFoundException | SQLException ex) 
+    {
+      Logger.getLogger(Prog0007ListaDao.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return listaCidade;
   }
 
 }

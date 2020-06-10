@@ -13,7 +13,7 @@ public class Prog0007_ListaCidadeFachada
     this.daoCidade = new Prog0007ListaDao();
   }
   
-  public List<Prog0007Vo> findCidade() 
+  public List<CidadeVo> findCidade() 
   {
     return daoCidade.findCidade();
   }

@@ -1281,12 +1281,14 @@ public class Prog0007View extends FormTemplate implements ActionListener,FocusLi
     this.abas.setSelectedIndex(1);
   }//GEN-LAST:event_btnAvancar1ActionPerformed
 
+  
+//=====================================================================================================================
+  // OS METODOS ABAIXO SAO SOMENTE GETERS E SETERS
   public JTextField getEdAgencBancEnde() 
   {
     return edAgencBancEnde;
   }
-//=====================================================================================================================
-  // OS METODOS ABAIXO SAO SOMENTE GETERS E SETERS
+  
   public void setEdAgencBancEnde(JTextField edAgencBancEnde) 
   {
     this.edAgencBancEnde = edAgencBancEnde;

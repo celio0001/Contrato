@@ -2,6 +2,8 @@ package model;
 
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
+import vo.CidadeVo;
+import vo.Prog0006Vo;
 import vo.Prog0007Vo;
 
 public class ListaCidadeTableModel extends AbstractTableModel
@@ -10,12 +12,14 @@ public class ListaCidadeTableModel extends AbstractTableModel
   private static final int COL_CIDADE = 1;
   private static final int COL_UF = 2;
   
-  private final List<Prog0007Vo>valores ;
-  Prog0007Vo cidade = new Prog0007Vo();
-
-  public ListaCidadeTableModel(List<Prog0007Vo> valores) 
+  private List<Prog0007Vo>prog0007Valores ;
+  private List<Prog0006Vo>prog0006Valores ;
+  private List<CidadeVo> valores ;
+  CidadeVo cidade = new CidadeVo();
+  
+  public ListaCidadeTableModel(List<CidadeVo> cidadeList) 
   {
-    this.valores = valores;
+    this.valores = cidadeList;
   }
    
   @Override
@@ -29,6 +33,8 @@ public class ListaCidadeTableModel extends AbstractTableModel
   {    
     return 3;
   }
+  
+  
  
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) 
@@ -38,9 +44,9 @@ public class ListaCidadeTableModel extends AbstractTableModel
       case COL_CODIGO:
         return cidade.getCodiCida();
       case COL_CIDADE:
-        return cidade.getNomeCidade();  
+        return cidade.getNomeCida();  
       case COL_UF:
-        return cidade.getUf();
+        return cidade.getEstado();
       default:
         break;
     }
@@ -84,7 +90,7 @@ public class ListaCidadeTableModel extends AbstractTableModel
     }
   }
   
-  public Prog0007Vo get(int row)
+  public CidadeVo get(int row)
   {
     return valores.get(row);
   }

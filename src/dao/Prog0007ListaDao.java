@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import vo.CidadeVo;
 import vo.Prog0007Vo;
 
 public class Prog0007ListaDao implements IListaProg0007Dao
@@ -147,9 +148,9 @@ public class Prog0007ListaDao implements IListaProg0007Dao
   }
 
   @Override
-  public List<Prog0007Vo> findCidade() 
+  public List<CidadeVo> findCidade() 
   {
-    List<Prog0007Vo>listaCida = new ArrayList();
+    List<CidadeVo>listaCida = new ArrayList();
     
     String sql = "select * from cida";             
     try 
@@ -161,12 +162,12 @@ public class Prog0007ListaDao implements IListaProg0007Dao
 
       while(rs.next())
       {
-        Prog0007Vo prog0007Vo = new Prog0007Vo(); 
+        CidadeVo cidadeVo = new CidadeVo(); 
 
-        prog0007Vo.setCodiCida(rs.getString("cida_codi"));
-        prog0007Vo.setNomeCidade(rs.getString("cida_desc"));
-        prog0007Vo.setUf(rs.getString("cida_sigl"));
-        listaCida.add(prog0007Vo);
+        cidadeVo.setCodiCida(rs.getString("cida_codi"));
+        cidadeVo.setNomeCida(rs.getString("cida_desc"));
+        cidadeVo.setEstado(rs.getString("cida_sigl"));
+        listaCida.add(cidadeVo);
       }
       conexao.desconectar();
     } 

@@ -11,6 +11,7 @@ import vo.TipoEntidadeVo;
 public class Prog0006Control 
 {
   private final Prog0006_ListaPessoaFisicaFachada  facadePessoaFisica;
+  private final Prog0006_ListaPessoaFisicaFachada  facadeCidade;
   Prog0006Vo prog0006Vo;
   Prog0006Dao prog0006Dao;
   CidadeVo cidadeVo;
@@ -19,9 +20,33 @@ public class Prog0006Control
   public Prog0006Control() 
   {
    this.facadePessoaFisica = new Prog0006_ListaPessoaFisicaFachada();
+   this.facadeCidade = new Prog0006_ListaPessoaFisicaFachada();
    prog0006Vo = new Prog0006Vo();
    prog0006Dao = new Prog0006Dao(prog0006Vo);
    cidadeVo = new CidadeVo();
+  }
+  
+  public List<Prog0006Vo> findPessoaFisica() 
+  {
+    return facadePessoaFisica.findPessoaFisica();
+  } 
+
+  public List<CidadeVo> findCidade() 
+  {
+    return facadeCidade.findCidade();
+  }
+//  public List<CidadeVo> findCidade() 
+//  {
+//    return facadeCidade.findCidade();
+//  }
+//================================================================================================
+  public Prog0006Vo buscarCidade(String cidaCodi, String cidaNome, String cidaUf) 
+  {
+    prog0006Vo.setCodiCida(cidaCodi);
+    prog0006Vo.setNomeCida(cidaNome);
+    prog0006Vo.setEstado(cidaUf);
+    
+    return prog0006Dao.buscaCidade();
   }
   
   public Prog0006Vo buscaNovaEntidade(String codigo) throws SQLException, ClassNotFoundException 
@@ -107,17 +132,7 @@ public class Prog0006Control
     pessoaD.excluirPessoaFisica();
   }
 
-  public List<Prog0006Vo> findPessoaFisica() 
-  {
-    return facadePessoaFisica.findPessoaFisica();
-  } 
+  
 
-  public Prog0006Vo buscarCidade(String cidaCodi, String cidaNome, String cidaUf) 
-  {
-    prog0006Vo.setCodiCida(cidaCodi);
-    prog0006Vo.setNomeCida(cidaNome);
-    prog0006Vo.setEstado(cidaUf);
-    
-    return prog0006Dao.buscaCidade();
-  }
+  
 }

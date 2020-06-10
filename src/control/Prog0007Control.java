@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 import dao.Prog0007Dao;
 import java.io.FileNotFoundException;
+import vo.CidadeVo;
 import vo.Prog0007_ListaEnderecoEntidadeFachada;
 import vo.Prog0007Vo;
 import vo.Prog0007_ListaBancoFachada;
@@ -45,7 +46,7 @@ public class Prog0007Control
     return facadeTipoEnti.findTipoEnti();
   }
 
-  public List<Prog0007Vo> findCidade() 
+  public List<CidadeVo> findCidade() 
   {
     return facadeCid.findCidade();
   }
