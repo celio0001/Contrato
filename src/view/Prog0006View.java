@@ -83,6 +83,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
       {
         pessoaE.editarPessoa(edCodi.getText(),
                              edDesc.getText(),
+                             edNasc.getText(),
+                             edProfi.getText(),
                              edCep.getText(),
                              edEnde.getText(),
                              edNume.getText(),
@@ -643,6 +645,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     edTienCodi.setText("");
     edTienNome.setText("");
     edObse.setText("");
+    edNasc.setText("");
+    edProfi.setText("");
   }
 //=================================================================  
   public JTextField getEdBairro() {

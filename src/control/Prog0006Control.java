@@ -96,11 +96,13 @@ public class Prog0006Control
     gravaFisica.gravarPessoaFisca();
   }
 
-  public void editarPessoa(String codigo, String nome, String cep, String endereco, String numero, String codiCidade, String nomeCidade, String estado,String bairro,String complemento, String rg, String cpf, String foneFixo, String celular, String email,String codiTien,String tien, String observacao) throws ClassNotFoundException, SQLException, ClassNotFoundException, ClassNotFoundException, ClassNotFoundException 
+  public void editarPessoa(String codigo, String nome, String nasc, String profi,String cep, String endereco, String numero, String codiCidade, String nomeCidade, String estado,String bairro,String complemento, String rg, String cpf, String foneFixo, String celular, String email,String codiTien,String tien, String observacao) throws ClassNotFoundException, SQLException, ClassNotFoundException, ClassNotFoundException, ClassNotFoundException 
   {
     Prog0006Vo pessoaFisicaE = new Prog0006Vo();
     pessoaFisicaE.setCodigo(codigo);
     pessoaFisicaE.setDescricao(nome);
+    pessoaFisicaE.setNascionalidade(nasc);
+    pessoaFisicaE.setProfissao(profi);
     pessoaFisicaE.setCep(cep);
     pessoaFisicaE.setEndereco(endereco);
     pessoaFisicaE.setNumero(numero);
@@ -117,7 +119,11 @@ public class Prog0006Control
     pessoaFisicaE.setCodiTien(codiTien);
     pessoaFisicaE.setTien(tien);
     pessoaFisicaE.setObservacao(observacao);
-    System.out.println(pessoaFisicaE.getCodiTien());
+    
+    System.out.println(prog0006Vo.getNascionalidade());
+    System.out.println(prog0006Vo.getProfissao());
+    System.out.println(prog0006Vo.getCodiTien());
+    System.out.println(prog0006Vo.getTien());
     
     Prog0006Dao editaFisica = new Prog0006Dao(pessoaFisicaE);
     editaFisica.editarPessoaFisca();

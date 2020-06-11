@@ -123,16 +123,11 @@ public class Prog0006Dao
       String dSiglEsta = (webServiceCep.getUf());
       
       prog0006Vo.setEndereco(dEndereco);
-      cidadeVo.setNomeCida(dCidade);
+      prog0006Vo.setNomeCida(dCidade);
       prog0006Vo.setBairro(dBairro);
-      cidadeVo.setEstado(dSiglEsta);
+      prog0006Vo.setEstado(dSiglEsta);
     }
-    else 
-    {
-      
-    } 
-    
-    String nomeCidade = cidadeVo.getNomeCida();
+    String nomeCidade = prog0006Vo.getNomeCida();
     
     Conexao conexao = new Conexao();
     Connection con = conexao.conectar();
@@ -146,10 +141,10 @@ public class Prog0006Dao
     while(rs.next())
     {  
       String dCodiCida  = Integer.toString(rs.getInt("cida_codi"));             
-      cidadeVo.setCodiCida(dCodiCida);       
+      prog0006Vo.setCodiCida(dCodiCida);       
     }
     conexao.desconectar();
-    System.out.println(cidadeVo.getCodiCida());
+    System.out.println(prog0006Vo.getCodiCida());
     return prog0006Vo;
   }
 
@@ -214,11 +209,12 @@ public class Prog0006Dao
   public void editarPessoaFisca() throws ClassNotFoundException, SQLException 
   {
     int num = Integer.parseInt(prog0006Vo.getCodigo());
-    int valor = Integer.parseInt(tipoEntidadeVo.getTienCodi());
+    int valor = Integer.parseInt(prog0006Vo.getCodiTien());
+    int cida = Integer.parseInt(prog0006Vo.getCodiCida());
     String sql = "UPDATE fisi SET fisi_nome  = '" + prog0006Vo.getDescricao() + 
                  "'," + "         fisi_cep = '" + prog0006Vo.getCep() + 
                  "'," + "         fisi_ende = '" + prog0006Vo.getEndereco()+ 
-                 "'," + "          fisi_cida  = '" + cidadeVo.getCodiCida() + 
+                 "'," + "          fisi_cida  = '" + cida + 
                  "'," + "          fisi_bair  = '" + prog0006Vo.getBairro() + 
                  "'," + "          fisi_nume = '" + prog0006Vo.getNumero()+ 
                  "'," + "          fisi_comp = '" + prog0006Vo.getComplemento()+ 

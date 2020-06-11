@@ -366,6 +366,8 @@ public final class ListaView extends javax.swing.JFrame
         lista0006.getEdCelu().setText((String) item.getValueAt(linha, 11));
         lista0006.getEdEmail().setText((String) item.getValueAt(linha, 12));
         lista0006.getEdObse().setText((String) item.getValueAt(linha, 13));  
+        lista0006.getEdTienCodi().setText((String) item.getValueAt(linha, 18));  
+        lista0006.getEdTienNome().setText((String) item.getValueAt(linha, 19));  
         lista0006.setVisible(true);
         this.dispose();
         lista0006.getEdDesc().requestFocus();

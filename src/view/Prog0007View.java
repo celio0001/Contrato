@@ -1265,7 +1265,7 @@ public class Prog0007View extends FormTemplate implements ActionListener,FocusLi
       edBairEnde.setText(prog0007Vo.getBairro());
       edCodiCidaEnde.setText(prog0007Vo.getCodiCida());
       edNomeCidaEnde.setText(prog0007Vo.getNomeCidade());
-      edContEnde.setText(prog0007Vo.getUf());
+      edUfEnde.setText(prog0007Vo.getUf());
     } 
     catch (ClassNotFoundException | SQLException ex) 
     {
