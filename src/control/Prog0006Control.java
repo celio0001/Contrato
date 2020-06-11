@@ -130,9 +130,5 @@ public class Prog0006Control
     
     Prog0006Dao pessoaD = new Prog0006Dao(pessoaFisicaD);
     pessoaD.excluirPessoaFisica();
-  }
-
-  
-
-  
+  }  
 }
