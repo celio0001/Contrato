@@ -365,10 +365,10 @@ public final class ListaView extends javax.swing.JFrame
         lista0006.getEdFoneFixo().setText((String) item.getValueAt(linha, 10));
         lista0006.getEdCelu().setText((String) item.getValueAt(linha, 11));
         lista0006.getEdEmail().setText((String) item.getValueAt(linha, 12));
-        lista0006.getEdObse().setText((String) item.getValueAt(linha, 13));
-        
+        lista0006.getEdObse().setText((String) item.getValueAt(linha, 13));  
         lista0006.setVisible(true);
         this.dispose();
+        lista0006.getEdDesc().requestFocus();
         break;
       }
      case"listaCidade":
@@ -381,6 +381,7 @@ public final class ListaView extends javax.swing.JFrame
         lista0006.getEdSiglaEsta().setText((String) item.getValueAt(linha, 2));
         lista0006.setVisible(true);
         this.dispose();
+        lista0006.getEdBairro().requestFocus();
         break;
       }
       case"listatipoEnti":
@@ -392,6 +393,7 @@ public final class ListaView extends javax.swing.JFrame
         lista0006.getEdTienNome().setText((String) item.getValueAt(linha, 1));
         lista0006.setVisible(true);
         this.dispose();
+        lista0006.getEdObse().requestFocus();
         break;
       }
       //LISTA PARA CLASSE PROG0007View

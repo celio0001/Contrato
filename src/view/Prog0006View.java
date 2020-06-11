@@ -384,6 +384,11 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     btnBuscarTien.setBackground(new java.awt.Color(0, 0, 0));
     btnBuscarTien.setForeground(new java.awt.Color(255, 255, 255));
     btnBuscarTien.setText("Buscar");
+    btnBuscarTien.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnBuscarTienActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -585,6 +590,11 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
   private void edProfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edProfiActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_edProfiActionPerformed
+
+  private void btnBuscarTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTienActionPerformed
+    setPalavra("tipoEnti");
+    buscarLista(palavra);
+  }//GEN-LAST:event_btnBuscarTienActionPerformed
 
   public void buscarLista(String palavra)
   {

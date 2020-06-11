@@ -230,8 +230,7 @@ public class Prog0006Dao
                  "'," + "          fisi_obse    = '" + prog0006Vo.getObservacao()+
                  "'," + "          fisi_nasc    = '" + prog0006Vo.getNascionalidade()+
                  "'," + "          fisi_prof    = '" + prog0006Vo.getProfissao()+
-                 "'," + "          fisi_tien = '" + valor+ 
-                  
+                 "'," + "          fisi_tien = '" + valor+                   
                  "' " + "WHERE     fisi_codi    =  " + num;
     Conexao conexao = new Conexao();
     Connection con = conexao.conectar();
