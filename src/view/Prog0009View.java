@@ -51,7 +51,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   @Override
   public void focusLost(FocusEvent fe) 
   {
-    if(edCodi.getText().equals(""))
+    if(!edCodi.getText().equals(""))
     {
       try 
       {
@@ -66,6 +66,11 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
       }
     }
+    else
+    {
+      edStatus.setText("Lançado");
+      edData.requestFocus();
+    }
   }
 
   @Override
@@ -78,6 +83,30 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   public void btnGravarActionPerformed(ActionEvent e) 
   {
     
+    if(edCodi.getText().equals(""))
+    {
+      
+      prog0009Vo = prog0009Control.gravarContrato(edData.getText(),
+                                                  edValor.getText(),
+                                                  edStatus.getText(),
+                                                  edCodiComp.getText(),
+                                                  edCepComp.getText(),
+                                                  edEndeComp.getText(),
+                                                  edNumeComp.getText(),
+                                                  edBairroComp.getText(),
+                                                  edCodiCidaComp.getText(),
+                                                  edCodiVend.getText(),
+                                                  edCepVend.getText(),
+                                                  edEndeVend.getText(),
+                                                  edNumeVend.getText(),
+                                                  edBairroVend.getText(),
+                                                  edCodiCidaVend.getText(),
+                                                  edCodiCidaImovel.getText(),
+                                                  edNomeTest1.getText(),
+                                                  edNomeTest2.getText(),
+                                                  edCodiBanc.getText(),
+                                                  edCodiForo.getText());
+    }
   }
 
   @Override
@@ -163,13 +192,13 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     btnBuscaCidaImovel = new javax.swing.JButton();
     jSeparator3 = new javax.swing.JSeparator();
     jLabel34 = new javax.swing.JLabel();
-    edNomeTest3 = new javax.swing.JTextField();
+    edNomeTest1 = new javax.swing.JTextField();
     jLabel35 = new javax.swing.JLabel();
-    edNomeTest4 = new javax.swing.JTextField();
+    edNomeTest2 = new javax.swing.JTextField();
     btnBuscaTest3 = new javax.swing.JButton();
     btnBuscaTest4 = new javax.swing.JButton();
-    edCodiTest3 = new javax.swing.JTextField();
-    edCodiTest4 = new javax.swing.JTextField();
+    edCodiTest1 = new javax.swing.JTextField();
+    edCodiTest2 = new javax.swing.JTextField();
     jLabel36 = new javax.swing.JLabel();
     jLabel37 = new javax.swing.JLabel();
     jPanel3 = new javax.swing.JPanel();
@@ -609,15 +638,15 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     jLabel34.setForeground(new java.awt.Color(0, 0, 0));
     jLabel34.setText("Testemunha 1");
 
-    edNomeTest3.setBackground(new java.awt.Color(255, 255, 255));
-    edNomeTest3.setForeground(new java.awt.Color(0, 0, 0));
+    edNomeTest1.setBackground(new java.awt.Color(255, 255, 255));
+    edNomeTest1.setForeground(new java.awt.Color(0, 0, 0));
 
     jLabel35.setBackground(new java.awt.Color(255, 255, 255));
     jLabel35.setForeground(new java.awt.Color(0, 0, 0));
     jLabel35.setText("Testemunha 2");
 
-    edNomeTest4.setBackground(new java.awt.Color(255, 255, 255));
-    edNomeTest4.setForeground(new java.awt.Color(0, 0, 0));
+    edNomeTest2.setBackground(new java.awt.Color(255, 255, 255));
+    edNomeTest2.setForeground(new java.awt.Color(0, 0, 0));
 
     btnBuscaTest3.setBackground(new java.awt.Color(0, 0, 0));
     btnBuscaTest3.setForeground(new java.awt.Color(255, 255, 255));
@@ -627,11 +656,11 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     btnBuscaTest4.setForeground(new java.awt.Color(255, 255, 255));
     btnBuscaTest4.setText("Buscar");
 
-    edCodiTest3.setBackground(new java.awt.Color(255, 255, 255));
-    edCodiTest3.setForeground(new java.awt.Color(0, 0, 0));
+    edCodiTest1.setBackground(new java.awt.Color(255, 255, 255));
+    edCodiTest1.setForeground(new java.awt.Color(0, 0, 0));
 
-    edCodiTest4.setBackground(new java.awt.Color(255, 255, 255));
-    edCodiTest4.setForeground(new java.awt.Color(0, 0, 0));
+    edCodiTest2.setBackground(new java.awt.Color(255, 255, 255));
+    edCodiTest2.setForeground(new java.awt.Color(0, 0, 0));
 
     jLabel36.setBackground(new java.awt.Color(255, 255, 255));
     jLabel36.setForeground(new java.awt.Color(0, 0, 0));
@@ -691,7 +720,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabel37)
                   .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(edCodiTest3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edCodiTest1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(btnBuscaTest4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -699,17 +728,17 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
                   .addGroup(jPanel2Layout.createSequentialGroup()
                     .addComponent(jLabel34)
                     .addGap(349, 349, 349))
-                  .addComponent(edNomeTest3)))
+                  .addComponent(edNomeTest1)))
               .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabel36)
                   .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(edCodiTest4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edCodiTest2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(btnBuscaTest3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(edNomeTest4)
+                  .addComponent(edNomeTest2)
                   .addGroup(jPanel2Layout.createSequentialGroup()
                     .addComponent(jLabel35)
                     .addGap(0, 0, Short.MAX_VALUE)))))
@@ -752,8 +781,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         .addGap(0, 0, 0)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
           .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-            .addComponent(edCodiTest3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(edNomeTest3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(edCodiTest1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(edNomeTest1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addComponent(btnBuscaTest4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(1, 1, 1)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -761,8 +790,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
           .addComponent(jLabel35))
         .addGap(0, 0, 0)
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(edCodiTest4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(edNomeTest4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edCodiTest2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edNomeTest2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnBuscaTest3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addContainerGap(157, Short.MAX_VALUE))
     );
@@ -996,8 +1025,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     setPalavra("CForo");
     buscarLista(palavra);
   }//GEN-LAST:event_btnBuscaForoActionPerformed
-
-    
+  
   private void buscarLista(String palavra) 
   {
     switch(palavra)
@@ -1090,8 +1118,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JTextField edCodiCidaVend;
   private javax.swing.JTextField edCodiComp;
   private javax.swing.JTextField edCodiForo;
-  private javax.swing.JTextField edCodiTest3;
-  private javax.swing.JTextField edCodiTest4;
+  private javax.swing.JTextField edCodiTest1;
+  private javax.swing.JTextField edCodiTest2;
   private javax.swing.JTextField edCodiVend;
   private javax.swing.JTextField edEndeComp;
   private javax.swing.JTextField edEndeImovel;
@@ -1102,8 +1130,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JTextField edNomeCidaVend;
   private javax.swing.JTextField edNomeComp;
   private javax.swing.JTextField edNomeForo;
-  private javax.swing.JTextField edNomeTest3;
-  private javax.swing.JTextField edNomeTest4;
+  private javax.swing.JTextField edNomeTest1;
+  private javax.swing.JTextField edNomeTest2;
   private javax.swing.JTextField edNomeVend;
   private javax.swing.JTextField edNumeComp;
   private javax.swing.JTextField edNumeImovel;

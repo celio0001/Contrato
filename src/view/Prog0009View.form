@@ -798,7 +798,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="edCodiTest3" min="-2" pref="97" max="-2" attributes="0"/>
+                                              <Component id="edCodiTest1" min="-2" pref="97" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="btnBuscaTest4" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -809,21 +809,21 @@
                                               <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="edNomeTest3" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="edNomeTest1" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="edCodiTest4" min="-2" pref="97" max="-2" attributes="0"/>
+                                              <Component id="edCodiTest2" min="-2" pref="97" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="btnBuscaTest3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="edNomeTest4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="edNomeTest2" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -880,8 +880,8 @@
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="edCodiTest3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="edNomeTest3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="edCodiTest1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="edNomeTest1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="btnBuscaTest4" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
@@ -892,8 +892,8 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="edCodiTest4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="edNomeTest4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="edCodiTest2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="edNomeTest2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnBuscaTest3" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="157" max="32767" attributes="0"/>
@@ -1079,7 +1079,7 @@
                 <Property name="text" type="java.lang.String" value="Testemunha 1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="edNomeTest3">
+            <Component class="javax.swing.JTextField" name="edNomeTest1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1100,7 +1100,7 @@
                 <Property name="text" type="java.lang.String" value="Testemunha 2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="edNomeTest4">
+            <Component class="javax.swing.JTextField" name="edNomeTest2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1132,7 +1132,7 @@
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="edCodiTest3">
+            <Component class="javax.swing.JTextField" name="edCodiTest1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1142,7 +1142,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="edCodiTest4">
+            <Component class="javax.swing.JTextField" name="edCodiTest2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>

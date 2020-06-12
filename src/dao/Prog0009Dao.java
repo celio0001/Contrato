@@ -34,4 +34,10 @@ public class Prog0009Dao
     return prog0009Vo;
   }
 
+  public Prog0009Vo gravarContrato() 
+  {
+    return null;
+    
+  }
+
 }
