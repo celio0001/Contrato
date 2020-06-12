@@ -1,0 +1,183 @@
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for baen
+-- ----------------------------
+DROP TABLE IF EXISTS `baen`;
+CREATE TABLE `baen` (
+  `baen_id` int(11) NOT NULL AUTO_INCREMENT,
+  `baen_enti` int(11) DEFAULT NULL,
+  `baen_banc` int(11) DEFAULT NULL,
+  `baen_nome_banc` varchar(200) DEFAULT NULL,
+  `baen_agen` varchar(20) DEFAULT NULL,
+  `baen_cont` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`baen_id`),
+  KEY `baen_idx` (`baen_enti`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+-- Table structure for banc
+-- ----------------------------
+DROP TABLE IF EXISTS `banc`;
+CREATE TABLE `banc` (
+  `banc_id` int(11) NOT NULL,
+  `banc_nume` varchar(30) DEFAULT NULL,
+  `banc_desc` varchar(255) DEFAULT NULL,
+  `banc_docu` varchar(30) DEFAULT NULL,
+  `banc_site` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`banc_id`),
+  KEY `banco_idx` (`banc_nume`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for cida
+-- ----------------------------
+DROP TABLE IF EXISTS `cida`;
+CREATE TABLE `cida` (
+  `cida_codi` int(11) NOT NULL,
+  `cida_desc` varchar(60) NOT NULL,
+  `cida_esta` int(11) NOT NULL,
+  `cida_sigl` varchar(2) NOT NULL,
+  `cida_id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`cida_id`,`cida_codi`),
+  KEY `cida_idx` (`cida_codi`,`cida_desc`,`cida_esta`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=10949 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+-- Table structure for cont
+-- ----------------------------
+DROP TABLE IF EXISTS `cont`;
+CREATE TABLE `cont` (
+  `cont_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cont_codi` int(11) DEFAULT NULL,
+  `cont_comp` int(11) DEFAULT NULL,
+  ` cont_vend` int(11) DEFAULT NULL,
+  `cont_banc` int(11) DEFAULT NULL,
+  `cont_foro` int(11) DEFAULT NULL,
+  `cont_cida` int(11) DEFAULT NULL,
+  `cont_valo` decimal(15,2) DEFAULT NULL,
+  `cont_fopa` int(11) DEFAULT NULL,
+  `cont_data` varchar(20) DEFAULT NULL,
+  `cont_stat` varchar(100) DEFAULT NULL,
+  `cont_tien` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cont_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for ende
+-- ----------------------------
+DROP TABLE IF EXISTS `ende`;
+CREATE TABLE `ende` (
+  `ende_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ende_enti` int(11) DEFAULT NULL,
+  `ende_cep` varchar(15) DEFAULT NULL,
+  `ende_ende` varchar(255) DEFAULT NULL,
+  `ende_nume` varchar(5) DEFAULT NULL,
+  `ende_cida` int(11) DEFAULT NULL,
+  `ende_desc` varchar(255) DEFAULT NULL,
+  `ende_bair` varchar(100) DEFAULT NULL,
+  `ende_cont` varchar(200) DEFAULT NULL,
+  `ende_fone` varchar(15) DEFAULT NULL,
+  `ende_comp` varchar(255) DEFAULT NULL,
+  `ende_ie` varchar(30) DEFAULT NULL,
+  `ende_banc` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ende_id`),
+  KEY `ende_idx` (`ende_enti`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=528 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+-- ----------------------------
+-- Table structure for enti
+-- ----------------------------
+DROP TABLE IF EXISTS `enti`;
+CREATE TABLE `enti` (
+  `enti_id` int(11) NOT NULL AUTO_INCREMENT,
+  `enti_codi` int(11) DEFAULT NULL,
+  `enti_raza` varchar(100) DEFAULT NULL,
+  `enti_fant` varchar(100) DEFAULT NULL,
+  `enti_cpf` varchar(15) DEFAULT NULL,
+  `enti_rg` varchar(15) DEFAULT NULL,
+  `enti_cnpj` varchar(20) DEFAULT NULL,
+  `enti_fone` varchar(15) DEFAULT NULL,
+  `enti_celu` varchar(15) DEFAULT NULL,
+  `enti_cont` varchar(20) DEFAULT NULL,
+  `enti_emai` varchar(100) DEFAULT NULL,
+  `enti_obse` varchar(255) DEFAULT NULL,
+  `enti_ie` varchar(20) DEFAULT NULL,
+  `enti_tien` int(11) DEFAULT NULL,
+  PRIMARY KEY (`enti_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fisi
+-- ----------------------------
+DROP TABLE IF EXISTS `fisi`;
+CREATE TABLE `fisi` (
+  `fisi_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fisi_codi` int(11) DEFAULT NULL,
+  `fisi_nome` varchar(100) DEFAULT NULL,
+  `fisi_cep` varchar(9) DEFAULT NULL,
+  `fisi_ende` varchar(255) DEFAULT '',
+  `fisi_cida` int(11) DEFAULT NULL,
+  `fisi_bair` varchar(50) DEFAULT '',
+  `fisi_nume` int(11) DEFAULT NULL,
+  `fisi_comp` varchar(50) DEFAULT NULL,
+  `fisi_rg` varchar(15) DEFAULT NULL,
+  `fisi_cpf` varchar(14) DEFAULT NULL,
+  `fisi_fone` varchar(13) DEFAULT NULL,
+  `fisi_celu` varchar(14) DEFAULT NULL,
+  `fisi_emai` varchar(50) DEFAULT '',
+  `fisi_obse` varchar(200) DEFAULT NULL,
+  `fisi_nasc` varchar(100) DEFAULT NULL,
+  `fisi_prof` varchar(100) DEFAULT NULL,
+  `fisi_tien` int(11) DEFAULT NULL,
+  PRIMARY KEY (`fisi_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for foro
+-- ----------------------------
+DROP TABLE IF EXISTS `foro`;
+CREATE TABLE `foro` (
+  `foro_id` int(11) NOT NULL AUTO_INCREMENT,
+  `foro_codi` int(11) DEFAULT NULL,
+  `foro_desc` varchar(255) DEFAULT NULL,
+  `foro_obse` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`foro_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for juri
+-- ----------------------------
+DROP TABLE IF EXISTS `juri`;
+CREATE TABLE `juri` (
+  `juri_id` int(11) NOT NULL AUTO_INCREMENT,
+  `juri_codi` int(11) DEFAULT NULL,
+  `juri_nome` varchar(255) DEFAULT NULL,
+  `juri_raza` varchar(255) DEFAULT NULL,
+  `juri_fant` varchar(255) DEFAULT NULL,
+  `juri_cpf` varchar(30) DEFAULT NULL,
+  `juri_cnpj` varchar(30) DEFAULT NULL,
+  `juri_ie` varchar(30) DEFAULT NULL,
+  `juri_fone` varchar(20) DEFAULT NULL,
+  `juri_cont` varchar(100) DEFAULT NULL,
+  `juri_email` varchar(255) DEFAULT NULL,
+  `juri_obse` text DEFAULT NULL,
+  `juri_celu` varchar(20) DEFAULT NULL,
+  `juri_cida` int(11) DEFAULT NULL,
+  `juri_rg` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`juri_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for tien
+-- ----------------------------
+DROP TABLE IF EXISTS `tien`;
+CREATE TABLE `tien` (
+  `tien_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tien_codi` int(11) DEFAULT NULL,
+  `tien_desc` varchar(255) DEFAULT NULL,
+  `tien_obse` text DEFAULT NULL,
+  PRIMARY KEY (`tien_id`),
+  KEY `tien_idx` (`tien_codi`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
