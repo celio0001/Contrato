@@ -7,14 +7,16 @@ public class Prog0009Vo
   private String valor;
   private String statu;
   private String codiComp;
+  private String comp;
   private String codiCidaComp;
-  private String cepCmp;
+  private String cepComp;
   private String endeComp;
   private String numeComp;
   private String cidaComp;
   private String ufComp;
   private String bairroComp;
   private String codiVend;
+  private String vend;
   private String codiCidaVend;
   private String cepVend;
   private String endeVend;
@@ -23,6 +25,7 @@ public class Prog0009Vo
   private String ufVend;
   private String bairroVend;
   private String codiImovel;
+  private String imovel;
   private String codiCidaImovel;
   private String cepImovel;
   private String endeImovel;
@@ -30,8 +33,16 @@ public class Prog0009Vo
   private String cidaImovel;
   private String ufImovel;
   private String bairroImovel;
+  private String codiForo;
   private String foro;
+  private String codiBanco;
   private String banco;
+  private String codTeste1;
+  private String teste1;
+  private String codiTeste2;
+  private String testemunha2;
+  
+  
 
   public String getCodigo() {
     return codigo;
@@ -81,12 +92,12 @@ public class Prog0009Vo
     this.codiCidaComp = codiCidaComp;
   }
 
-  public String getCepCmp() {
-    return cepCmp;
+  public String getCepComp() {
+    return cepComp;
   }
 
-  public void setCepCmp(String cepCmp) {
-    this.cepCmp = cepCmp;
+  public void setCepComp(String cepComp) {
+    this.cepComp = cepComp;
   }
 
   public String getEndeComp() {
@@ -272,6 +283,80 @@ public class Prog0009Vo
   public void setBanco(String banco) {
     this.banco = banco;
   }
+
+  public String getComp() {
+    return comp;
+  }
+
+  public void setComp(String comp) {
+    this.comp = comp;
+  }
+
+  public String getVend() {
+    return vend;
+  }
+
+  public void setVend(String vend) {
+    this.vend = vend;
+  }
+
+  public String getImovel() {
+    return imovel;
+  }
+
+  public void setImovel(String imovel) {
+    this.imovel = imovel;
+  }
+
+  public String getCodTeste1() {
+    return codTeste1;
+  }
+
+  public void setCodTeste1(String codTeste1) {
+    this.codTeste1 = codTeste1;
+  }
+
+  public String getTeste1() {
+    return teste1;
+  }
+
+  public void setTeste1(String teste1) {
+    this.teste1 = teste1;
+  }
+
+  public String getCodiTeste2() {
+    return codiTeste2;
+  }
+
+  public void setCodiTeste2(String codiTeste2) {
+    this.codiTeste2 = codiTeste2;
+  }
+
+  public String getTestemunha2() {
+    return testemunha2;
+  }
+
+  public void setTestemunha2(String testemunha2) {
+    this.testemunha2 = testemunha2;
+  }
+
+  public String getCodiForo() {
+    return codiForo;
+  }
+
+  public void setCodiForo(String codiForo) {
+    this.codiForo = codiForo;
+  }
+
+  public String getCodiBanco() {
+    return codiBanco;
+  }
+
+  public void setCodiBanco(String codiBanco) {
+    this.codiBanco = codiBanco;
+  }
+
+  
   
   
   
