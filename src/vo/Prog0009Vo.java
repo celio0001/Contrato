@@ -41,6 +41,33 @@ public class Prog0009Vo
   private String teste1;
   private String codiTeste2;
   private String testemunha2;
+  private String codiTien;
+  private String tien;
+  private String fopa;
+
+  public String getCodiTien() {
+    return codiTien;
+  }
+
+  public void setCodiTien(String codiTien) {
+    this.codiTien = codiTien;
+  }
+  
+  public String getTien() {
+    return tien;
+  }
+
+  public void setTien(String tien) {
+    this.tien = tien;
+  }
+
+  public String getFopa() {
+    return fopa;
+  }
+
+  public void setFopa(String fopa) {
+    this.fopa = fopa;
+  }
   
   
 

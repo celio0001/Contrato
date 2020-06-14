@@ -86,26 +86,33 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     if(edCodi.getText().equals(""))
     {
       
-      prog0009Vo = prog0009Control.gravarContrato(edData.getText(),
-                                                  edValor.getText(),
-                                                  edStatus.getText(),
-                                                  edCodiComp.getText(),
-                                                  edCepComp.getText(),
-                                                  edEndeComp.getText(),
-                                                  edNumeComp.getText(),
-                                                  edBairroComp.getText(),
-                                                  edCodiCidaComp.getText(),
-                                                  edCodiVend.getText(),
-                                                  edCepVend.getText(),
-                                                  edEndeVend.getText(),
-                                                  edNumeVend.getText(),
-                                                  edBairroVend.getText(),
-                                                  edCodiCidaVend.getText(),
-                                                  edCodiCidaImovel.getText(),
-                                                  edNomeTest1.getText(),
-                                                  edNomeTest2.getText(),
-                                                  edCodiBanc.getText(),
-                                                  edCodiForo.getText());
+      try 
+      {
+        prog0009Control.gravarContrato(edData.getText(),
+                                       edValor.getText(),
+                                       edStatus.getText(),
+                                       edCodiComp.getText(),
+                                       edCepComp.getText(),
+                                       edEndeComp.getText(),
+                                       edNumeComp.getText(),
+                                       edBairroComp.getText(),
+                                       edCodiCidaComp.getText(),
+                                       edCodiVend.getText(),
+                                       edCepVend.getText(),
+                                       edEndeVend.getText(),
+                                       edNumeVend.getText(),
+                                       edBairroVend.getText(),
+                                       edCodiCidaVend.getText(),
+                                       edCodiCidaImovel.getText(),
+                                       edNomeTest1.getText(),
+                                       edNomeTest2.getText(),
+                                       edCodiBanc.getText(),
+                                       edCodiForo.getText());
+      } 
+      catch (ClassNotFoundException | SQLException /*| NumberFormatException*/ ex) 
+      {
+        System.out.println("Error: "+ex);
+      }
     }
   }
 
