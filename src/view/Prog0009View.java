@@ -85,7 +85,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     
     if(edCodi.getText().equals(""))
     {
-      
+      System.out.println(edCodiComp.getText()); 
+      System.out.println(edCepImovel.getText()); 
       try 
       {
         prog0009Control.gravarContrato(edData.getText(),
@@ -152,7 +153,6 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     edCodiCidaComp = new javax.swing.JTextField();
     btnBuscaComp = new javax.swing.JButton();
     btnBuscaCidaComp = new javax.swing.JButton();
-    edCodiComp = new javax.swing.JTextField();
     edNomeComp = new javax.swing.JTextField();
     edNomeCidaComp = new javax.swing.JTextField();
     jLabel22 = new javax.swing.JLabel();
@@ -181,6 +181,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     edUfVend = new javax.swing.JTextField();
     jLabel32 = new javax.swing.JLabel();
     edBairroVend = new javax.swing.JTextField();
+    edCodiComp = new javax.swing.JTextField();
     jPanel2 = new javax.swing.JPanel();
     edNomeCidaImovel = new javax.swing.JTextField();
     jLabel16 = new javax.swing.JLabel();
@@ -284,9 +285,6 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         btnBuscaCidaCompActionPerformed(evt);
       }
     });
-
-    edCodiComp.setBackground(new java.awt.Color(255, 255, 255));
-    edCodiComp.setForeground(new java.awt.Color(0, 0, 0));
 
     edNomeComp.setBackground(new java.awt.Color(255, 255, 255));
     edNomeComp.setForeground(new java.awt.Color(0, 0, 0));
@@ -396,6 +394,9 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     edBairroVend.setBackground(new java.awt.Color(255, 255, 255));
     edBairroVend.setForeground(new java.awt.Color(0, 0, 0));
 
+    edCodiComp.setBackground(new java.awt.Color(255, 255, 255));
+    edCodiComp.setForeground(new java.awt.Color(0, 0, 0));
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -411,7 +412,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jLabel1)
               .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(edCodiComp, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edCodiComp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBuscaComp)))
             .addGap(3, 3, 3)
@@ -509,8 +510,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
           .addComponent(jLabel2))
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(btnBuscaComp, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(edCodiComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(edNomeComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(edNomeComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edCodiComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel18)
