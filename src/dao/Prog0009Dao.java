@@ -51,7 +51,7 @@ public class Prog0009Dao
     int codiCidaVend = Integer.parseInt(prog0009Vo.getCodiCidaVend());
     int valorNumeImovel = Integer.parseInt(prog0009Vo.getNumeImovel());
     int codiCidaImovel = Integer.parseInt(prog0009Vo.getCodiCidaImovel());
-    //int valorFopa = Integer.parseInt(prog0009Vo.getFopa());
+    int codiFopa = Integer.parseInt(prog0009Vo.getFopa());
     String sqlAux ="select (coalesce(max(cont_codi),0)+1) as sequ from cont";
     
     
@@ -100,7 +100,7 @@ public class Prog0009Dao
                 +"'"              +codiBanc+"',"
                 +"'"              +codiForo+"',"
                 +"'"              +prog0009Vo.getValor()+"',"
-               // +"'"              +valorFopa+"',"
+                +"'"              +codiFopa+"',"
                 +"'"              +prog0009Vo.getData()+"',"
                 +"'"              +prog0009Vo.getStatu()+"',"
                 +"'"              +prog0009Vo.getCepComp()+"',"
@@ -115,10 +115,10 @@ public class Prog0009Dao
                 +"'"              +prog0009Vo.getBairroVend()+"',"
                 +"'"              +prog0009Vo.getTeste1()+"',"
                 +"'"              +prog0009Vo.getTestemunha2()+"',"
+                +"'"              +prog0009Vo.getCepImovel()+"',"
+                +"'"              +prog0009Vo.getEndeImovel()+"',"
                 +"'"              +valorNumeImovel+"',"  
                 +"'"              +codiCidaImovel+"',"
-                +"'"              +prog0009Vo.getCepImovel()+"',"
-                +"'"              +prog0009Vo.getEndeImovel()+"',"                           
                 +"'"              +prog0009Vo.getBairroImovel()+"',"
                 +"'"              +codiTienComp+"',"
                 +"'"              +codiTienVend+"')";

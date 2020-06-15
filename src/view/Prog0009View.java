@@ -234,6 +234,17 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     jLabel8 = new javax.swing.JLabel();
     edCodiBanc = new javax.swing.JTextField();
     edCodiForo = new javax.swing.JTextField();
+    jLabel25 = new javax.swing.JLabel();
+    jLabel33 = new javax.swing.JLabel();
+    edCodiFopa = new javax.swing.JTextField();
+    edFopa = new javax.swing.JTextField();
+    btmBuscarFopa = new javax.swing.JButton();
+    jLabel38 = new javax.swing.JLabel();
+    jLabel39 = new javax.swing.JLabel();
+    jLabel40 = new javax.swing.JLabel();
+    edQuantParc = new javax.swing.JTextField();
+    edDataParc1 = new javax.swing.JTextField();
+    edDiasEntreParc = new javax.swing.JTextField();
 
     jTextArea1.setColumns(20);
     jTextArea1.setRows(5);
@@ -943,6 +954,45 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     edCodiForo.setBackground(new java.awt.Color(255, 255, 255));
     edCodiForo.setForeground(new java.awt.Color(0, 0, 0));
 
+    jLabel25.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel25.setText("Codigo");
+
+    jLabel33.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel33.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel33.setText("Forma Pagamento");
+
+    edCodiFopa.setBackground(new java.awt.Color(255, 255, 255));
+    edCodiFopa.setForeground(new java.awt.Color(0, 0, 0));
+
+    edFopa.setBackground(new java.awt.Color(255, 255, 255));
+    edFopa.setForeground(new java.awt.Color(0, 0, 0));
+
+    btmBuscarFopa.setBackground(new java.awt.Color(0, 0, 0));
+    btmBuscarFopa.setForeground(new java.awt.Color(255, 255, 255));
+    btmBuscarFopa.setText("Buscar");
+
+    jLabel38.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel38.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel38.setText("Quantidade Parcelas");
+
+    jLabel39.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel39.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel39.setText("Data 1º Parcela");
+
+    jLabel40.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel40.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel40.setText("Dias Entre Parcelas");
+
+    edQuantParc.setBackground(new java.awt.Color(255, 255, 255));
+    edQuantParc.setForeground(new java.awt.Color(0, 0, 0));
+
+    edDataParc1.setBackground(new java.awt.Color(255, 255, 255));
+    edDataParc1.setForeground(new java.awt.Color(0, 0, 0));
+
+    edDiasEntreParc.setBackground(new java.awt.Color(255, 255, 255));
+    edDiasEntreParc.setForeground(new java.awt.Color(0, 0, 0));
+
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
     jPanel3.setLayout(jPanel3Layout);
     jPanel3Layout.setHorizontalGroup(
@@ -961,20 +1011,42 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel6)
-                .addGap(0, 380, Short.MAX_VALUE))
+                .addGap(0, 393, Short.MAX_VALUE))
               .addComponent(edNomeBanc)))
           .addGroup(jPanel3Layout.createSequentialGroup()
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jLabel7)
+              .addComponent(jLabel25)
               .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(edCodiForo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                  .addComponent(edCodiFopa, javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(edCodiForo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscaForo)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                  .addComponent(btnBuscaForo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                  .addComponent(btmBuscarFopa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+              .addComponent(edQuantParc, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(3, 3, 3)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel8)
-              .addComponent(edNomeForo))))
-        .addGap(19, 19, 19))
+              .addComponent(edFopa)
+              .addComponent(edNomeForo)
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(edDataParc1)
+                  .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                  .addComponent(edDiasEntreParc)
+                  .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(124, 124, 124)))))))
+        .addContainerGap())
     );
     jPanel3Layout.setVerticalGroup(
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -995,7 +1067,26 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
           .addComponent(btnBuscaForo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edNomeForo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edCodiForo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(357, Short.MAX_VALUE))
+        .addGap(1, 1, 1)
+        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel25)
+          .addComponent(jLabel33))
+        .addGap(0, 0, 0)
+        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(edCodiFopa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edFopa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btmBuscarFopa, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(1, 1, 1)
+        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel38)
+          .addComponent(jLabel39)
+          .addComponent(jLabel40))
+        .addGap(0, 0, 0)
+        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(edQuantParc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edDataParc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edDiasEntreParc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addContainerGap(275, Short.MAX_VALUE))
     );
 
     jTabbedPane1.addTab("DADOS BANCO", jPanel3);
@@ -1197,6 +1288,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   }   
   
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton btmBuscarFopa;
   private javax.swing.JButton btnBuscaBanco;
   private javax.swing.JButton btnBuscaCidaComp;
   private javax.swing.JButton btnBuscaCidaImovel;
@@ -1219,6 +1311,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JTextField edCodiCidaImovel;
   private javax.swing.JTextField edCodiCidaVend;
   private javax.swing.JTextField edCodiComp;
+  private javax.swing.JTextField edCodiFopa;
   private javax.swing.JTextField edCodiForo;
   private javax.swing.JTextField edCodiTest1;
   private javax.swing.JTextField edCodiTest2;
@@ -1226,9 +1319,12 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JTextField edCodiTienComp;
   private javax.swing.JTextField edCodiTienVend;
   private javax.swing.JTextField edCodiVend;
+  private javax.swing.JTextField edDataParc1;
+  private javax.swing.JTextField edDiasEntreParc;
   private javax.swing.JTextField edEndeComp;
   private javax.swing.JTextField edEndeImovel;
   private javax.swing.JTextField edEndeVend;
+  private javax.swing.JTextField edFopa;
   private javax.swing.JTextField edNomeBanc;
   private javax.swing.JTextField edNomeCidaComp;
   private javax.swing.JTextField edNomeCidaImovel;
@@ -1241,6 +1337,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JTextField edNumeComp;
   private javax.swing.JTextField edNumeImovel;
   private javax.swing.JTextField edNumeVend;
+  private javax.swing.JTextField edQuantParc;
   private javax.swing.JTextField edTienComp;
   private javax.swing.JTextField edTienVend;
   private javax.swing.JTextField edUfComp;
@@ -1263,6 +1360,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JLabel jLabel22;
   private javax.swing.JLabel jLabel23;
   private javax.swing.JLabel jLabel24;
+  private javax.swing.JLabel jLabel25;
   private javax.swing.JLabel jLabel26;
   private javax.swing.JLabel jLabel27;
   private javax.swing.JLabel jLabel28;
@@ -1271,11 +1369,15 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JLabel jLabel30;
   private javax.swing.JLabel jLabel31;
   private javax.swing.JLabel jLabel32;
+  private javax.swing.JLabel jLabel33;
   private javax.swing.JLabel jLabel34;
   private javax.swing.JLabel jLabel35;
   private javax.swing.JLabel jLabel36;
   private javax.swing.JLabel jLabel37;
+  private javax.swing.JLabel jLabel38;
+  private javax.swing.JLabel jLabel39;
   private javax.swing.JLabel jLabel4;
+  private javax.swing.JLabel jLabel40;
   private javax.swing.JLabel jLabel5;
   private javax.swing.JLabel jLabel6;
   private javax.swing.JLabel jLabel7;
