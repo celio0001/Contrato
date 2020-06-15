@@ -37,7 +37,7 @@ public class Prog0009Control
                              String bairroVend, String codiCidaVend, String codiCidaImovel, String nomeTest1, String nomeTeste2, String codiBanco, 
                              String codiForo) throws ClassNotFoundException, SQLException 
   {
-    Prog0009Dao prog0009G = new Prog0009Dao();
+    
     prog0009Vo.setData(data);
     prog0009Vo.setValor(valor);
     prog0009Vo.setStatu(status);
@@ -59,6 +59,6 @@ public class Prog0009Control
     prog0009Vo.setCodiBanco(codiBanco);
     prog0009Vo.setCodiForo(codiForo);
     
-    prog0009G.gravarContrato();     
+    prog0009Dao.gravarContrato();     
   }
 }

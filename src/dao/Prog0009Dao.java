@@ -17,10 +17,7 @@ public class Prog0009Dao
     this.prog0009Vo = prog0009Vo;
   }
 
-  public Prog0009Dao() 
-  {
-    
-  }
+  
 
   public Prog0009Vo buscarContrato() throws SQLException, ClassNotFoundException 
   {
@@ -41,7 +38,8 @@ public class Prog0009Dao
 
   public void gravarContrato() throws ClassNotFoundException, SQLException 
   {
-    System.out.println(prog0009Vo.getCodiComp());
+    System.out.println(prog0009Vo.getCodiBanco());
+    System.out.println(prog0009Vo.getCodiVend());
     int valorCodi;
     int valorComp = Integer.parseInt(prog0009Vo.getCodiComp());
     int valorVend = Integer.parseInt(prog0009Vo.getCodiVend());
@@ -55,7 +53,6 @@ public class Prog0009Dao
     int valorNumeImovel = Integer.parseInt(prog0009Vo.getNumeImovel());
     int valorCidaImovel = Integer.parseInt(prog0009Vo.getCodiCidaImovel());
     int valorFopa = Integer.parseInt(prog0009Vo.getFopa());
-    System.out.println(valorComp);
     String sqlAux ="select (coalesce(max(cont_codi),0)+1) as sequ from cont";
     
     
