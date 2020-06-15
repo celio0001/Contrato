@@ -32,12 +32,13 @@ public class Prog0009Control
     return prog0009Dao.buscarContrato();
   }
 
+  
+
   public void gravarContrato(String data, String valor, String status, String codiComp, String cepComp, String endeComp, String numeComp, 
                              String bairroComp, String codiCidaComp, String codiVend, String cepVend, String endeVend, String numeVend, 
                              String bairroVend, String codiCidaVend, String codiCidaImovel, String nomeTest1, String nomeTeste2, String codiBanco, 
-                             String codiForo) throws ClassNotFoundException, SQLException 
+                             String codiForo, String codiTienComp,  String codiTienVend) throws ClassNotFoundException, SQLException 
   {
-    
     prog0009Vo.setData(data);
     prog0009Vo.setValor(valor);
     prog0009Vo.setStatu(status);
@@ -58,6 +59,9 @@ public class Prog0009Control
     prog0009Vo.setTestemunha2(nomeTeste2);
     prog0009Vo.setCodiBanco(codiBanco);
     prog0009Vo.setCodiForo(codiForo);
+    prog0009Vo.setCodiTienComp(codiTienComp);
+    prog0009Vo.setCodiTienVend(codiTienVend);
+    
     
     prog0009Dao.gravarContrato();     
   }

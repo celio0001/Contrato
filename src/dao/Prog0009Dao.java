@@ -45,7 +45,8 @@ public class Prog0009Dao
     int valorVend = Integer.parseInt(prog0009Vo.getCodiVend());
     int valorBanc = Integer.parseInt(prog0009Vo.getCodiBanco());
     int valorForo = Integer.parseInt(prog0009Vo.getCodiForo());
-    int valorTien = Integer.parseInt(prog0009Vo.getCodiTien());
+    int valorCodiTienComp = Integer.parseInt(prog0009Vo.getCodiTienComp());    
+    int valorCodiTienVend = Integer.parseInt(prog0009Vo.getCodiTienVend());
     int valorNumeComp = Integer.parseInt(prog0009Vo.getNumeComp());
     int valorCidaComp = Integer.parseInt(prog0009Vo.getCodiCidaComp());
     int valorNumeVend = Integer.parseInt(prog0009Vo.getNumeVend());
@@ -102,7 +103,8 @@ public class Prog0009Dao
                 +"'"              +valorFopa+"',"
                 +"'"              +prog0009Vo.getData()+"',"
                 +"'"              +prog0009Vo.getStatu()+"',"
-                +"'"              +valorTien+"',"
+                +"'"              +valorCodiTienComp+"',"
+                +"'"              +valorCodiTienVend+"',"
                 +"'"              +prog0009Vo.getCepComp()+"',"
                 +"'"              +prog0009Vo.getEndeComp()+"',"
                 +"'"              +valorNumeComp+"',"

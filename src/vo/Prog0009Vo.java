@@ -41,17 +41,46 @@ public class Prog0009Vo
   private String teste1;
   private String codiTeste2;
   private String testemunha2;
-  private String codiTien;
+  private String codiTienComp;
+  private String tienComp;
+  private String codiTienVend;
+  private String TienVend;
   private String tien;
   private String fopa;
 
-  public String getCodiTien() {
-    return codiTien;
+  public String getCodiTienComp() {
+    return codiTienComp;
   }
 
-  public void setCodiTien(String codiTien) {
-    this.codiTien = codiTien;
+  public void setCodiTienComp(String codiTienComp) {
+    this.codiTienComp = codiTienComp;
   }
+
+  public String getTienComp() {
+    return tienComp;
+  }
+
+  public void setTienComp(String tienComp) {
+    this.tienComp = tienComp;
+  }
+
+  public String getCodiTienVend() {
+    return codiTienVend;
+  }
+
+  public void setCodiTienVend(String codiTienVend) {
+    this.codiTienVend = codiTienVend;
+  }
+
+  public String getTienVend() {
+    return TienVend;
+  }
+
+  public void setTienVend(String TienVend) {
+    this.TienVend = TienVend;
+  }
+
+  
   
   public String getTien() {
     return tien;

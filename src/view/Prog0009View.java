@@ -34,7 +34,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     super.lblValor.setText("Valor");
     super.lblStatus.setText("Status");
     super.setTitle("..::PROG0009::..");
-    super.setSize(650, 650);
+    super.setSize(650, 710);
     super.setLocationRelativeTo(null);
     super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     edCodi.addFocusListener((FocusListener) this);
@@ -105,8 +105,10 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
                                        edCodiCidaImovel.getText(),
                                        edNomeTest1.getText(),
                                        edNomeTest2.getText(),
+                                       edCodiForo.getText(),
                                        edCodiBanc.getText(),
-                                       edCodiForo.getText());
+                                       edCodiTienComp.getText(),
+                                       edCodiTienVend.getText());
         
         JOptionPane.showMessageDialog(null,"Registro Salvo com sucesso:" ,"Cadastro Contrato",JOptionPane.INFORMATION_MESSAGE);
       } 
@@ -184,12 +186,12 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     edCodiVend = new javax.swing.JTextField();
     jLabel9 = new javax.swing.JLabel();
     edCodiTienVend = new javax.swing.JTextField();
-    jButton1 = new javax.swing.JButton();
+    btnBuscarTienVend = new javax.swing.JButton();
     edTienVend = new javax.swing.JTextField();
     edCodiTien = new javax.swing.JLabel();
     edCodiTienComp = new javax.swing.JTextField();
     edTienComp = new javax.swing.JTextField();
-    jButton2 = new javax.swing.JButton();
+    btnBuscarTienComp = new javax.swing.JButton();
     lblTienComp = new javax.swing.JLabel();
     jLabel11 = new javax.swing.JLabel();
     jPanel2 = new javax.swing.JPanel();
@@ -334,11 +336,6 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
 
     edNomeVend.setBackground(new java.awt.Color(255, 255, 255));
     edNomeVend.setForeground(new java.awt.Color(0, 0, 0));
-    edNomeVend.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        edNomeVendActionPerformed(evt);
-      }
-    });
 
     jLabel4.setForeground(new java.awt.Color(0, 0, 0));
     jLabel4.setText("Vendedor");
@@ -418,21 +415,13 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
 
     edCodiTienVend.setBackground(new java.awt.Color(255, 255, 255));
     edCodiTienVend.setForeground(new java.awt.Color(0, 0, 0));
-    edCodiTienVend.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        edCodiTienVendActionPerformed(evt);
-      }
-    });
 
-    jButton1.setText("jButton1");
+    btnBuscarTienVend.setBackground(new java.awt.Color(0, 0, 0));
+    btnBuscarTienVend.setForeground(new java.awt.Color(255, 255, 255));
+    btnBuscarTienVend.setText("Buscar");
 
     edTienVend.setBackground(new java.awt.Color(255, 255, 255));
     edTienVend.setForeground(new java.awt.Color(0, 0, 0));
-    edTienVend.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        edTienVendActionPerformed(evt);
-      }
-    });
 
     edCodiTien.setBackground(new java.awt.Color(255, 255, 255));
     edCodiTien.setForeground(new java.awt.Color(0, 0, 0));
@@ -440,16 +429,13 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
 
     edCodiTienComp.setBackground(new java.awt.Color(255, 255, 255));
     edCodiTienComp.setForeground(new java.awt.Color(0, 0, 0));
-    edCodiTienComp.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        edCodiTienCompActionPerformed(evt);
-      }
-    });
 
     edTienComp.setBackground(new java.awt.Color(255, 255, 255));
     edTienComp.setForeground(new java.awt.Color(0, 0, 0));
 
-    jButton2.setText("jButton2");
+    btnBuscarTienComp.setBackground(new java.awt.Color(0, 0, 0));
+    btnBuscarTienComp.setForeground(new java.awt.Color(255, 255, 255));
+    btnBuscarTienComp.setText("Buscar");
 
     lblTienComp.setBackground(new java.awt.Color(255, 255, 255));
     lblTienComp.setForeground(new java.awt.Color(0, 0, 0));
@@ -487,7 +473,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                   .addComponent(edCodiCidaComp)
                   .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(edCepComp, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(edCepComp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                   .addComponent(jLabel19)
@@ -508,7 +494,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(jLabel20)
                   .addComponent(jLabel23))
-                .addGap(0, 29, Short.MAX_VALUE))))
+                .addGap(0, 30, Short.MAX_VALUE))))
           .addComponent(edBairroComp, javax.swing.GroupLayout.Alignment.LEADING))
         .addGap(5, 5, 5))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -521,7 +507,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(edCodiVend, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edCodiVend, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(btnBuscaVendedor))
                   .addComponent(jLabel3))
@@ -538,7 +524,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                       .addComponent(edCodiCidaVend)
                       .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)
-                      .addComponent(edCepVend, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addComponent(edCepVend, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                       .addComponent(jLabel27)
@@ -557,7 +543,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                       .addComponent(jLabel28)
                       .addComponent(jLabel31))
-                    .addGap(0, 33, Short.MAX_VALUE))
+                    .addGap(0, 34, Short.MAX_VALUE))
                   .addComponent(edNumeVend)
                   .addComponent(edUfVend)))
               .addComponent(edBairroVend)
@@ -567,9 +553,9 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(edCodiTienVend, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edCodiTienVend, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton1))
+                    .addComponent(btnBuscarTienVend))
                   .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -583,9 +569,9 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         .addContainerGap()
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addComponent(edCodiTienComp, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(edCodiTienComp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jButton2))
+            .addComponent(btnBuscarTienComp))
           .addComponent(edCodiTien))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -631,15 +617,15 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         .addComponent(jLabel24)
         .addGap(0, 0, 0)
         .addComponent(edBairroComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGap(1, 1, 1)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(edCodiTien)
           .addComponent(lblTienComp))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGap(0, 0, 0)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(edCodiTienComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edTienComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(btnBuscarTienComp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(5, 5, 5)
@@ -675,16 +661,16 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         .addComponent(jLabel32)
         .addGap(0, 0, 0)
         .addComponent(edBairroVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGap(1, 1, 1)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel9)
           .addComponent(jLabel11))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGap(0, 0, 0)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(edCodiTienVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btnBuscarTienVend, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edTienVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(10, Short.MAX_VALUE))
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     jTabbedPane1.addTab("DADOS COMPRADOR / VENDEDOR", jPanel1);
@@ -913,7 +899,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
           .addComponent(edCodiTest2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edNomeTest2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(btnBuscaTest3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(249, Short.MAX_VALUE))
+        .addContainerGap(223, Short.MAX_VALUE))
     );
 
     jTabbedPane1.addTab("DADOS IMOVEL / TESTEMUNHAS", jPanel2);
@@ -1015,7 +1001,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
           .addComponent(btnBuscaForo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edNomeForo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(edCodiForo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(383, Short.MAX_VALUE))
+        .addContainerGap(357, Short.MAX_VALUE))
     );
 
     jTabbedPane1.addTab("DADOS BANCO", jPanel3);
@@ -1145,22 +1131,6 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     setPalavra("CForo");
     buscarLista(palavra);
   }//GEN-LAST:event_btnBuscaForoActionPerformed
-
-  private void edCodiTienCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edCodiTienCompActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_edCodiTienCompActionPerformed
-
-  private void edNomeVendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edNomeVendActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_edNomeVendActionPerformed
-
-  private void edCodiTienVendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edCodiTienVendActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_edCodiTienVendActionPerformed
-
-  private void edTienVendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edTienVendActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_edTienVendActionPerformed
   
   private void buscarLista(String palavra) 
   {
@@ -1242,6 +1212,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JButton btnBuscaTest3;
   private javax.swing.JButton btnBuscaTest4;
   private javax.swing.JButton btnBuscaVendedor;
+  private javax.swing.JButton btnBuscarTienComp;
+  private javax.swing.JButton btnBuscarTienVend;
   private javax.swing.JTextField edBairroComp;
   private javax.swing.JTextField edBairroImovel;
   private javax.swing.JTextField edBairroVend;
@@ -1280,8 +1252,6 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   private javax.swing.JTextField edUfComp;
   private javax.swing.JTextField edUfImovel;
   private javax.swing.JTextField edUfVend;
-  private javax.swing.JButton jButton1;
-  private javax.swing.JButton jButton2;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel10;
   private javax.swing.JLabel jLabel11;
