@@ -38,22 +38,20 @@ public class Prog0009Dao
 
   public void gravarContrato() throws ClassNotFoundException, SQLException 
   {
-    System.out.println(prog0009Vo.getCodiBanco());
-    System.out.println(prog0009Vo.getCodiVend());
     int valorCodi;
-    int valorComp = Integer.parseInt(prog0009Vo.getCodiComp());
-    int valorVend = Integer.parseInt(prog0009Vo.getCodiVend());
-    int valorBanc = Integer.parseInt(prog0009Vo.getCodiBanco());
-    int valorForo = Integer.parseInt(prog0009Vo.getCodiForo());
-    int valorCodiTienComp = Integer.parseInt(prog0009Vo.getCodiTienComp());    
-    int valorCodiTienVend = Integer.parseInt(prog0009Vo.getCodiTienVend());
+    int codiComp = Integer.parseInt(prog0009Vo.getCodiComp());
+    int codiVend = Integer.parseInt(prog0009Vo.getCodiVend());
+    int codiBanc = Integer.parseInt(prog0009Vo.getCodiBanco());
+    int codiForo = Integer.parseInt(prog0009Vo.getCodiForo());
+    int codiTienComp = Integer.parseInt(prog0009Vo.getCodiTienComp());    
+    int codiTienVend = Integer.parseInt(prog0009Vo.getCodiTienVend());
     int valorNumeComp = Integer.parseInt(prog0009Vo.getNumeComp());
-    int valorCidaComp = Integer.parseInt(prog0009Vo.getCodiCidaComp());
+    int codiCidaComp = Integer.parseInt(prog0009Vo.getCodiCidaComp());
     int valorNumeVend = Integer.parseInt(prog0009Vo.getNumeVend());
-    int valorCidaVend = Integer.parseInt(prog0009Vo.getCodiCidaVend());
+    int codiCidaVend = Integer.parseInt(prog0009Vo.getCodiCidaVend());
     int valorNumeImovel = Integer.parseInt(prog0009Vo.getNumeImovel());
-    int valorCidaImovel = Integer.parseInt(prog0009Vo.getCodiCidaImovel());
-    int valorFopa = Integer.parseInt(prog0009Vo.getFopa());
+    int codiCidaImovel = Integer.parseInt(prog0009Vo.getCodiCidaImovel());
+    //int valorFopa = Integer.parseInt(prog0009Vo.getFopa());
     String sqlAux ="select (coalesce(max(cont_codi),0)+1) as sequ from cont";
     
     
@@ -93,36 +91,37 @@ public class Prog0009Dao
                  "                 cont_cep_imov,"+
                  "                 cont_ende_imov,"+
                  "                 cont_nume_imov,"+
-                 "                 cont_bair_imov)"+
+                 "                 cont_bair_imov,"+
+                 "                 cont_tien_comp,"+
+                 "                 cont_tien_vend)"+
                  "value('"        +valorCodi+"',"
-                +"'"              +valorComp+"',"
-                +"'"              +valorVend+"',"
-                +"'"              +valorBanc+"',"
-                +"'"              +valorForo+"',"
+                +"'"              +codiComp+"',"
+                +"'"              +codiVend+"',"
+                +"'"              +codiBanc+"',"
+                +"'"              +codiForo+"',"
                 +"'"              +prog0009Vo.getValor()+"',"
-                +"'"              +valorFopa+"',"
+               // +"'"              +valorFopa+"',"
                 +"'"              +prog0009Vo.getData()+"',"
                 +"'"              +prog0009Vo.getStatu()+"',"
-                +"'"              +valorCodiTienComp+"',"
-                +"'"              +valorCodiTienVend+"',"
                 +"'"              +prog0009Vo.getCepComp()+"',"
                 +"'"              +prog0009Vo.getEndeComp()+"',"
                 +"'"              +valorNumeComp+"',"
-                +"'"              +prog0009Vo.getNumeComp()+"',"
-                +"'"              +valorCidaComp+"',"
+                +"'"              +codiCidaComp+"',"
                 +"'"              +prog0009Vo.getBairroComp()+"',"
                 +"'"              +prog0009Vo.getCepVend()+"',"
                 +"'"              +prog0009Vo.getEndeVend()+"',"
                 +"'"              +valorNumeVend+"',"
-                +"'"              +valorCidaVend+"',"
+                +"'"              +codiCidaVend+"',"
                 +"'"              +prog0009Vo.getBairroVend()+"',"
                 +"'"              +prog0009Vo.getTeste1()+"',"
                 +"'"              +prog0009Vo.getTestemunha2()+"',"
-                +"'"              +valorCidaImovel+"',"
+                +"'"              +valorNumeImovel+"',"  
+                +"'"              +codiCidaImovel+"',"
                 +"'"              +prog0009Vo.getCepImovel()+"',"
-                +"'"              +prog0009Vo.getEndeImovel()+"',"
-                +"'"              +valorNumeImovel+"',"              
-                +"'"              +prog0009Vo.getBairroImovel()+"')";
+                +"'"              +prog0009Vo.getEndeImovel()+"',"                           
+                +"'"              +prog0009Vo.getBairroImovel()+"',"
+                +"'"              +codiTienComp+"',"
+                +"'"              +codiTienVend+"')";
     sessao.executeUpdate(sql);
     conexao.desconectar(); 
   }

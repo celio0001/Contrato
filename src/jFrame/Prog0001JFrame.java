@@ -1,5 +1,6 @@
 package jFrame;
 
+import javax.swing.ImageIcon;
 import view.Prog0004View;
 import view.Prog0005View;
 import view.Prog0008View;
@@ -14,14 +15,23 @@ public class Prog0001JFrame extends javax.swing.JFrame
     super.setExtendedState(MAXIMIZED_BOTH);
     super.setLocationRelativeTo(null);
     super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    
+    
+    redimensionarImagem();
   }
     
+  private void redimensionarImagem()
+  {
+    ImageIcon icon = new ImageIcon("src/imagens/img1.jpg");
+    icon.setImage(icon.getImage().getScaledInstance(jblImg.getWidth(), jblImg.getHeight(), 1));
+    jblImg.setIcon(icon);
+  }
 @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
-    jPanel1 = new javax.swing.JPanel();
-    jSeparator1 = new javax.swing.JSeparator();
+    jPanel2 = new javax.swing.JPanel();
+    jblImg = new javax.swing.JLabel();
     jMenuBar1 = new javax.swing.JMenuBar();
     jMenu1 = new javax.swing.JMenu();
     jMenu4 = new javax.swing.JMenu();
@@ -50,24 +60,28 @@ public class Prog0001JFrame extends javax.swing.JFrame
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-    jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-    jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+    jblImg.setBackground(new java.awt.Color(255, 255, 255));
+    jblImg.setForeground(new java.awt.Color(0, 0, 0));
+    jblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/img1.jpg"))); // NOI18N
 
-    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-    jPanel1.setLayout(jPanel1Layout);
-    jPanel1Layout.setHorizontalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-    );
-    jPanel1Layout.setVerticalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel1Layout.createSequentialGroup()
+    javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+    jPanel2.setLayout(jPanel2Layout);
+    jPanel2Layout.setHorizontalGroup(
+      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
-        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(261, Short.MAX_VALUE))
+        .addComponent(jblImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap())
+    );
+    jPanel2Layout.setVerticalGroup(
+      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel2Layout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(jblImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addContainerGap())
     );
 
-    getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+    getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
     jMenu1.setText("CADASTRO");
 
@@ -259,11 +273,13 @@ public class Prog0001JFrame extends javax.swing.JFrame
   private javax.swing.JMenuItem jMenuItem7;
   private javax.swing.JMenuItem jMenuItem8;
   private javax.swing.JMenuItem jMenuItem9;
-  private javax.swing.JPanel jPanel1;
-  private javax.swing.JSeparator jSeparator1;
+  private javax.swing.JPanel jPanel2;
+  private javax.swing.JLabel jblImg;
   private javax.swing.JMenu jm;
   private javax.swing.JMenuItem jmComarca;
   private javax.swing.JMenuItem jmSair;
   // End of variables declaration//GEN-END:variables
+
+  
 
 }
