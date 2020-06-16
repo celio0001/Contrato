@@ -9,15 +9,12 @@ import vo.Prog0009Vo;
 
 public class Prog0009Dao 
 {
-
   Prog0009Vo prog0009Vo = new Prog0009Vo();
   
   public Prog0009Dao(Prog0009Vo prog0009Vo) 
   {
     this.prog0009Vo = prog0009Vo;
   }
-
-  
 
   public Prog0009Vo buscarContrato() throws SQLException, ClassNotFoundException 
   {
@@ -36,7 +33,7 @@ public class Prog0009Dao
     return prog0009Vo;
   }
 
-  public void gravarContrato() throws ClassNotFoundException, SQLException 
+  public void gravarContrato() throws ClassNotFoundException, SQLException, NumberFormatException 
   {
     int valorCodi;
     int codiComp = Integer.parseInt(prog0009Vo.getCodiComp());
@@ -52,8 +49,8 @@ public class Prog0009Dao
     int valorNumeImovel = Integer.parseInt(prog0009Vo.getNumeImovel());
     int codiCidaImovel = Integer.parseInt(prog0009Vo.getCodiCidaImovel());
     int codiFopa = Integer.parseInt(prog0009Vo.getFopa());
-    String sqlAux ="select (coalesce(max(cont_codi),0)+1) as sequ from cont";
     
+    String sqlAux ="select (coalesce(max(cont_codi),0)+1) as sequ from cont";
     
     Conexao conexao = new Conexao();
     Connection con = conexao.conectar();
@@ -61,7 +58,8 @@ public class Prog0009Dao
     ResultSet rs = sessao.executeQuery(sqlAux);
     if (rs.next()) 
     {
-      prog0009Vo.setCodigo(Integer.toString(rs.getInt("sequ")));  
+      valorCodi = rs.getInt("sequ");
+      //prog0009Vo.setCodigo(Integer.toString(rs.getInt("sequ")));  
       
     } 
     valorCodi = Integer.parseInt(prog0009Vo.getCodigo());
