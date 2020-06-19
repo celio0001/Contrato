@@ -41,7 +41,12 @@ public class Prog0009Dao
                 "       (select cida_desc from cida where cida_codi = cont_cida_vend)as 'cidade_vendedor',\n"+
                 "       (select cida_sigl from cida where cida_codi = cont_cida_vend)as 'estado_vendedor',\n"+
                 "       (select tien_desc from tien where tien_codi = cont_tien_comp)as 'tienComp',\n"+
-                "       (select tien_desc from tien where tien_codi = cont_tien_vend)as 'tienVend'\n"+
+                "       (select tien_desc from tien where tien_codi = cont_tien_vend)as 'tienVend',\n"+
+                "       (select cida_sigl from cida where cida_codi = cont_cida_imov)as 'estado_imovel',\n"+
+                "       (select fopa_quan_parc from fopa where fopa_codi = cont_fopa)as 'qauntParc',\n"+
+                "       (select fopa_dias_entr from fopa where fopa_codi = cont_fopa)as 'diasEntreParc',\n"+
+                "       (select fopa_prim_parc from fopa where fopa_codi = cont_fopa)as 'PrimeParc',\n"+
+                "       (select fopa_desc from fopa where fopa_codi = cont_fopa)as 'fopa'\n"+
                 "from cont "+
                 "where cont_codi ="+valor;
     Conexao conexao = new Conexao();
@@ -88,8 +93,16 @@ public class Prog0009Dao
       prog0009Vo.setUfComp(rs.getString("estado_comprador"));
       prog0009Vo.setCidaVend(rs.getString("cidade_vendedor"));
       prog0009Vo.setUfVend(rs.getString("estado_vendedor"));
+      prog0009Vo.setUfImovel(rs.getString("estado_imovel"));
       prog0009Vo.setTienComp(rs.getString("tienComp"));
       prog0009Vo.setTienVend(rs.getString("tienVend"));
+      prog0009Vo.setCodiFopa(rs.getString("cont_fopa"));
+      prog0009Vo.setQuantParc(rs.getString("qauntParc"));
+      prog0009Vo.setDiasEntreParc(rs.getString("diasEntreParc"));
+      prog0009Vo.setDiasParc1(rs.getString("PrimeParc"));
+      prog0009Vo.setFormapagamento(rs.getString("fopa"));
+      prog0009Vo.setCodiBanco(rs.getString("cont_banc"));
+      
 
     }
     return prog0009Vo;
@@ -112,7 +125,8 @@ public class Prog0009Dao
     int codiCidaVend = Integer.parseInt(prog0009Vo.getCodiCidaVend());
     int valorNumeImovel = Integer.parseInt(prog0009Vo.getNumeImovel());
     int codiCidaImovel = Integer.parseInt(prog0009Vo.getCodiCidaImovel());
-    int codiFopa = Integer.parseInt(prog0009Vo.getFopa());
+    int codiFopa = Integer.parseInt(prog0009Vo.getCodiFopa());
+    
     
     String sqlAux ="select (coalesce(max(cont_codi),0)+1) as sequ from cont";
     

@@ -46,7 +46,45 @@ public class Prog0009Vo
   private String codiTienVend;
   private String TienVend;
   private String tien;
-  private String fopa;
+  private String codiFopa;
+  private String formapagamento;
+  private String quantParc;
+  private String diasParc1;
+  private String diasEntreParc;
+
+  public String getFormapagamento() {
+    return formapagamento;
+  }
+
+  public void setFormapagamento(String formapagamento) {
+    this.formapagamento = formapagamento;
+  }
+
+  public String getQuantParc() {
+    return quantParc;
+  }
+
+  public void setQuantParc(String quantParc) {
+    this.quantParc = quantParc;
+  }
+
+  public String getDiasParc1() {
+    return diasParc1;
+  }
+
+  public void setDiasParc1(String diasParc1) {
+    this.diasParc1 = diasParc1;
+  }
+
+  public String getDiasEntreParc() {
+    return diasEntreParc;
+  }
+
+  public void setDiasEntreParc(String diasEntreParc) {
+    this.diasEntreParc = diasEntreParc;
+  }
+  
+  
 
   public String getCodiTienComp() {
     return codiTienComp;
@@ -79,8 +117,6 @@ public class Prog0009Vo
   public void setTienVend(String TienVend) {
     this.TienVend = TienVend;
   }
-
-  
   
   public String getTien() {
     return tien;
@@ -90,15 +126,14 @@ public class Prog0009Vo
     this.tien = tien;
   }
 
-  public String getFopa() {
-    return fopa;
+  public String getCodiFopa() {
+    return codiFopa;
   }
 
-  public void setFopa(String fopa) {
-    this.fopa = fopa;
+  public void setCodiFopa(String codiFopa) {
+    this.codiFopa = codiFopa;
   }
-  
-  
+
 
   public String getCodigo() {
     return codigo;

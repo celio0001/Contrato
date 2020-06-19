@@ -37,7 +37,8 @@ public class Prog0009Control
                              String bairroComp, String codiCidaComp, String codiVend, String cepVend, String endeVend, String numeVend, 
                              String bairroVend, String codiCidaVend, String codiCidaImovel, String cepImovel, String endeImovel, String numeImovel, 
                              String bairroImovel, String codiFopa, String nomeTest1, String nomeTeste2, String codiBanco, 
-                             String codiForo, String codiTienComp,  String codiTienVend) throws ClassNotFoundException, SQLException, NumberFormatException
+                             String codiForo, String codiTienComp,  String codiTienVend,    String formaPagamento, 
+                             String quantParc, String diasParc1,  String diasEntreParc  ) throws ClassNotFoundException, SQLException, NumberFormatException
   {
     prog0009Vo.setData(data);
     prog0009Vo.setValor(valor);
@@ -65,7 +66,11 @@ public class Prog0009Control
     prog0009Vo.setEndeImovel(endeImovel);
     prog0009Vo.setNumeImovel(numeImovel);
     prog0009Vo.setBairroImovel(bairroImovel);
-    prog0009Vo.setFopa(codiFopa);
+    prog0009Vo.setCodiFopa(codiFopa);
+    prog0009Vo.setFormapagamento(formaPagamento);
+    prog0009Vo.setQuantParc(quantParc);
+    prog0009Vo.setDiasParc1(diasParc1);
+    prog0009Vo.setDiasEntreParc(diasEntreParc);
     
     prog0009Dao.gravarContrato();     
   }
