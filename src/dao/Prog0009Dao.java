@@ -21,7 +21,29 @@ public class Prog0009Dao
   {
     int valor =  Integer.parseInt(prog0009Vo.getCodigo());
     
-    String sql ="select * from cont where cont_codi ="+valor;
+    String sql ="select *                                                  ,\n"+
+                "       (case                                                         "+
+				"         WHEN cont_tien_comp = 1 then                                "+ 
+				"          (SELECT fisi_nome from fisi WHERE fisi_codi = cont_codi)   "+
+				"         WHEN cont_tien_comp = 2 THEN                                "+
+				"          (SELECT enti_raza from enti where enti_codi = cont_codi)   "+
+			    "       end)as'comprador'                                          ,\n"+              
+                "       (case                                                         "+
+				"         WHEN cont_tien_vend = 1 then                                "+ 
+				"          (SELECT fisi_nome from fisi WHERE fisi_codi = cont_codi)   "+
+				"         WHEN cont_tien_vend = 2 THEN                                "+
+				"          (SELECT enti_raza from enti where enti_codi = cont_codi)   "+
+			    "       end)as'vendedor'                                          ,\n"+
+                "      (select banc_desc from banc where banc_nume = cont_banc)as 'banco',\n"+
+                "      (select foro_desc from foro where foro_codi = cont_foro)as 'foro',\n"+
+                "       (select cida_desc from cida where cida_codi = cont_cida_comp)as 'cidade_comprador',\n"+
+                "       (select cida_sigl from cida where cida_codi = cont_cida_comp)as 'estado_comprador',\n"+
+                "       (select cida_desc from cida where cida_codi = cont_cida_vend)as 'cidade_vendedor',\n"+
+                "       (select cida_sigl from cida where cida_codi = cont_cida_vend)as 'estado_vendedor',\n"+
+                "       (select tien_desc from tien where tien_codi = cont_tien_comp)as 'tienComp',\n"+
+                "       (select tien_desc from tien where tien_codi = cont_tien_vend)as 'tienVend'\n"+
+                "from cont "+
+                "where cont_codi ="+valor;
     Conexao conexao = new Conexao();
     Connection con = conexao.conectar();
     Statement sessao = con.createStatement();
@@ -29,7 +51,46 @@ public class Prog0009Dao
     
     if(rs.next())
     {
-      
+      prog0009Vo.setCodiComp(Integer.toString(rs.getInt("cont_comp")));
+      prog0009Vo.setCodiVend(Integer.toString(rs.getInt("cont_vend")));
+      prog0009Vo.setCodiBanco(Integer.toString(rs.getInt("cont_banc")));
+      prog0009Vo.setCodiForo(Integer.toString(rs.getInt("cont_foro")));
+      prog0009Vo.setValor(rs.getString("cont_foro"));
+      prog0009Vo.setData(rs.getString("cont_data"));
+      prog0009Vo.setStatu(rs.getString("cont_stat"));
+      prog0009Vo.setCepComp(rs.getString("cont_cep_comp"));
+      prog0009Vo.setEndeComp(rs.getString("cont_ende_comp"));
+      prog0009Vo.setNumeComp(Integer.toString(rs.getInt("cont_nume_comp")));
+      prog0009Vo.setCidaComp(Integer.toString(rs.getInt("cont_cida_comp")));
+      prog0009Vo.setBairroComp(rs.getString("cont_bair_comp"));
+      prog0009Vo.setCodiCidaComp(rs.getString("cont_cida_comp"));
+      prog0009Vo.setCepVend(rs.getString("cont_cep_vend"));
+      prog0009Vo.setEndeVend(rs.getString("cont_ende_vend"));
+      prog0009Vo.setNumeVend(Integer.toString(rs.getInt("cont_nume_vend")));
+      prog0009Vo.setCidaVend(Integer.toString(rs.getInt("cont_cida_vend")));
+      prog0009Vo.setBairroVend(rs.getString("cont_bair_vend"));
+      prog0009Vo.setCodiCidaVend(rs.getString("cont_cida_vend"));
+      prog0009Vo.setTeste1(rs.getString("cont_test1"));
+      prog0009Vo.setTestemunha2(rs.getString("cont_test2"));
+      prog0009Vo.setCepImovel(rs.getString("cont_cep_imov"));
+      prog0009Vo.setEndeImovel(rs.getString("cont_ende_imov"));
+      prog0009Vo.setNumeImovel(Integer.toString(rs.getInt("cont_nume_imov")));
+      prog0009Vo.setCidaImovel(Integer.toString(rs.getInt("cont_cida_imov")));
+      prog0009Vo.setBairroImovel(rs.getString("cont_bair_imov"));
+      prog0009Vo.setCodiCidaImovel(rs.getString("cont_cida_imov"));
+      prog0009Vo.setCodiTienComp(Integer.toString(rs.getInt("cont_tien_comp")));
+      prog0009Vo.setCodiTienVend(Integer.toString(rs.getInt("cont_tien_vend")));
+      prog0009Vo.setComp(rs.getString("comprador"));
+      prog0009Vo.setVend(rs.getString("vendedor"));
+      prog0009Vo.setBanco(rs.getString("banco"));
+      prog0009Vo.setForo(rs.getString("foro"));
+      prog0009Vo.setCidaComp(rs.getString("cidade_comprador"));
+      prog0009Vo.setUfComp(rs.getString("estado_comprador"));
+      prog0009Vo.setCidaVend(rs.getString("cidade_vendedor"));
+      prog0009Vo.setUfVend(rs.getString("estado_vendedor"));
+      prog0009Vo.setTienComp(rs.getString("tienComp"));
+      prog0009Vo.setTienVend(rs.getString("tienVend"));
+
     }
     return prog0009Vo;
   }
