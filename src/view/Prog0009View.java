@@ -104,11 +104,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         edCodiForo.setText(prog0009Vo.getCodiForo());
         edNomeForo.setText(prog0009Vo.getForo());
       } 
-      catch (SQLException ex) 
-      {
-        Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
-      } 
-      catch (ClassNotFoundException ex) 
+      catch (SQLException | ClassNotFoundException | NumberFormatException ex) 
       {
         Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
       }
@@ -163,15 +159,55 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
                                        edFopa.getText(),
                                        edQuantParc.getText(),
                                        edDiasParc1.getText(),
-                                       edDiasEntreParc.getText());
-                                        
-        
-        JOptionPane.showMessageDialog(null,"Registro Salvo com sucesso:" ,"Cadastro Contrato",JOptionPane.INFORMATION_MESSAGE);
+                                       edDiasEntreParc.getText());                                               
+        JOptionPane.showMessageDialog(null,"Registro Salvo com sucesso:" ,"Salvar Contrato",JOptionPane.INFORMATION_MESSAGE);
       } 
       catch (ClassNotFoundException | SQLException | NumberFormatException ex) 
       {
-        //System.out.println("Error: "+ex);
-        Logger.getLogger(Prog0005View.class.getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null,"Error: "+ex ,"Salvar Contrato",JOptionPane.ERROR_MESSAGE);
+      }
+    }
+    else
+    {
+      try 
+      {
+        prog0009Control.editarContrato(edCodi.getText(),
+                                       edData.getText(),
+                                       edValor.getText(),
+                                       edStatus.getText(),
+                                       edCodiComp.getText(),
+                                       edCepComp.getText(),
+                                       edEndeComp.getText(),
+                                       edNumeComp.getText(),
+                                       edBairroComp.getText(),
+                                       edCodiCidaComp.getText(),
+                                       edCodiVend.getText(),
+                                       edCepVend.getText(),
+                                       edEndeVend.getText(),
+                                       edNumeVend.getText(),
+                                       edBairroVend.getText(),
+                                       edCodiCidaVend.getText(),
+                                       edCodiCidaImovel.getText(),
+                                       edCepImovel.getText(),
+                                       edEndeImovel.getText(),
+                                       edNumeImovel.getText(),
+                                       edBairroImovel.getText(),
+                                       edCodiFopa.getText(),
+                                       edNomeTest1.getText(),
+                                       edNomeTest2.getText(),
+                                       edCodiForo.getText(),
+                                       edCodiBanc.getText(),
+                                       edCodiTienComp.getText(),
+                                       edCodiTienVend.getText(),
+                                       edFopa.getText(),
+                                       edQuantParc.getText(),
+                                       edDiasParc1.getText(),
+                                       edDiasEntreParc.getText());
+        JOptionPane.showMessageDialog(null,"Registro Editado com sucesso:" ,"Editar Contrato",JOptionPane.INFORMATION_MESSAGE);
+      } 
+      catch (ClassNotFoundException | SQLException | NumberFormatException ex) 
+      {
+        JOptionPane.showMessageDialog(null,"Error: "+ex ,"Editar Contrato",JOptionPane.ERROR_MESSAGE);
       }
     }
   }

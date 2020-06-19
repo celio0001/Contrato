@@ -17,7 +17,7 @@ public class Prog0009Dao
     this.prog0009Vo = prog0009Vo;
   }
 
-  public Prog0009Vo buscarContrato() throws SQLException, ClassNotFoundException 
+  public Prog0009Vo buscarContrato() throws SQLException, ClassNotFoundException, NumberFormatException
   {
     int valor =  Integer.parseInt(prog0009Vo.getCodigo());
     
@@ -206,6 +206,46 @@ public class Prog0009Dao
     
     String sql = " delete from cont where cont_codi ="+valor;
     
+    Conexao conexao = new Conexao();
+    Connection con = conexao.conectar();
+    Statement sessao = con.createStatement();
+    sessao.executeUpdate(sql);
+    conexao.desconectar();
+  }
+
+  public void editarContrato() throws ClassNotFoundException, SQLException, NumberFormatException
+  {
+    int valor = Integer.parseInt(prog0009Vo.getCodigo());
+    
+    String sql = "Update cont set cont_comp = '"+ Integer.parseInt(prog0009Vo.getCodiComp())+"',"
+                 +"               cont_vend= '"+ Integer.parseInt(prog0009Vo.getCodiVend())+"',"
+                 +"               cont_banc= '"+ Integer.parseInt(prog0009Vo.getCodiBanco())+"',"
+                 +"               cont_foro= '"+ Integer.parseInt(prog0009Vo.getCodiForo())+"',"
+                 +"               cont_valo= '"+ prog0009Vo.getValor()+"',"
+                 +"               cont_fopa= '"+ Integer.parseInt(prog0009Vo.getCodiFopa())+"',"
+                 +"               cont_data= '"+ prog0009Vo.getData()+"',"
+                 +"               cont_stat= '"+ prog0009Vo.getStatu()+"',"
+                 +"               cont_cep_comp= '"+ prog0009Vo.getCepComp()+"',"
+                 +"               cont_ende_comp= '"+ prog0009Vo.getEndeComp()+"',"
+                 +"               cont_nume_comp= '"+ Integer.parseInt(prog0009Vo.getNumeComp())+"',"
+                 +"               cont_cida_comp= '"+ Integer.parseInt(prog0009Vo.getCodiCidaComp())+"',"
+                 +"               cont_bair_comp= '"+ prog0009Vo.getBairroComp()+"',"
+                 +"               cont_cep_vend= '"+ prog0009Vo.getCepVend()+"',"
+                 +"               cont_ende_vend= '"+ prog0009Vo.getEndeVend()+"',"
+                 +"               cont_nume_vend= '"+ Integer.parseInt(prog0009Vo.getNumeVend())+"',"
+                 +"               cont_cida_vend= '"+ Integer.parseInt(prog0009Vo.getCodiCidaVend())+"',"
+                 +"               cont_bair_Vend= '"+ prog0009Vo.getBairroVend()+"',"
+                 +"               cont_bair_vend= '"+ prog0009Vo.getBairroVend()+"',"
+                 +"               cont_test1= '"+ prog0009Vo.getTeste1()+"',"
+                 +"               cont_test2= '"+ prog0009Vo.getTestemunha2()+"',"
+                 +"               cont_cep_imov= '"+ prog0009Vo.getCepImovel()+"',"
+                 +"               cont_ende_imov= '"+ prog0009Vo.getEndeImovel()+"',"
+                 +"               cont_nume_imov= '"+ Integer.parseInt(prog0009Vo.getNumeImovel())+"',"
+                 +"               cont_cida_imov= '"+ Integer.parseInt(prog0009Vo.getCodiCidaImovel())+"',"
+                 +"               cont_bair_imov= '"+ prog0009Vo.getBairroImovel()+"',"
+                 +"               cont_tien_comp= '"+ prog0009Vo.getCodiTienComp()+"',"
+                 +"               cont_tien_vend= '"+ prog0009Vo.getCodiTienVend()+"'"
+                 +"Where cont_codi ="+valor;
     Conexao conexao = new Conexao();
     Connection con = conexao.conectar();
     Statement sessao = con.createStatement();
