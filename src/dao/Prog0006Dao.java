@@ -144,7 +144,6 @@ public class Prog0006Dao
       prog0006Vo.setCodiCida(dCodiCida);       
     }
     conexao.desconectar();
-    System.out.println(prog0006Vo.getCodiCida());
     return prog0006Vo;
   }
 
@@ -194,17 +193,6 @@ public class Prog0006Dao
     sessao.executeUpdate(sql);
     conexao.desconectar();
   }
-
-//  public void excluirFilme() throws ClassNotFoundException, SQLException 
-//  {
-//    int num = Integer.parseInt(filmeVo.getCodigo());
-//    String sql = "DELETE FROM filme WHERE filme_codi = " + num;
-//    Conexao conexao = new Conexao();
-//    Connection con = conexao.conectar();
-//    Statement sessao = con.createStatement();
-//    sessao.executeUpdate(sql);
-//    conexao.desconectar();
-//  }
 
   public void editarPessoaFisca() throws ClassNotFoundException, SQLException 
   {

@@ -73,7 +73,7 @@ public class Prog0006ListaDao implements IListaProg0006Dao
     } 
     catch (ClassNotFoundException | SQLException ex) 
     {
-      Logger.getLogger(Prog0007ListaDao.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(Prog0006ListaDao.class.getName()).log(Level.SEVERE, null, ex);
     }
     return listaPessoaFisica;
     

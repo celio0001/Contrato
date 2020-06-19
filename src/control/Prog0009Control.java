@@ -1,5 +1,6 @@
 package control;
 
+
 import dao.Prog0009Dao;
 import java.sql.SQLException;
 import java.util.List;
@@ -32,8 +33,6 @@ public class Prog0009Control
     return prog0009Dao.buscarContrato();
   }
 
-  
-
   public void gravarContrato(String data, String valor, String status, String codiComp, String cepComp, String endeComp, String numeComp, 
                              String bairroComp, String codiCidaComp, String codiVend, String cepVend, String endeVend, String numeVend, 
                              String bairroVend, String codiCidaVend, String codiCidaImovel, String cepImovel, String endeImovel, String numeImovel, 
@@ -48,7 +47,7 @@ public class Prog0009Control
     prog0009Vo.setEndeComp(endeComp);
     prog0009Vo.setNumeComp(numeComp);
     prog0009Vo.setBairroComp(bairroComp);
-    prog0009Vo.setCidaComp(codiCidaComp);
+    prog0009Vo.setCodiCidaComp(codiCidaComp);
     prog0009Vo.setCodiVend(codiVend);
     prog0009Vo.setCepVend(cepVend);
     prog0009Vo.setEndeVend(endeVend);
@@ -67,7 +66,6 @@ public class Prog0009Control
     prog0009Vo.setNumeImovel(numeImovel);
     prog0009Vo.setBairroImovel(bairroImovel);
     prog0009Vo.setFopa(codiFopa);
-    
     
     prog0009Dao.gravarContrato();     
   }

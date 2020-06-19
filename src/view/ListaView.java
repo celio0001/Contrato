@@ -496,6 +496,7 @@ public final class ListaView extends javax.swing.JFrame
         
         lista0009.setVisible(true);
         this.dispose();
+        lista0009.getEdCepComp().requestFocus();
         break;
       }
       case"compradorJuridica":
@@ -508,6 +509,7 @@ public final class ListaView extends javax.swing.JFrame
         
         lista0009.setVisible(true);
         this.dispose();
+        lista0009.getEdCepComp().requestFocus();
         break;
       }
       case"vendedorFisica":
@@ -520,6 +522,7 @@ public final class ListaView extends javax.swing.JFrame
         
         lista0009.setVisible(true);
         this.dispose();
+        lista0009.getEdCepVend().requestFocus();
         break;
       }
       case"vendedorJuridica":
@@ -532,6 +535,7 @@ public final class ListaView extends javax.swing.JFrame
         
         lista0009.setVisible(true);
         this.dispose();
+        lista0009.getEdCepVend().requestFocus();
         break;
       }
       case"cBanco":

@@ -35,10 +35,6 @@ public class Prog0006Control
   {
     return facadeCidade.findCidade();
   }
-//  public List<CidadeVo> findCidade() 
-//  {
-//    return facadeCidade.findCidade();
-//  }
 //================================================================================================
   public Prog0006Vo buscarCidade(String cidaCodi, String cidaNome, String cidaUf) 
   {
@@ -120,10 +116,6 @@ public class Prog0006Control
     pessoaFisicaE.setTien(tien);
     pessoaFisicaE.setObservacao(observacao);
     
-    System.out.println(prog0006Vo.getNascionalidade());
-    System.out.println(prog0006Vo.getProfissao());
-    System.out.println(prog0006Vo.getCodiTien());
-    System.out.println(prog0006Vo.getTien());
     
     Prog0006Dao editaFisica = new Prog0006Dao(pessoaFisicaE);
     editaFisica.editarPessoaFisca();

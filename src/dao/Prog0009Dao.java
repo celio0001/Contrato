@@ -1,5 +1,6 @@
 package dao;
 
+
 import dados.Conexao;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -33,8 +34,10 @@ public class Prog0009Dao
     return prog0009Vo;
   }
 
-  public void gravarContrato() throws ClassNotFoundException, SQLException, NumberFormatException 
+  public void gravarContrato() throws ClassNotFoundException, SQLException, NumberFormatException
   {
+    
+    
     int valorCodi;
     int codiComp = Integer.parseInt(prog0009Vo.getCodiComp());
     int codiVend = Integer.parseInt(prog0009Vo.getCodiVend());
@@ -58,8 +61,7 @@ public class Prog0009Dao
     ResultSet rs = sessao.executeQuery(sqlAux);
     if (rs.next()) 
     {
-      valorCodi = rs.getInt("sequ");
-      //prog0009Vo.setCodigo(Integer.toString(rs.getInt("sequ")));  
+      prog0009Vo.setCodigo(Integer.toString(rs.getInt("sequ")));  
       
     } 
     valorCodi = Integer.parseInt(prog0009Vo.getCodigo());
@@ -72,7 +74,6 @@ public class Prog0009Dao
                  "                 cont_fopa,"+
                  "                 cont_data,"+
                  "                 cont_stat,"+
-                 "                 cont_tien,"+
                  "                 cont_cep_comp,"+
                  "                 cont_ende_comp,"+
                  "                 cont_nume_comp,"+
@@ -85,10 +86,10 @@ public class Prog0009Dao
                  "                 cont_bair_vend,"+
                  "                 cont_test1,"+
                  "                 cont_test2,"+
-                 "                 cont_cida_imov,"+
                  "                 cont_cep_imov,"+
                  "                 cont_ende_imov,"+
                  "                 cont_nume_imov,"+
+                 "                 cont_cida_imov,"+
                  "                 cont_bair_imov,"+
                  "                 cont_tien_comp,"+
                  "                 cont_tien_vend)"+

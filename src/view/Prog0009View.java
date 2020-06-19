@@ -82,7 +82,6 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   @Override
   public void btnGravarActionPerformed(ActionEvent e) 
   {
-    
     if(edCodi.getText().equals(""))
     {
       try 
@@ -119,7 +118,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       } 
       catch (ClassNotFoundException | SQLException | NumberFormatException ex) 
       {
-        System.out.println("Error: "+ex);
+        //System.out.println("Error: "+ex);
+        Logger.getLogger(Prog0005View.class.getName()).log(Level.SEVERE, null, ex);
       }
     }
   }
@@ -199,8 +199,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     btnBuscarTienComp = new javax.swing.JButton();
     lblTienComp = new javax.swing.JLabel();
     jLabel11 = new javax.swing.JLabel();
-    edCodiCidaComp = new javax.swing.JTextField();
     edCodiCidaVend = new javax.swing.JTextField();
+    edCodiCidaComp = new javax.swing.JTextField();
     jPanel2 = new javax.swing.JPanel();
     edNomeCidaImovel = new javax.swing.JTextField();
     jLabel16 = new javax.swing.JLabel();
@@ -465,11 +465,11 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     jLabel11.setForeground(new java.awt.Color(0, 0, 0));
     jLabel11.setText("Tipo entidade");
 
-    edCodiCidaComp.setBackground(new java.awt.Color(255, 255, 255));
-    edCodiCidaComp.setForeground(new java.awt.Color(0, 0, 0));
-
     edCodiCidaVend.setBackground(new java.awt.Color(255, 255, 255));
     edCodiCidaVend.setForeground(new java.awt.Color(0, 0, 0));
+
+    edCodiCidaComp.setBackground(new java.awt.Color(255, 255, 255));
+    edCodiCidaComp.setForeground(new java.awt.Color(0, 0, 0));
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -1162,7 +1162,6 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     else
     {
       setPalavra("compradorJuridica");
-      System.out.println(getPalavra());
       buscarLista(palavra);
     }
   }//GEN-LAST:event_btnBuscaCompActionPerformed
