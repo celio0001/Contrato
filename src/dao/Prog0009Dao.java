@@ -199,4 +199,17 @@ public class Prog0009Dao
     sessao.executeUpdate(sql);
     conexao.desconectar(); 
   }
+
+  public void excluirContrato() throws ClassNotFoundException, SQLException, NumberFormatException
+  {
+    int valor = Integer.parseInt(prog0009Vo.getCodigo());
+    
+    String sql = " delete from cont where cont_codi ="+valor;
+    
+    Conexao conexao = new Conexao();
+    Connection con = conexao.conectar();
+    Statement sessao = con.createStatement();
+    sessao.executeUpdate(sql);
+    conexao.desconectar();
+  }
 }

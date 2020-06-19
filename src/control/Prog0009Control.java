@@ -74,4 +74,11 @@ public class Prog0009Control
     
     prog0009Dao.gravarContrato();     
   }
+
+  public void excluirContrato(String codigo) throws ClassNotFoundException, SQLException, NumberFormatException
+  {
+    prog0009Vo.setCodigo(codigo);
+    
+    prog0009Dao.excluirContrato();
+  }
 }
