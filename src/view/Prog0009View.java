@@ -179,7 +179,13 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   @Override
   public void btnExcluirActionPerformed(ActionEvent e) 
   {
-    
+    try {
+      prog0009Control.excluirContrato(edCodi.getText());
+    } 
+    catch (ClassNotFoundException | SQLException | NumberFormatException ex) 
+    {
+      JOptionPane.showMessageDialog(null,"Error: "+ex ,"Excluir Contrato",JOptionPane.ERROR_MESSAGE);
+    }
   }
 
   @Override
