@@ -1,11 +1,22 @@
 package view;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import control.Prog0006Control;
 import control.Prog0009Control;
+import java.awt.Desktop;
+//import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,6 +27,7 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import template.FormContrato;
 import vo.Prog0006Vo;
 import vo.Prog0009Vo;
+
 
 public class Prog0009View extends FormContrato implements ActionListener,FocusListener 
 {
@@ -91,6 +103,8 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         edNomeCidaImovel.setText(prog0009Vo.getCidaImovel());
         edUfImovel.setText(prog0009Vo.getUfImovel());
         edBairroImovel.setText(prog0009Vo.getBairroImovel());
+        edNomeTest1.setText(prog0009Vo.getTeste1());
+        edNomeTest2.setText(prog0009Vo.getTestemunha2());
         
 
         //Aba FORMA PAGAMENTO
@@ -227,7 +241,37 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   @Override
   public void btnImpromirActionPerformed(ActionEvent e) 
   {
-    
+    Document doc = new Document();
+    try 
+    {
+      PdfWriter.getInstance(doc, new FileOutputStream("doc.pdf"));
+      doc.open();
+      Font f1 = new Font(Font.FontFamily.TIMES_ROMAN,11,Font.NORMAL);
+     
+      doc.add(new Paragraph("PROMITENTE VENDEDOR: "+edNomeVend.getText()+"(nacionalidade), (estado civil), "+
+                            " profissão), portador da carteira de identidade R.G. nº xxxxxx, e CPF/MF nº xxxxxxx, "+
+                            " residente e domiciliado à "+edEndeVend.getText()+", "+edNumeVend.getText()+", "+ edBairroVend.getText()+", "+
+                              edCepVend.getText()+", "+ edNomeCidaVend.getText()+", "+edUfVend.getText(),f1));
+      doc.add(new Paragraph("PROMITENTE COMPRADOR: "+edNomeComp.getText()+", (nacionalidade), (estado civil), (profissão), portador da "+
+                            " carteira de identidade R.G. nº xxxxxx, e CPF/MF nº xxxxxxx, residente e domiciliado à "+edEndeComp.getText()+", "+
+                            edNumeComp.getText()+", "+ edBairroComp.getText()+", "+edCepComp.getText() +", "+ edNomeCidaComp.getText()+", "+ edUfComp.getText()+". ",f1));
+    } 
+    catch (FileNotFoundException | DocumentException ex) 
+    {
+      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    finally
+    {
+      doc.close();
+    }
+    try 
+    {
+      Desktop.getDesktop().open(new File("doc.pdf"));
+    } 
+    catch (IOException ex) 
+    {
+      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
+    }
   }
 
   @Override
@@ -527,6 +571,11 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     btnBuscarTienVend.setBackground(new java.awt.Color(0, 0, 0));
     btnBuscarTienVend.setForeground(new java.awt.Color(255, 255, 255));
     btnBuscarTienVend.setText("Buscar");
+    btnBuscarTienVend.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnBuscarTienVendActionPerformed(evt);
+      }
+    });
 
     edTienVend.setBackground(new java.awt.Color(255, 255, 255));
     edTienVend.setForeground(new java.awt.Color(0, 0, 0));
@@ -544,6 +593,11 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     btnBuscarTienComp.setBackground(new java.awt.Color(0, 0, 0));
     btnBuscarTienComp.setForeground(new java.awt.Color(255, 255, 255));
     btnBuscarTienComp.setText("Buscar");
+    btnBuscarTienComp.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnBuscarTienCompActionPerformed(evt);
+      }
+    });
 
     lblTienComp.setBackground(new java.awt.Color(255, 255, 255));
     lblTienComp.setForeground(new java.awt.Color(0, 0, 0));
@@ -1287,6 +1341,16 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     setPalavra("CForo");
     buscarLista(palavra);
   }//GEN-LAST:event_btnBuscaForoActionPerformed
+
+  private void btnBuscarTienCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTienCompActionPerformed
+    setPalavra("tienComp");
+    buscarLista(palavra);
+  }//GEN-LAST:event_btnBuscarTienCompActionPerformed
+
+  private void btnBuscarTienVendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTienVendActionPerformed
+    setPalavra("tienVend");
+    buscarLista(palavra);
+  }//GEN-LAST:event_btnBuscarTienVendActionPerformed
   
   private void buscarLista(String palavra) 
   {
@@ -1352,6 +1416,20 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       {
         ListaView listaCidaVend = new ListaView(this);
         listaCidaVend.setVisible(true);
+        this.dispose();
+        break;
+      }
+      case"tienComp":
+      {
+        ListaView listaTienComp = new ListaView(this);
+        listaTienComp.setVisible(true);
+        this.dispose();
+        break;
+      }
+      case"tienVend":
+      {
+        ListaView listaTienVend = new ListaView(this);
+        listaTienVend.setVisible(true);
         this.dispose();
         break;
       }
@@ -1736,6 +1814,94 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
 
   public void setEdValor(JTextField edValor) {
     this.edValor = edValor;
+  }
+
+  public JTextField getEdCodiFopa() {
+    return edCodiFopa;
+  }
+
+  public void setEdCodiFopa(JTextField edCodiFopa) {
+    this.edCodiFopa = edCodiFopa;
+  }
+
+  public JTextField getEdCodiTienComp() {
+    return edCodiTienComp;
+  }
+
+  public void setEdCodiTienComp(JTextField edCodiTienComp) {
+    this.edCodiTienComp = edCodiTienComp;
+  }
+
+  public JTextField getEdCodiTienVend() {
+    return edCodiTienVend;
+  }
+
+  public void setEdCodiTienVend(JTextField edCodiTienVend) {
+    this.edCodiTienVend = edCodiTienVend;
+  }
+
+  public JTextField getEdDiasEntreParc() {
+    return edDiasEntreParc;
+  }
+
+  public void setEdDiasEntreParc(JTextField edDiasEntreParc) {
+    this.edDiasEntreParc = edDiasEntreParc;
+  }
+
+  public JTextField getEdDiasParc1() {
+    return edDiasParc1;
+  }
+
+  public void setEdDiasParc1(JTextField edDiasParc1) {
+    this.edDiasParc1 = edDiasParc1;
+  }
+
+  public JTextField getEdFopa() {
+    return edFopa;
+  }
+
+  public void setEdFopa(JTextField edFopa) {
+    this.edFopa = edFopa;
+  }
+
+  public JTextField getEdNomeTest1() {
+    return edNomeTest1;
+  }
+
+  public void setEdNomeTest1(JTextField edNomeTest1) {
+    this.edNomeTest1 = edNomeTest1;
+  }
+
+  public JTextField getEdNomeTest2() {
+    return edNomeTest2;
+  }
+
+  public void setEdNomeTest2(JTextField edNomeTest2) {
+    this.edNomeTest2 = edNomeTest2;
+  }
+
+  public JTextField getEdQuantParc() {
+    return edQuantParc;
+  }
+
+  public void setEdQuantParc(JTextField edQuantParc) {
+    this.edQuantParc = edQuantParc;
+  }
+
+  public JTextField getEdTienComp() {
+    return edTienComp;
+  }
+
+  public void setEdTienComp(JTextField edTienComp) {
+    this.edTienComp = edTienComp;
+  }
+
+  public JTextField getEdTienVend() {
+    return edTienVend;
+  }
+
+  public void setEdTienVend(JTextField edTienVend) {
+    this.edTienVend = edTienVend;
   }
 
   

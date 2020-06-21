@@ -243,8 +243,8 @@ public class Prog0009Dao
                  +"               cont_nume_imov= '"+ Integer.parseInt(prog0009Vo.getNumeImovel())+"',"
                  +"               cont_cida_imov= '"+ Integer.parseInt(prog0009Vo.getCodiCidaImovel())+"',"
                  +"               cont_bair_imov= '"+ prog0009Vo.getBairroImovel()+"',"
-                 +"               cont_tien_comp= '"+ prog0009Vo.getCodiTienComp()+"',"
-                 +"               cont_tien_vend= '"+ prog0009Vo.getCodiTienVend()+"'"
+                 +"               cont_tien_comp= '"+ Integer.parseInt(prog0009Vo.getCodiTienComp())+"',"
+                 +"               cont_tien_vend= '"+ Integer.parseInt(prog0009Vo.getCodiTienVend())+"'"
                  +"Where cont_codi ="+valor;
     Conexao conexao = new Conexao();
     Connection con = conexao.conectar();

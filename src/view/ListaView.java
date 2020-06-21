@@ -207,6 +207,20 @@ public final class ListaView extends javax.swing.JFrame
         mostrarTabelaCidade();
         break;
       }
+      case"tienComp":
+      {
+        setPalavra("");
+        setPalavra("tienComp");
+        mostrarTabelaTipoEntidade();
+        break;
+      }
+      case"tienVend":
+      {
+        setPalavra("");
+        setPalavra("tienVend");
+        mostrarTabelaTipoEntidade();
+        break;
+      }
     }
   }
 
@@ -595,6 +609,30 @@ public final class ListaView extends javax.swing.JFrame
         lista0009.getEdUfImovel().setText((String) item.getValueAt(linha, 2));
         lista0009.setVisible(true);
         this.dispose();
+        break;
+      }
+      case"tienComp":
+      {
+        int linha = tblGridView.getSelectedRow();
+        ListaTipoEntidadeTableModel item = new ListaTipoEntidadeTableModel(prog0007List);
+
+        lista0009.getEdCodiTienComp().setText((String) item.getValueAt(linha, 0));
+        lista0009.getEdTienComp().setText((String) item.getValueAt(linha, 1));
+        lista0009.setVisible(true);
+        this.dispose();
+        lista0009.getEdCodiVend().requestFocus();
+        break;
+      }
+      case"tienVend":
+      {
+        int linha = tblGridView.getSelectedRow();
+        ListaTipoEntidadeTableModel item = new ListaTipoEntidadeTableModel(prog0007List);
+
+        lista0009.getEdCodiTienVend().setText((String) item.getValueAt(linha, 0));
+        lista0009.getEdTienVend().setText((String) item.getValueAt(linha, 1));
+        lista0009.setVisible(true);
+        this.dispose();
+        lista0009.getEdCepImovel().requestFocus();
         break;
       }
    }
