@@ -21,19 +21,43 @@ public class Prog0009Dao
   {
     int valor =  Integer.parseInt(prog0009Vo.getCodigo());
     
-    String sql ="select *                                                  ,\n"+
+    String sql ="select *                                                          ,\n"+
                 "       (case                                                         "+
 				"         WHEN cont_tien_comp = 1 then                                "+ 
 				"          (SELECT fisi_nome from fisi WHERE fisi_codi = cont_codi)   "+
 				"         WHEN cont_tien_comp = 2 THEN                                "+
 				"          (SELECT enti_raza from enti where enti_codi = cont_codi)   "+
-			    "       end)as'comprador'                                          ,\n"+              
+			    "       end)as'comprador',                                          \n"+  
+                "      (case                                                        \n"+
+				"   	 WHEN cont_tien_comp = 1 then                                 "+
+				"  		   (SELECT fisi_rg from fisi WHERE fisi_codi = cont_codi)     "+
+				"   	 WHEN cont_tien_comp = 2 THEN                                 "+
+				"		   (SELECT enti_rg from enti where enti_codi = cont_codi)     "+
+			    "      end)as'rg_comp',                                             \n"+
+			    "      (case                                                        \n"+
+				"	     WHEN cont_tien_comp = 1 THEN                                 "+
+				"          (SELECT fisi_cpf from fisi WHERE fisi_codi = cont_codi)    "+
+				" 	     WHEN cont_tien_comp = 2 THEN                                 "+
+				"		   (SELECT enti_cpf from enti where enti_codi = cont_codi)    "+
+			    "       end)as'cpf_comp',                                             "+
                 "       (case                                                         "+
 				"         WHEN cont_tien_vend = 1 then                                "+ 
 				"          (SELECT fisi_nome from fisi WHERE fisi_codi = cont_codi)   "+
 				"         WHEN cont_tien_vend = 2 THEN                                "+
 				"          (SELECT enti_raza from enti where enti_codi = cont_codi)   "+
-			    "       end)as'vendedor'                                          ,\n"+
+			    "       end)as'vendedor',                                           \n"+
+                "      (case                                                        \n"+
+				"	     WHEN cont_tien_vend = 1 then                                 "+
+				"		  (SELECT fisi_cpf from fisi WHERE fisi_codi = cont_codi)     "+
+				"	     WHEN cont_tien_comp = 2 THEN                                 "+
+				"		  (SELECT enti_cpf from enti where enti_codi = cont_codi)     "+
+			    "      end)as'cpf_vend',                                            \n"+
+                "     (case                                                         \n"+ 
+				"	    WHEN cont_tien_vend = 1 then                                  "+ 
+				"		 (SELECT fisi_rg from fisi WHERE fisi_codi = cont_codi)       "+
+				"	    WHEN cont_tien_vend = 2 THEN                                  "+
+				"		 (SELECT enti_rg from enti where enti_codi = cont_codi)       "+
+			    "     end)as'rg_vend',                                               \n"+ 
                 "      (select banc_desc from banc where banc_nume = cont_banc)as 'banco',\n"+
                 "      (select foro_desc from foro where foro_codi = cont_foro)as 'foro',\n"+
                 "       (select cida_desc from cida where cida_codi = cont_cida_comp)as 'cidade_comprador',\n"+
@@ -102,6 +126,10 @@ public class Prog0009Dao
       prog0009Vo.setDiasParc1(rs.getString("PrimeParc"));
       prog0009Vo.setFormapagamento(rs.getString("fopa"));
       prog0009Vo.setCodiBanco(rs.getString("cont_banc"));
+      prog0009Vo.setCpfComp(rs.getString("cpf_comp"));
+      prog0009Vo.setRgComp(rs.getString("rg_comp"));
+      prog0009Vo.setCpfVend(rs.getString("rg_vend"));
+      prog0009Vo.setRgVend(rs.getString("rg_vend"));
       
 
     }

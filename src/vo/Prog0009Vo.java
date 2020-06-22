@@ -51,7 +51,44 @@ public class Prog0009Vo
   private String quantParc;
   private String diasParc1;
   private String diasEntreParc;
+  private String cpfComp;
+  private String rgComp;
+  private String cpfVend;
+  private String rgVend;
 
+  public String getCpfComp() {
+    return cpfComp;
+  }
+
+  public void setCpfComp(String cpfComp) {
+    this.cpfComp = cpfComp;
+  }
+
+  public String getRgComp() {
+    return rgComp;
+  }
+
+  public void setRgComp(String rgComp) {
+    this.rgComp = rgComp;
+  }
+
+  public String getCpfVend() {
+    return cpfVend;
+  }
+
+  public void setCpfVend(String cpfVend) {
+    this.cpfVend = cpfVend;
+  }
+
+  public String getRgVend() {
+    return rgVend;
+  }
+
+  public void setRgVend(String rgVend) {
+    this.rgVend = rgVend;
+  }
+
+  
   public String getFormapagamento() {
     return formapagamento;
   }

@@ -1,14 +1,8 @@
 package view;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
 import control.Prog0006Control;
 import control.Prog0009Control;
 import java.awt.Desktop;
-//import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -24,6 +18,10 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 import template.FormContrato;
 import vo.Prog0006Vo;
 import vo.Prog0009Vo;
@@ -31,7 +29,6 @@ import vo.Prog0009Vo;
 
 public class Prog0009View extends FormContrato implements ActionListener,FocusListener 
 {
-
   private Prog0009Control prog0009Control;
   private Prog0009Vo prog0009Vo;
   private String palavra;
@@ -55,9 +52,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   }
 
   @Override
-  public void focusGained(FocusEvent fe) 
-  {
-    
+  public void focusGained(FocusEvent fe) {
   }
 
   @Override
@@ -68,7 +63,6 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       try 
       {
         prog0009Vo = prog0009Control.buscarContrato(edCodi.getText());
-        
         //Aba COMPRADOR/VENDEDOR
         edData.setText(prog0009Vo.getData());
         edValor.setText(prog0009Vo.getValor());
@@ -105,8 +99,6 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
         edBairroImovel.setText(prog0009Vo.getBairroImovel());
         edNomeTest1.setText(prog0009Vo.getTeste1());
         edNomeTest2.setText(prog0009Vo.getTestemunha2());
-        
-
         //Aba FORMA PAGAMENTO
         edCodiFopa.setText(prog0009Vo.getCodiFopa());
         edFopa.setText(prog0009Vo.getFormapagamento());
@@ -120,7 +112,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       } 
       catch (SQLException | ClassNotFoundException | NumberFormatException ex) 
       {
-        Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null,"Error: "+ex ,"Buscar Contrato",JOptionPane.ERROR_MESSAGE);
       }
     }
     else
@@ -131,9 +123,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   }
 
   @Override
-  public void btnBuscarActionPerformed(ActionEvent e) 
-  {
-    
+  public void btnBuscarActionPerformed(ActionEvent e) {
   }
 
   @Override
@@ -241,37 +231,94 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   @Override
   public void btnImpromirActionPerformed(ActionEvent e) 
   {
-    Document doc = new Document();
+    String nomeDoc = JOptionPane.showInputDialog(null, "Informe o nome do documento");
     try 
     {
-      PdfWriter.getInstance(doc, new FileOutputStream("doc.pdf"));
-      doc.open();
-      Font f1 = new Font(Font.FontFamily.TIMES_ROMAN,11,Font.NORMAL);
-     
-      doc.add(new Paragraph("PROMITENTE VENDEDOR: "+edNomeVend.getText()+"(nacionalidade), (estado civil), "+
-                            " profissão), portador da carteira de identidade R.G. nº xxxxxx, e CPF/MF nº xxxxxxx, "+
-                            " residente e domiciliado à "+edEndeVend.getText()+", "+edNumeVend.getText()+", "+ edBairroVend.getText()+", "+
-                              edCepVend.getText()+", "+ edNomeCidaVend.getText()+", "+edUfVend.getText(),f1));
-      doc.add(new Paragraph("PROMITENTE COMPRADOR: "+edNomeComp.getText()+", (nacionalidade), (estado civil), (profissão), portador da "+
-                            " carteira de identidade R.G. nº xxxxxx, e CPF/MF nº xxxxxxx, residente e domiciliado à "+edEndeComp.getText()+", "+
-                            edNumeComp.getText()+", "+ edBairroComp.getText()+", "+edCepComp.getText() +", "+ edNomeCidaComp.getText()+", "+ edUfComp.getText()+". ",f1));
+      XWPFDocument doc = new XWPFDocument();  
+      FileOutputStream out = new FileOutputStream(new File("C:\\Users\\Celio\\Desktop\\contratos gerados\\"+nomeDoc+".docx"));
+      
+      XWPFParagraph titulo = doc.createParagraph();
+      XWPFRun runTitulo1 = titulo.createRun();
+      titulo.setAlignment(ParagraphAlignment.CENTER);
+      runTitulo1.setFontFamily("Book Antiqua");
+      runTitulo1.setFontSize(11);
+      runTitulo1.setText("CONTRATO PARTICULAR DE COMPRA E VENDA DE IMÓVEL");
+      runTitulo1.setBold(true);
+      
+      XWPFParagraph p1 = doc.createParagraph();
+      XWPFRun runP1 = p1.createRun();
+      p1.setAlignment(ParagraphAlignment.BOTH);
+      runP1.setFontFamily("Arial");
+      runP1.setFontSize(11);
+      //runP1.addTab();
+      runP1.setText("Pelo presente instrumento particular, de um lado, "+edNomeVend.getText()+" brasileiro, solteiro, "+
+                    "portador do RG nº "+prog0009Vo.getRgVend()+", inscrito no CPF sob o nº "+prog0009Vo.getCpfVend()+", residente e domiciliado "+
+                    "à "+edEndeVend.getText()+", nº "+edNumeVend.getText()+", Bairro "+edBairroVend.getText()+", "+ edNomeCidaVend.getText()+" - "+edUfVend.getText() +", de ora em diante denominado simplesmente "+
+                    " VENDEDOR e, de outro lado, "+edNomeComp.getText()+", brasileira, união estável, cabeleireira, RG Nº "+prog0009Vo.getRgComp()+ " SSP/PR, "+
+                    "CPF Nº "+prog0009Vo.getCpfComp()+", residente e domiciliada "+ edEndeComp.getText()+", nº "+edNumeComp.getText()+", "+ edBairroComp.getText()+", "+edNomeCidaComp.getText()+ " – "+edUfComp.getText()+", "+
+                    "de ora em diante denominada COMPRADOR, têm entre si como justo e contratado o que segue, que se obrigam a cumprir "+
+                    "por si, seus herdeiros e sucessores:");
+      
+      XWPFParagraph p2 = doc.createParagraph();
+      XWPFRun runP2 = p2.createRun();
+      p2.setAlignment(ParagraphAlignment.BOTH);
+      runP2.setFontFamily("Book Antiqua");
+      runP2.setFontSize(11);
+      //runP2.addTab();
+      runP2.setText("1.    O VENDEDOR, na qualidade de legítimo proprietário do apartamento nº 44, do Bloco 15, "+
+                    " do CONDOMÍNIO RESIDENCIAL VIDA NOVA MOD II (descrição resumida permitida pelo § 1º, artigo 2º da Lei 7433/85), "+
+                    " resolve vendê-lo(a)(s) ao COMPRADOR, pelo valor de R$ 40.000,00(quarenta mil reais), que deverá ser pago da seguinte forma: "+
+                    " entrega da camionete de cor branca, marca/modelo IMP/GM Grand Blazer DLX, Diesel, modelo ano 1998, modelo 1999, placa HSB-2900, "+
+                    " representando o valor de R$ 30.000,00 (trinta mil reais), nesta data, do qual o VENDEDOR dará plena quitação após a compensação "+
+                    " ou cobrança respectiva, e o restante do valor, qual seja, R$ 10.000,00 (dez mil reais), no ato da assinatura da Procuração Pública.");
+  
+      runP2.addTab();
+      runP2.addTab();
+      runP2.addTab();
+      
+      XWPFParagraph p3 = doc.createParagraph();
+      XWPFRun runP3 = p3.createRun();
+      p3.setAlignment(ParagraphAlignment.CENTER);
+      runP3.setText("______________________________________");
+      
+      XWPFParagraph p4 = doc.createParagraph();
+      XWPFRun runP4 = p4.createRun();
+      p4.setAlignment(ParagraphAlignment.CENTER);
+      runP4.setText(edNomeVend.getText());
+      
+      runP4.addTab();
+      runP4.addTab();
+      runP4.addTab();
+      
+      XWPFParagraph p5 = doc.createParagraph();
+      XWPFRun runP5 = p5.createRun();
+      p5.setAlignment(ParagraphAlignment.CENTER);
+      runP5.setText("______________________________________");
+      
+      XWPFParagraph p6 = doc.createParagraph();
+      XWPFRun runP6 = p6.createRun();
+      p6.setAlignment(ParagraphAlignment.CENTER);
+      runP6.setText(edNomeComp.getText());
+      
+      doc.write(out);
+      out.close();
     } 
-    catch (FileNotFoundException | DocumentException ex) 
+    catch (FileNotFoundException ex) 
     {
-      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    finally
-    {
-      doc.close();
-    }
-    try 
-    {
-      Desktop.getDesktop().open(new File("doc.pdf"));
+      JOptionPane.showMessageDialog(null,"Error: "+ex ,"Gerar Contrato",JOptionPane.ERROR_MESSAGE);
     } 
     catch (IOException ex) 
     {
-      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
+      JOptionPane.showMessageDialog(null,"Error: "+ex ,"Gerar Contrato",JOptionPane.ERROR_MESSAGE);
     }
+    try 
+    {
+      Desktop.getDesktop().open(new File("C:\\Users\\Celio\\Desktop\\contratos gerados\\"+nomeDoc+".docx"));
+    } 
+    catch (IOException ex) 
+    {
+      JOptionPane.showMessageDialog(null,"Error: "+ex ,"Abrir Contrato",JOptionPane.ERROR_MESSAGE);
+    }  
   }
 
   @Override
@@ -1234,13 +1281,9 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       edNomeCidaComp.setText(prog0006Vo.getNomeCida());
       edUfComp.setText(prog0006Vo.getEstado());
     }
-    catch (ClassNotFoundException ex)
+    catch (ClassNotFoundException | SQLException ex)
     {
-      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    catch (SQLException ex)
-    {
-      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
+      JOptionPane.showMessageDialog(null,"Error: "+ex ,"Buscar Cep Comprador",JOptionPane.ERROR_MESSAGE);
     }
   }//GEN-LAST:event_edCepCompFocusLost
 
@@ -1290,13 +1333,9 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       edNomeCidaVend.setText(prog0006Vo.getNomeCida());
       edUfVend.setText(prog0006Vo.getEstado());
     }
-    catch (ClassNotFoundException ex)
+    catch (ClassNotFoundException | SQLException ex)
     {
-      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    catch (SQLException ex)
-    {
-      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
+      JOptionPane.showMessageDialog(null,"Error: "+ex ,"Busar Cep Vendedor",JOptionPane.ERROR_MESSAGE);
     }
   }//GEN-LAST:event_edCepVendFocusLost
 
@@ -1317,13 +1356,9 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       edNomeCidaImovel.setText(prog0006Vo.getNomeCida());
       edUfImovel.setText(prog0006Vo.getEstado());
     }
-    catch (ClassNotFoundException ex)
+    catch (ClassNotFoundException | SQLException ex)
     {
-      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    catch (SQLException ex)
-    {
-      Logger.getLogger(Prog0009View.class.getName()).log(Level.SEVERE, null, ex);
+      JOptionPane.showMessageDialog(null,"Error: "+ex ,"Buscar Cep Imovel",JOptionPane.ERROR_MESSAGE);
     }
   }//GEN-LAST:event_edCepImovelFocusLost
 
@@ -1903,6 +1938,4 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   public void setEdTienVend(JTextField edTienVend) {
     this.edTienVend = edTienVend;
   }
-
-  
 }
