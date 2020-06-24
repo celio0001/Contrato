@@ -63,7 +63,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
                                   edEmail.getText(),
                                   edTienCodi.getText(),
                                   edTienNome.getText(),
-                                  edObse.getText());
+                                  edObse.getText(),
+                                  edEstaCivil.getText());
         limarCampos();
         
         JOptionPane.showMessageDialog(null,"Cadastro Salvo com sucesso","Gravar Pessoa Fisica",JOptionPane.INFORMATION_MESSAGE);
@@ -100,7 +101,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
                              edEmail.getText(),
                              edTienCodi.getText(),
                              edTienNome.getText(),
-                             edObse.getText());
+                             edObse.getText(),
+                             edEstaCivil.getText());
         limarCampos();
         edDesc.requestFocus();
         
@@ -167,7 +169,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
         edComp.setText(prog0006Vo.getComplemento());
         edTienCodi.setText(prog0006Vo.getCodiTien());
         edTienNome.setText(prog0006Vo.getTien());
-        edObse.setText(prog0006Vo.getObservacao());      
+        edObse.setText(prog0006Vo.getObservacao()); 
+        edEstaCivil.setText(prog0006Vo.getEstadoCivil());
       } 
       catch (SQLException | ClassNotFoundException ex) 
       {
@@ -226,6 +229,8 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     edTienCodi = new javax.swing.JTextField();
     edTienNome = new javax.swing.JTextField();
     btnBuscarTien = new javax.swing.JButton();
+    jLabel19 = new javax.swing.JLabel();
+    edEstaCivil = new javax.swing.JTextField();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -363,11 +368,6 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
 
     edProfi.setBackground(new java.awt.Color(255, 255, 255));
     edProfi.setForeground(new java.awt.Color(0, 0, 0));
-    edProfi.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        edProfiActionPerformed(evt);
-      }
-    });
 
     jLabel17.setBackground(java.awt.Color.white);
     jLabel17.setForeground(new java.awt.Color(0, 0, 0));
@@ -391,6 +391,13 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
         btnBuscarTienActionPerformed(evt);
       }
     });
+
+    jLabel19.setBackground(new java.awt.Color(255, 255, 255));
+    jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel19.setText("Estado Civil");
+
+    edEstaCivil.setBackground(new java.awt.Color(255, 255, 255));
+    edEstaCivil.setForeground(new java.awt.Color(0, 0, 0));
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -457,14 +464,24 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
                     .addGap(0, 0, Short.MAX_VALUE))))
               .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(edNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(jLabel14)
-                  .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(jLabel16)
+                    .addComponent(jLabel14)
                     .addGap(0, 0, Short.MAX_VALUE))
+                  .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(edNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(jLabel15))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addComponent(edEstaCivil)
+                      .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addGap(0, 0, Short.MAX_VALUE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                  .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(52, 52, 52))
                   .addComponent(edProfi)))
               .addComponent(jScrollPane2)
               .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -488,11 +505,13 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel15)
-          .addComponent(jLabel16))
+          .addComponent(jLabel16)
+          .addComponent(jLabel19))
         .addGap(0, 0, 0)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(edNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-          .addComponent(edProfi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(edProfi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(edEstaCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(0, 0, 0)
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel1)
@@ -588,10 +607,6 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     setPalavra("tipoEnti");
     buscarLista(palavra);
   }//GEN-LAST:event_btnBuscaTipoEntidadeFisicaActionPerformed
-
-  private void edProfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edProfiActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_edProfiActionPerformed
 
   private void btnBuscarTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTienActionPerformed
     setPalavra("tipoEnti");
@@ -830,6 +845,7 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
   private javax.swing.JTextField edCpf;
   private javax.swing.JTextField edEmail;
   private javax.swing.JTextField edEnde;
+  private javax.swing.JTextField edEstaCivil;
   private javax.swing.JTextField edFoneFixo;
   private javax.swing.JTextField edNasc;
   private javax.swing.JTextField edNomeCida;
@@ -850,6 +866,7 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
   private javax.swing.JLabel jLabel16;
   private javax.swing.JLabel jLabel17;
   private javax.swing.JLabel jLabel18;
+  private javax.swing.JLabel jLabel19;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;

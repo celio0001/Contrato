@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.sql.SQLException;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
@@ -20,10 +21,11 @@ import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPageMar;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTSectPr;
 import template.FormContrato;
 import vo.Prog0006Vo;
 import vo.Prog0009Vo;
-
 
 public class Prog0009View extends FormContrato implements ActionListener,FocusListener 
 {
@@ -229,12 +231,23 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
   @Override
   public void btnImpromirActionPerformed(ActionEvent e) 
   {
+    
     String nomeDoc = JOptionPane.showInputDialog(null, "Informe o nome do documento");
     try 
     {
+      //CRIA DOCUMENTO DO TIPO WORD E SETA ONDE VAI SER SALVO
       XWPFDocument doc = new XWPFDocument();  
       FileOutputStream out = new FileOutputStream(new File("C:\\Users\\Celio\\Desktop\\contratos gerados\\"+nomeDoc+".docx"));
       
+      //DEFINE LAYOUT DA PAGINA
+      CTSectPr sectPr = doc.getDocument().getBody().addNewSectPr();
+      CTPageMar pageMar = sectPr.addNewPgMar();
+      pageMar.setLeft(BigInteger.valueOf(800L));
+      pageMar.setTop(BigInteger.valueOf(1400L));
+      pageMar.setRight(BigInteger.valueOf(800L));
+      pageMar.setBottom(BigInteger.valueOf(800L));
+        
+      //CRIA TITULO
       XWPFParagraph titulo = doc.createParagraph();
       XWPFRun runTitulo1 = titulo.createRun();
       titulo.setAlignment(ParagraphAlignment.CENTER);
@@ -243,12 +256,13 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       runTitulo1.setText("CONTRATO PARTICULAR DE COMPRA E VENDA DE IMÓVEL");
       runTitulo1.setBold(true);
       
+      //CRIA PARAGRAFO 1
       XWPFParagraph p1 = doc.createParagraph();
+      p1.setAlignment(ParagraphAlignment.THAI_DISTRIBUTE);
+      p1.setSpacingBetween(1.0);     
       XWPFRun runP1 = p1.createRun();
-      p1.setAlignment(ParagraphAlignment.BOTH);
-      runP1.setFontFamily("Arial");
+      runP1.setFontFamily("Book Antiqua");
       runP1.setFontSize(11);
-      //runP1.addTab();
       runP1.setText("Pelo presente instrumento particular, de um lado, "+edNomeVend.getText()+" brasileiro, solteiro, "+
                     "portador do RG nº "+prog0009Vo.getRgVend()+", inscrito no CPF sob o nº "+prog0009Vo.getCpfVend()+", residente e domiciliado "+
                     "à "+edEndeVend.getText()+", nº "+edNumeVend.getText()+", Bairro "+edBairroVend.getText()+", "+ edNomeCidaVend.getText()+" - "+edUfVend.getText() +", de ora em diante denominado simplesmente "+
@@ -257,22 +271,22 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
                     "de ora em diante denominada COMPRADOR, têm entre si como justo e contratado o que segue, que se obrigam a cumprir "+
                     "por si, seus herdeiros e sucessores:");
       
+      //CRIA PARAGRAFO 2
       XWPFParagraph p2 = doc.createParagraph();
       XWPFRun runP2 = p2.createRun();
       p2.setAlignment(ParagraphAlignment.BOTH);
+      p2.setSpacingBetween(1.0);
       runP2.setFontFamily("Book Antiqua");
       runP2.setFontSize(11);
-      //runP2.addTab();
       runP2.setText("1.    O VENDEDOR, na qualidade de legítimo proprietário do apartamento nº 44, do Bloco 15, "+
                     " do CONDOMÍNIO RESIDENCIAL VIDA NOVA MOD II (descrição resumida permitida pelo § 1º, artigo 2º da Lei 7433/85), "+
                     " resolve vendê-lo(a)(s) ao COMPRADOR, pelo valor de R$ 40.000,00(quarenta mil reais), que deverá ser pago da seguinte forma: "+
                     " entrega da camionete de cor branca, marca/modelo IMP/GM Grand Blazer DLX, Diesel, modelo ano 1998, modelo 1999, placa HSB-2900, "+
                     " representando o valor de R$ 30.000,00 (trinta mil reais), nesta data, do qual o VENDEDOR dará plena quitação após a compensação "+
                     " ou cobrança respectiva, e o restante do valor, qual seja, R$ 10.000,00 (dez mil reais), no ato da assinatura da Procuração Pública.");
-  
-      runP2.addTab();
-      runP2.addTab();
-      runP2.addTab();
+      runP2.addBreak();
+      runP2.addBreak();
+      runP2.addBreak();
       
       XWPFParagraph p3 = doc.createParagraph();
       XWPFRun runP3 = p3.createRun();
@@ -283,10 +297,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
       XWPFRun runP4 = p4.createRun();
       p4.setAlignment(ParagraphAlignment.CENTER);
       runP4.setText(edNomeVend.getText());
-      
-      runP4.addTab();
-      runP4.addTab();
-      runP4.addTab();
+      runP4.addBreak();
       
       XWPFParagraph p5 = doc.createParagraph();
       XWPFRun runP5 = p5.createRun();
@@ -1935,5 +1946,5 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
 
   public void setEdTienVend(JTextField edTienVend) {
     this.edTienVend = edTienVend;
-  }
+  } 
 }

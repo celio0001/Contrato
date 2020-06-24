@@ -67,7 +67,9 @@ public class Prog0006Control
     return prog0006DaoEC.buscaCep();
   }
 
-  public void gravarPessoaFisica(String nome, String cep, String endereco, String numero, String codiCidade, String nomeCidade, String estado,String bairro,String complemento, String rg, String cpf, String foneFixo, String celular, String email, String coditien,String tien, String observacao) throws ClassNotFoundException, SQLException
+  public void gravarPessoaFisica(String nome, String cep, String endereco, String numero, String codiCidade, String nomeCidade, String estado,
+                                 String bairro,String complemento, String rg, String cpf, String foneFixo, String celular, String email, String coditien,String tien, 
+                                 String observacao, String estadoCivil) throws ClassNotFoundException, SQLException
   {
     //Prog0006Vo pessoaFisicaG = new Prog0006Vo();
     prog0006Vo.setDescricao(nome);
@@ -87,12 +89,15 @@ public class Prog0006Control
     prog0006Vo.setCodiTien(coditien);
     prog0006Vo.setTien(tien);
     prog0006Vo.setObservacao(observacao);
+    prog0006Vo.setEstadoCivil(estadoCivil);
     
     Prog0006Dao gravaFisica = new Prog0006Dao(prog0006Vo);
     gravaFisica.gravarPessoaFisca();
   }
 
-  public void editarPessoa(String codigo, String nome, String nasc, String profi,String cep, String endereco, String numero, String codiCidade, String nomeCidade, String estado,String bairro,String complemento, String rg, String cpf, String foneFixo, String celular, String email,String codiTien,String tien, String observacao) throws ClassNotFoundException, SQLException, ClassNotFoundException, ClassNotFoundException, ClassNotFoundException 
+  public void editarPessoa(String codigo, String nome, String nasc, String profi,String cep, String endereco, String numero, String codiCidade, 
+                           String nomeCidade, String estado,String bairro,String complemento, String rg, String cpf, String foneFixo, String celular, 
+                           String email,String codiTien,String tien, String observacao, String estadoCivil) throws ClassNotFoundException, SQLException, ClassNotFoundException, ClassNotFoundException, ClassNotFoundException 
   {
     Prog0006Vo pessoaFisicaE = new Prog0006Vo();
     pessoaFisicaE.setCodigo(codigo);
@@ -115,6 +120,7 @@ public class Prog0006Control
     pessoaFisicaE.setCodiTien(codiTien);
     pessoaFisicaE.setTien(tien);
     pessoaFisicaE.setObservacao(observacao);
+    pessoaFisicaE.setEstadoCivil(estadoCivil);
     
     
     Prog0006Dao editaFisica = new Prog0006Dao(pessoaFisicaE);
