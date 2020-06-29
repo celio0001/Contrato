@@ -117,7 +117,7 @@ public class Prog0009View extends FormContrato implements ActionListener,FocusLi
     }
     else
     {
-      edStatus.setText("Lançado");
+      edStatus.setText("Em Processo");
       edData.requestFocus();
     }
   }

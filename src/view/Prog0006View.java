@@ -662,6 +662,7 @@ public class Prog0006View extends FormTemplate implements ActionListener,FocusLi
     edObse.setText("");
     edNasc.setText("");
     edProfi.setText("");
+    edEstaCivil.setText("");
   }
 //=================================================================  
   public JTextField getEdBairro() {
