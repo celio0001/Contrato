@@ -1,6 +1,6 @@
 package jFrame;
 
-import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 import view.Prog0004View;
 import view.Prog0005View;
 import view.Prog0008View;
@@ -8,6 +8,7 @@ import view.Prog0009View;
 //import view.Prog0008View;
 public class Prog0001JFrame extends javax.swing.JFrame 
 {
+
   public Prog0001JFrame() 
   {
     initComponents();
@@ -16,22 +17,16 @@ public class Prog0001JFrame extends javax.swing.JFrame
     super.setLocationRelativeTo(null);
     super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     
+    ImportaImagem imgTela = new ImportaImagem();
+    this.PanelPrincipal.add(imgTela);
     
-    redimensionarImagem();
   }
     
-  private void redimensionarImagem()
-  {
-    ImageIcon icon = new ImageIcon("src/imagens/img1.jpg");
-    icon.setImage(icon.getImage().getScaledInstance(jblImg.getWidth(), jblImg.getHeight(), 1));
-    jblImg.setIcon(icon);
-  }
 @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
-    jPanel2 = new javax.swing.JPanel();
-    jblImg = new javax.swing.JLabel();
+    PanelPrincipal = new javax.swing.JPanel();
     jMenuBar1 = new javax.swing.JMenuBar();
     jMenu1 = new javax.swing.JMenu();
     jMenu4 = new javax.swing.JMenu();
@@ -60,28 +55,10 @@ public class Prog0001JFrame extends javax.swing.JFrame
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-    jblImg.setBackground(new java.awt.Color(255, 255, 255));
-    jblImg.setForeground(new java.awt.Color(0, 0, 0));
-    jblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/img1.jpg"))); // NOI18N
-
-    javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-    jPanel2.setLayout(jPanel2Layout);
-    jPanel2Layout.setHorizontalGroup(
-      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel2Layout.createSequentialGroup()
-        .addContainerGap()
-        .addComponent(jblImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addContainerGap())
-    );
-    jPanel2Layout.setVerticalGroup(
-      jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel2Layout.createSequentialGroup()
-        .addContainerGap()
-        .addComponent(jblImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addContainerGap())
-    );
-
-    getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
+    PanelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+    PanelPrincipal.setForeground(new java.awt.Color(255, 255, 255));
+    PanelPrincipal.setLayout(new java.awt.BorderLayout());
+    getContentPane().add(PanelPrincipal, java.awt.BorderLayout.CENTER);
 
     jMenu1.setText("CADASTRO");
 
@@ -251,6 +228,7 @@ public class Prog0001JFrame extends javax.swing.JFrame
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JPanel PanelPrincipal;
   private javax.swing.JMenu jMenu1;
   private javax.swing.JMenu jMenu2;
   private javax.swing.JMenu jMenu4;
@@ -273,13 +251,12 @@ public class Prog0001JFrame extends javax.swing.JFrame
   private javax.swing.JMenuItem jMenuItem7;
   private javax.swing.JMenuItem jMenuItem8;
   private javax.swing.JMenuItem jMenuItem9;
-  private javax.swing.JPanel jPanel2;
-  private javax.swing.JLabel jblImg;
   private javax.swing.JMenu jm;
   private javax.swing.JMenuItem jmComarca;
   private javax.swing.JMenuItem jmSair;
   // End of variables declaration//GEN-END:variables
 
-  
-
+  private static final long serialVersionUID = 1L;
 }
+
+
