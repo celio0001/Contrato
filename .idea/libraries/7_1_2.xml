@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="7.1.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/hyph-7.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/pdftest-7.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/layout-7.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/pdfa-7.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/forms-7.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/barcodes-7.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/slf4j-simple-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/kernel-7.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/sign-7.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/io-7.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bibliotecas/7.1.2/font-asian-7.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

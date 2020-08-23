@@ -15,7 +15,7 @@ public class ImportaImagem extends javax.swing.JPanel
       initComponents();
       try
       {
-        this.imgFundo = ImageIO.read(new File("src/imagens/img1.jpg"));
+        this.imgFundo = ImageIO.read(new File("src/imagens/img2.jpg"));
       }
       catch(IOException e)
       {
@@ -28,7 +28,7 @@ public class ImportaImagem extends javax.swing.JPanel
   protected void paintComponent(Graphics g)
   {
     super.paintComponent(g);
-    g.drawImage(imgFundo.getScaledInstance(this.getWidth(), this.getHeight(), 1), 0, 0, null);
+    g.drawImage(imgFundo.getScaledInstance(this.getWidth(), this.getHeight(), 0), 0, 0, null);
   }
   @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
